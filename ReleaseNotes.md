@@ -2,6 +2,11 @@
 
 # Release notes lib-ihe-xds
 
+## Release 1.0.2
+
+### fixed
+- Added missing url element in POM file
+
 ## Release 1.0.1
 
 ### fixed

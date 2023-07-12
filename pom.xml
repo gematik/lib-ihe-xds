@@ -6,9 +6,10 @@
     <groupId>de.gematik.epa</groupId>
     <artifactId>lib-ihe-xds</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>lib-ihe-xds</name>
     <description>A lib to create and process IHE requests from/to more descriptive Java records</description>
+    <url>https://github.com/gematik/lib-ihe-xds</url>
     <properties>
         <!-- Project Settings -->
         <encoding>UTF-8</encoding>
