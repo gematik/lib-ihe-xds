@@ -117,7 +117,7 @@ class ResponseFindUtilTest extends RegistryObjectListUtils {
   }
 
   private void assertAssociationsList(ProxyFindResponse proxyResponse) {
-    final List<Association> associations = proxyResponse.registryObjectLists().associationList();
+    final List<Association> associations = proxyResponse.registryObjectLists().associations();
     assertNotNull(associations);
     assertEquals(1, associations.size());
 
@@ -130,7 +130,7 @@ class ResponseFindUtilTest extends RegistryObjectListUtils {
 
   private void assertDocuments(ProxyFindResponse proxyResponse) {
     final List<DocumentMetadata> documentMetadataList =
-        proxyResponse.registryObjectLists().documentMetadataList();
+        proxyResponse.registryObjectLists().documentsMetadata();
     assertEquals(1, documentMetadataList.size());
 
     final DocumentMetadata documentMetadata = documentMetadataList.get(0);
@@ -150,7 +150,7 @@ class ResponseFindUtilTest extends RegistryObjectListUtils {
 
   private void assertSubmissionSetList(ProxyFindResponse proxyResponse) {
     final List<SubmissionSetMetadata> submissionSetMetadataList =
-        proxyResponse.registryObjectLists().submissionSetMetadataList();
+        proxyResponse.registryObjectLists().submissionSetsMetadata();
     assertNotNull(submissionSetMetadataList);
     assertEquals(1, submissionSetMetadataList.size());
 
@@ -165,7 +165,7 @@ class ResponseFindUtilTest extends RegistryObjectListUtils {
 
   private void assertFolderMetadataList(ProxyFindResponse proxyResponse) {
     final List<FolderMetadata> folderMetadataList =
-        proxyResponse.registryObjectLists().folderMetadataList();
+        proxyResponse.registryObjectLists().foldersMetadata();
     assertNotNull(folderMetadataList);
     assertEquals(1, folderMetadataList.size());
 

@@ -2,6 +2,11 @@
 
 # Release notes lib-ihe-xds
 
+## Release 1.0.3
+
+### added
+- DIGA format code
+
 ## Release 1.0.2
 
 ### fixed
