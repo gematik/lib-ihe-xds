@@ -58,7 +58,9 @@ public enum FormatCode implements CodeInterface {
       "Persönliche Erklärungen"),
   REZEPT("urn:gematik:ig:VerordnungsdatensatzMedikation:r4.0", CodingScheme.DOK_DE, "Rezept"),
   ZAHNBONUSHEFT("urn:gematik:ig:Zahnbonusheft:v1.1.0", CodingScheme.DOK_DE, "Zahnbonusheft"),
-  BEFUND("urn:ihe:iti:xds:2017:mimeTypeSufficient", CodingScheme.IHE, "Befund");
+  BEFUND("urn:ihe:iti:xds:2017:mimeTypeSufficient", CodingScheme.IHE, "Befund"),
+  PATIENTEN_KURZ_AKTE("urn:gematik:ig:pka:v1.0", CodingScheme.DOK_DE, "Patientenkurzakte"),
+  DIGA("urn:gematik:ig:diga:v1.1", CodingScheme.DOK_DE, "DiGA (gematik) v1.1");
 
   private final String value;
   private final String codingScheme;

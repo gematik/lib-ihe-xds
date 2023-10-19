@@ -23,7 +23,7 @@ import de.gematik.epa.ihe.model.simple.SubmissionSetMetadata;
 import java.util.List;
 
 public record RegistryObjectLists(
-    List<SubmissionSetMetadata> submissionSetMetadataList,
-    List<DocumentMetadata> documentMetadataList,
-    List<FolderMetadata> folderMetadataList,
-    List<Association> associationList) {}
+    List<SubmissionSetMetadata> submissionSetsMetadata,
+    List<DocumentMetadata> documentsMetadata,
+    List<FolderMetadata> foldersMetadata,
+    List<Association> associations) {}
