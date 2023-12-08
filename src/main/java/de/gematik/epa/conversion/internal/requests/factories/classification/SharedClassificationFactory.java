@@ -17,7 +17,6 @@
 package de.gematik.epa.conversion.internal.requests.factories.classification;
 
 import static de.gematik.epa.conversion.internal.AuthorUtils.formatAuthorInstitutions;
-import static de.gematik.epa.conversion.internal.AuthorUtils.formatAuthorName;
 import static de.gematik.epa.conversion.internal.AuthorUtils.formatAuthorRole;
 
 import de.gematik.epa.conversion.internal.enumerated.CodeInterface;
@@ -69,8 +68,7 @@ public class SharedClassificationFactory {
     var slots =
         new java.util.ArrayList<>(
             List.of(
-                SlotFactory.slotIf(
-                    SlotName.AUTHOR_PERSON, Objects::nonNull, formatAuthorName(author)),
+                SlotFactory.slotIf(SlotName.AUTHOR_PERSON, Objects::nonNull, author.formatted()),
                 SlotFactory.slotIf(
                     SlotName.AUTHOR_ROLE, strings -> !strings.isEmpty(), formatAuthorRole(author)),
                 SlotFactory.slotIf(

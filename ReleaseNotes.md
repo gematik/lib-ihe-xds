@@ -2,6 +2,17 @@
 
 # Release notes lib-ihe-xds
 
+## Release 1.0.5
+
+### fixed
+- Updated releaseChain.jenkinsfile - use variable TAGNAME for publishing
+
+## Release 1.0.4
+
+### fixed
+- Migration to deploy Snapshot-Only Artifacts
+- Added missing DIGA oid to the author attribute
+
 ## Release 1.0.3
 
 ### added

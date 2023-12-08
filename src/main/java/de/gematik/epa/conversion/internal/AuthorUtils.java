@@ -36,19 +36,6 @@ public class AuthorUtils {
   private AuthorUtils() {}
 
   public static final String DEFAULT_INSTITUTION_CODE = "^^^^^&1.2.276.0.76.4.188&ISO^^^^";
-  public static final String DEFAULT_LEI_CODE = "^^&1.2.276.0.76.4.16&ISO";
-
-  public static String formatAuthorName(final Author author) {
-    // Build Author Person IHE String if Information are given
-    // Moved to new method in class TdToIheUtils
-    return (Objects.nonNull(author.identifier()) ? author.identifier() + "^" : "^")
-        + (Objects.nonNull(author.familyName()) ? author.familyName() + "^" : "^")
-        + (Objects.nonNull(author.givenName()) ? author.givenName() + "^" : "^")
-        + (Objects.nonNull(author.otherName()) ? author.otherName() + "^" : "^")
-        + (Objects.nonNull(author.nameAffix()) ? author.nameAffix() + "^" : "^")
-        + (Objects.nonNull(author.title()) ? author.title() + "^" : "^")
-        + (Objects.nonNull(author.identifier()) ? DEFAULT_LEI_CODE : "");
-  }
 
   public static List<String> formatAuthorRole(final Author author) {
     return Optional.ofNullable(author.authorRole()).stream()

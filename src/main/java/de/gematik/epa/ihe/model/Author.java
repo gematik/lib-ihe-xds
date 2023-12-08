@@ -26,7 +26,48 @@ public record Author(
     String otherName,
     String nameAffix,
     String title,
+    String oid,
     List<AuthorInstitution> authorInstitution,
     List<String> authorRole,
     List<String> authorSpecialty,
-    List<String> authorTelecommunication) {}
+    List<String> authorTelecommunication) {
+
+  /** Sets the OID to 1.2.276.0.76.4.16 */
+  public Author(
+      String identifier,
+      String familyName,
+      String givenName,
+      String otherName,
+      String nameAffix,
+      String title,
+      List<AuthorInstitution> authorInstitution,
+      List<String> authorRole,
+      List<String> authorSpecialty,
+      List<String> authorTelecommunication) {
+    this(
+        identifier,
+        familyName,
+        givenName,
+        otherName,
+        nameAffix,
+        title,
+        "1.2.276.0.76.4.16",
+        authorInstitution,
+        authorRole,
+        authorSpecialty,
+        authorTelecommunication);
+  }
+
+  public String formatted() {
+    return "%s^%s^%s^%s^%s^%s^^^%s"
+        .formatted(identifier, familyName, givenName, otherName, nameAffix, title, determineOid())
+        .replace("null", "");
+  }
+
+  private String determineOid() {
+    if (identifier != null) {
+      return "&%s&ISO".formatted(oid != null ? oid : "1.2.276.0.76.4.16");
+    }
+    return "";
+  }
+}
