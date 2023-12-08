@@ -16,7 +16,6 @@
 
 package de.gematik.epa.unit.util;
 
-import static de.gematik.epa.conversion.internal.AuthorUtils.DEFAULT_LEI_CODE;
 import static de.gematik.epa.unit.util.GetXDSAttributesUtil.getClassificationList;
 import static de.gematik.epa.unit.util.GetXDSAttributesUtil.getSlotFromAuthorClassification;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -28,7 +27,6 @@ import de.gematik.epa.conversion.internal.requests.factories.slot.SlotName;
 import de.gematik.epa.ihe.model.Author;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.ClassificationType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotType1;
@@ -54,31 +52,8 @@ public class AuthorToSlotTestUtils {
     assertNotNull(slotAuthorPerson);
     // added two authors in json
     String authorPerson = slotAuthorPerson.getValueList().getValue().get(0);
-    String expectedPerson = buildAuthorName(author);
+    String expectedPerson = author.formatted();
     assertEquals(expectedPerson, authorPerson);
-  }
-
-  private static String buildAuthorName(Author author) {
-    // Only Test first author
-    String familyName = author.familyName();
-    String givenName = author.givenName();
-    String otherName = author.otherName();
-    String affix = author.nameAffix();
-    String identifier = author.identifier();
-    String title = author.title();
-    return identifier
-        + "^"
-        + Objects.requireNonNullElse(familyName, "")
-        + "^"
-        + Objects.requireNonNullElse(givenName, "")
-        + "^"
-        + Objects.requireNonNullElse(otherName, "")
-        + "^"
-        + Objects.requireNonNullElse(affix, "")
-        + "^"
-        + Objects.requireNonNullElse(title, "")
-        + "^"
-        + DEFAULT_LEI_CODE;
   }
 
   private static void assertAuthorInstitution(
