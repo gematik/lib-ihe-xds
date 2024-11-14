@@ -74,7 +74,7 @@ public class NotificationType
      * 
      * @return
      *     possible object is
-     *     {@link RegistryObjectListType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectListType }
      *     
      */
     public RegistryObjectListType getRegistryObjectList() {
@@ -86,7 +86,7 @@ public class NotificationType
      * 
      * @param value
      *     allowed object is
-     *     {@link RegistryObjectListType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectListType }
      *     
      */
     public void setRegistryObjectList(RegistryObjectListType value) {

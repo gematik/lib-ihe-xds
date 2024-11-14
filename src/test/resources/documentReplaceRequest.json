@@ -1,11 +1,7 @@
 {
-  "recordIdentifier": {
-    "insurantId": {
-      "root": "1.2.276.0.76.4.8",
-      "extension": "X110425143"
-    },
-    "homeCommunityId": "urn:oid:1.2.276.0.76.3.1.321.12.1.60.22"
-
+  "insurantId": {
+    "root": "1.2.276.0.76.4.8",
+    "extension": "X110425143"
   },
   "documents": [
     {

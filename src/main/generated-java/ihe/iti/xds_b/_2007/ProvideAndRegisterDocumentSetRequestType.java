@@ -80,14 +80,14 @@ public class ProvideAndRegisterDocumentSetRequestType {
     @XmlElement(name = "SubmitObjectsRequest", namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0", required = true)
     protected SubmitObjectsRequest submitObjectsRequest;
     @XmlElement(name = "Document")
-    protected List<ProvideAndRegisterDocumentSetRequestType.Document> document;
+    protected List<Document> document;
 
     /**
      * Gets the value of the submitObjectsRequest property.
      * 
      * @return
      *     possible object is
-     *     {@link SubmitObjectsRequest }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.lcm._3.SubmitObjectsRequest }
      *     
      */
     public SubmitObjectsRequest getSubmitObjectsRequest() {
@@ -99,7 +99,7 @@ public class ProvideAndRegisterDocumentSetRequestType {
      * 
      * @param value
      *     allowed object is
-     *     {@link SubmitObjectsRequest }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.lcm._3.SubmitObjectsRequest }
      *     
      */
     public void setSubmitObjectsRequest(SubmitObjectsRequest value) {
@@ -124,13 +124,13 @@ public class ProvideAndRegisterDocumentSetRequestType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link ProvideAndRegisterDocumentSetRequestType.Document }
+     * {@link ihe.iti.xds_b._2007.ProvideAndRegisterDocumentSetRequestType.Document }
      * 
      * 
      */
-    public List<ProvideAndRegisterDocumentSetRequestType.Document> getDocument() {
+    public List<Document> getDocument() {
         if (document == null) {
-            document = new ArrayList<ProvideAndRegisterDocumentSetRequestType.Document>();
+            document = new ArrayList<Document>();
         }
         return this.document;
     }
@@ -140,16 +140,16 @@ public class ProvideAndRegisterDocumentSetRequestType {
         return this;
     }
 
-    public ProvideAndRegisterDocumentSetRequestType withDocument(ProvideAndRegisterDocumentSetRequestType.Document... values) {
+    public ProvideAndRegisterDocumentSetRequestType withDocument(Document... values) {
         if (values!= null) {
-            for (ProvideAndRegisterDocumentSetRequestType.Document value: values) {
+            for (Document value: values) {
                 getDocument().add(value);
             }
         }
         return this;
     }
 
-    public ProvideAndRegisterDocumentSetRequestType withDocument(Collection<ProvideAndRegisterDocumentSetRequestType.Document> values) {
+    public ProvideAndRegisterDocumentSetRequestType withDocument(Collection<Document> values) {
         if (values!= null) {
             getDocument().addAll(values);
         }
@@ -185,9 +185,9 @@ public class ProvideAndRegisterDocumentSetRequestType {
             }
         }
         {
-            List<ProvideAndRegisterDocumentSetRequestType.Document> leftDocument;
+            List<Document> leftDocument;
             leftDocument = (((this.document!= null)&&(!this.document.isEmpty()))?this.getDocument():null);
-            List<ProvideAndRegisterDocumentSetRequestType.Document> rightDocument;
+            List<Document> rightDocument;
             rightDocument = (((that.document!= null)&&(!that.document.isEmpty()))?that.getDocument():null);
             if ((this.document!= null)&&(!this.document.isEmpty())) {
                 if ((that.document!= null)&&(!that.document.isEmpty())) {
@@ -219,7 +219,7 @@ public class ProvideAndRegisterDocumentSetRequestType {
         }
         {
             currentHashCode = (currentHashCode* 31);
-            List<ProvideAndRegisterDocumentSetRequestType.Document> theDocument;
+            List<Document> theDocument;
             theDocument = (((this.document!= null)&&(!this.document.isEmpty()))?this.getDocument():null);
             if ((this.document!= null)&&(!this.document.isEmpty())) {
                 currentHashCode += theDocument.hashCode();
@@ -314,12 +314,12 @@ public class ProvideAndRegisterDocumentSetRequestType {
             this.id = value;
         }
 
-        public ProvideAndRegisterDocumentSetRequestType.Document withValue(byte[] value) {
+        public Document withValue(byte[] value) {
             setValue(value);
             return this;
         }
 
-        public ProvideAndRegisterDocumentSetRequestType.Document withId(String value) {
+        public Document withId(String value) {
             setId(value);
             return this;
         }
@@ -332,7 +332,7 @@ public class ProvideAndRegisterDocumentSetRequestType {
             if (this == object) {
                 return true;
             }
-            final ProvideAndRegisterDocumentSetRequestType.Document that = ((ProvideAndRegisterDocumentSetRequestType.Document) object);
+            final Document that = ((Document) object);
             {
                 byte[] leftValue;
                 leftValue = this.getValue();

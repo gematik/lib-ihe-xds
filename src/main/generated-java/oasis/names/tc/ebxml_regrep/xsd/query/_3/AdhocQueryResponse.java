@@ -81,7 +81,7 @@ public class AdhocQueryResponse
      * 
      * @return
      *     possible object is
-     *     {@link RegistryObjectListType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectListType }
      *     
      */
     public RegistryObjectListType getRegistryObjectList() {
@@ -93,7 +93,7 @@ public class AdhocQueryResponse
      * 
      * @param value
      *     allowed object is
-     *     {@link RegistryObjectListType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectListType }
      *     
      */
     public void setRegistryObjectList(RegistryObjectListType value) {
@@ -105,7 +105,7 @@ public class AdhocQueryResponse
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link java.math.BigInteger }
      *     
      */
     public BigInteger getStartIndex() {
@@ -121,7 +121,7 @@ public class AdhocQueryResponse
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link java.math.BigInteger }
      *     
      */
     public void setStartIndex(BigInteger value) {
@@ -133,7 +133,7 @@ public class AdhocQueryResponse
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link java.math.BigInteger }
      *     
      */
     public BigInteger getTotalResultCount() {
@@ -145,7 +145,7 @@ public class AdhocQueryResponse
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link java.math.BigInteger }
      *     
      */
     public void setTotalResultCount(BigInteger value) {

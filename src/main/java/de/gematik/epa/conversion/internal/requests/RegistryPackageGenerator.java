@@ -16,7 +16,6 @@
 
 package de.gematik.epa.conversion.internal.requests;
 
-import de.gematik.epa.conversion.internal.requests.DocumentGenerator.DocumentGeneratorList;
 import de.gematik.epa.conversion.internal.requests.factories.OasisObjectType;
 import de.gematik.epa.conversion.internal.requests.factories.RegistryObjectFactory;
 import de.gematik.epa.conversion.internal.requests.factories.classification.RegistryPackageTypeClassificationFactory;
@@ -36,7 +35,7 @@ public class RegistryPackageGenerator {
   public static List<RegistryPackageType> createFolderRegistryPackages(
       DocumentSubmissionRequest documentSubmissionRequest,
       List<AssociationType1> documentToFolderAssociations,
-      DocumentGeneratorList documentGenerators) {
+      DocumentGenerator.DocumentGeneratorList documentGenerators) {
     return documentGenerators.stream()
         .filter(dg -> Objects.nonNull(dg.folderMetadata()))
         .filter(dg -> Objects.isNull(dg.folderMetadata().entryUUID()))
@@ -65,10 +64,7 @@ public class RegistryPackageGenerator {
             .orElseThrow(
                 () -> new IllegalArgumentException("Association for the new folder is missing"));
 
-    var registryPackage =
-        createNewFolderRegistryPackage(
-            association.getSourceObject(),
-            documentSubmissionRequest.recordIdentifier().getHomeCommunityId());
+    var registryPackage = createNewFolderRegistryPackage(association.getSourceObject());
 
     RegistryObjectFactory.setName(registryPackage, folderMetadata.title());
     RegistryObjectFactory.setDescription(registryPackage, folderMetadata.comments());
@@ -79,25 +75,20 @@ public class RegistryPackageGenerator {
         folderMetadata, registryPackage);
 
     ExternalIdentifierFactory.forFolder(
-        registryPackage,
-        folderMetadata,
-        documentSubmissionRequest.recordIdentifier().getInsurantId());
+        registryPackage, folderMetadata, documentSubmissionRequest.insurantId());
 
     return registryPackage;
   }
 
-  public static RegistryPackageType createNewFolderRegistryPackage(
-      String id, String homeCommunityId) {
-    var registryPackage = createNewRegistryPackage(homeCommunityId);
+  public static RegistryPackageType createNewFolderRegistryPackage(String id) {
+    var registryPackage = createNewRegistryPackage();
     registryPackage.setId(id);
     return registryPackage;
   }
 
-  public static RegistryPackageType createNewRegistryPackage(String homeCommunityId) {
+  public static RegistryPackageType createNewRegistryPackage() {
     var registryPackage = new RegistryPackageType();
     registryPackage.setObjectType(OasisObjectType.REGISTRY_PACKAGE.getValue());
-    registryPackage.setHome(homeCommunityId);
-
     return registryPackage;
   }
 

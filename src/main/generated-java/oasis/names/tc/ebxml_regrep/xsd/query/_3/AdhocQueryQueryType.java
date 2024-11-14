@@ -68,7 +68,7 @@ public class AdhocQueryQueryType
      * 
      * @return
      *     possible object is
-     *     {@link QueryExpressionBranchType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.QueryExpressionBranchType }
      *     
      */
     public QueryExpressionBranchType getQueryExpressionBranch() {
@@ -80,7 +80,7 @@ public class AdhocQueryQueryType
      * 
      * @param value
      *     allowed object is
-     *     {@link QueryExpressionBranchType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.QueryExpressionBranchType }
      *     
      */
     public void setQueryExpressionBranch(QueryExpressionBranchType value) {

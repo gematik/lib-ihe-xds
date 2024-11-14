@@ -76,7 +76,7 @@ public class ClassificationQueryType
      * 
      * @return
      *     possible object is
-     *     {@link ClassificationSchemeQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationSchemeQueryType }
      *     
      */
     public ClassificationSchemeQueryType getClassificationSchemeQuery() {
@@ -88,7 +88,7 @@ public class ClassificationQueryType
      * 
      * @param value
      *     allowed object is
-     *     {@link ClassificationSchemeQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationSchemeQueryType }
      *     
      */
     public void setClassificationSchemeQuery(ClassificationSchemeQueryType value) {
@@ -100,7 +100,7 @@ public class ClassificationQueryType
      * 
      * @return
      *     possible object is
-     *     {@link RegistryObjectQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryObjectQueryType }
      *     
      */
     public RegistryObjectQueryType getClassifiedObjectQuery() {
@@ -112,7 +112,7 @@ public class ClassificationQueryType
      * 
      * @param value
      *     allowed object is
-     *     {@link RegistryObjectQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryObjectQueryType }
      *     
      */
     public void setClassifiedObjectQuery(RegistryObjectQueryType value) {
@@ -124,7 +124,7 @@ public class ClassificationQueryType
      * 
      * @return
      *     possible object is
-     *     {@link ClassificationNodeQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationNodeQueryType }
      *     
      */
     public ClassificationNodeQueryType getClassificationNodeQuery() {
@@ -136,7 +136,7 @@ public class ClassificationQueryType
      * 
      * @param value
      *     allowed object is
-     *     {@link ClassificationNodeQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationNodeQueryType }
      *     
      */
     public void setClassificationNodeQuery(ClassificationNodeQueryType value) {

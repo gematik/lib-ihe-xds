@@ -26,11 +26,10 @@ import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
-import lombok.experimental.UtilityClass;
 import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryResponseType;
 
-@UtilityClass
-public class MessageUtils {
+// @UtilityClass
+public class MetadataTestUtils {
 
   public static final String RESPONSE_STATUS_SUCCESS =
       "urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success";

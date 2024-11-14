@@ -104,8 +104,8 @@ public class SubscriptionType
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link ActionType }{@code >}
-     * {@link JAXBElement }{@code <}{@link NotifyActionType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ActionType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link NotifyActionType }{@code >}
      * 
      * 
      */
@@ -145,7 +145,7 @@ public class SubscriptionType
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link javax.xml.datatype.XMLGregorianCalendar }
      *     
      */
     public XMLGregorianCalendar getStartTime() {
@@ -157,7 +157,7 @@ public class SubscriptionType
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link javax.xml.datatype.XMLGregorianCalendar }
      *     
      */
     public void setStartTime(XMLGregorianCalendar value) {
@@ -169,7 +169,7 @@ public class SubscriptionType
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link javax.xml.datatype.XMLGregorianCalendar }
      *     
      */
     public XMLGregorianCalendar getEndTime() {
@@ -181,7 +181,7 @@ public class SubscriptionType
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link javax.xml.datatype.XMLGregorianCalendar }
      *     
      */
     public void setEndTime(XMLGregorianCalendar value) {
@@ -193,7 +193,7 @@ public class SubscriptionType
      * 
      * @return
      *     possible object is
-     *     {@link Duration }
+     *     {@link javax.xml.datatype.Duration }
      *     
      */
     public Duration getNotificationInterval() {
@@ -205,7 +205,7 @@ public class SubscriptionType
      * 
      * @param value
      *     allowed object is
-     *     {@link Duration }
+     *     {@link javax.xml.datatype.Duration }
      *     
      */
     public void setNotificationInterval(Duration value) {

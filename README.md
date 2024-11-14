@@ -22,6 +22,20 @@
 IHE profiles for exchange of medical documents are used in more and more projects worldwide. They represent a modern, international basis for the electronic exchange of medical data in the healthcare sector. 
 As the profiles are quite complex and the objects are difficult to understand, we provide a library that converts human-readable Document-Request and Responses to IHE conform Objects. Hereby, the mapping contains no validation, it maps exactly what is given.
 
+It supports the following IHE operations:
+- Provide and Register Document Set-b [ITI-41]
+- Registry Stored Query [ITI-18] with the following query names:
+    - FindDocuments
+    - FindDocumentsByTitle
+    - FindDocumentsByComment
+    - FindDocumentsByReferenceId
+    - FindFolders
+    - GetAll
+    - GetFolderAndContents
+- Retrieve Document Set [ITI-43]
+- Remove Metadata [ITI-62]
+- Restricted Update Document Set (ITI-92)
+
 ### Release Notes
 The Release-Notes can be found in the file [ReleaseNotes.md](./ReleaseNotes.md)
 

@@ -157,7 +157,7 @@ public class RegistryObjectQueryType
      * 
      * @return
      *     possible object is
-     *     {@link InternationalStringBranchType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.InternationalStringBranchType }
      *     
      */
     public InternationalStringBranchType getNameBranch() {
@@ -169,7 +169,7 @@ public class RegistryObjectQueryType
      * 
      * @param value
      *     allowed object is
-     *     {@link InternationalStringBranchType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.InternationalStringBranchType }
      *     
      */
     public void setNameBranch(InternationalStringBranchType value) {
@@ -181,7 +181,7 @@ public class RegistryObjectQueryType
      * 
      * @return
      *     possible object is
-     *     {@link InternationalStringBranchType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.InternationalStringBranchType }
      *     
      */
     public InternationalStringBranchType getDescriptionBranch() {
@@ -193,7 +193,7 @@ public class RegistryObjectQueryType
      * 
      * @param value
      *     allowed object is
-     *     {@link InternationalStringBranchType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.InternationalStringBranchType }
      *     
      */
     public void setDescriptionBranch(InternationalStringBranchType value) {
@@ -271,7 +271,7 @@ public class RegistryObjectQueryType
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link ExternalIdentifierQueryType }
+     * {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ExternalIdentifierQueryType }
      * 
      * 
      */
@@ -287,7 +287,7 @@ public class RegistryObjectQueryType
      * 
      * @return
      *     possible object is
-     *     {@link ClassificationNodeQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationNodeQueryType }
      *     
      */
     public ClassificationNodeQueryType getObjectTypeQuery() {
@@ -299,7 +299,7 @@ public class RegistryObjectQueryType
      * 
      * @param value
      *     allowed object is
-     *     {@link ClassificationNodeQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationNodeQueryType }
      *     
      */
     public void setObjectTypeQuery(ClassificationNodeQueryType value) {
@@ -311,7 +311,7 @@ public class RegistryObjectQueryType
      * 
      * @return
      *     possible object is
-     *     {@link ClassificationNodeQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationNodeQueryType }
      *     
      */
     public ClassificationNodeQueryType getStatusQuery() {
@@ -323,7 +323,7 @@ public class RegistryObjectQueryType
      * 
      * @param value
      *     allowed object is
-     *     {@link ClassificationNodeQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationNodeQueryType }
      *     
      */
     public void setStatusQuery(ClassificationNodeQueryType value) {

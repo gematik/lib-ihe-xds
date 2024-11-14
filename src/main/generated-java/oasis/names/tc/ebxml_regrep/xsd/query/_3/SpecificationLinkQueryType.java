@@ -76,7 +76,7 @@ public class SpecificationLinkQueryType
      * 
      * @return
      *     possible object is
-     *     {@link InternationalStringBranchType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.InternationalStringBranchType }
      *     
      */
     public InternationalStringBranchType getUsageDescriptionBranch() {
@@ -88,7 +88,7 @@ public class SpecificationLinkQueryType
      * 
      * @param value
      *     allowed object is
-     *     {@link InternationalStringBranchType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.InternationalStringBranchType }
      *     
      */
     public void setUsageDescriptionBranch(InternationalStringBranchType value) {

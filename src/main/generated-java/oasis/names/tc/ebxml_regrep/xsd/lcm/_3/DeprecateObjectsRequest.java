@@ -77,7 +77,7 @@ public class DeprecateObjectsRequest
      * 
      * @return
      *     possible object is
-     *     {@link AdhocQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.AdhocQueryType }
      *     
      */
     public AdhocQueryType getAdhocQuery() {
@@ -89,7 +89,7 @@ public class DeprecateObjectsRequest
      * 
      * @param value
      *     allowed object is
-     *     {@link AdhocQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.AdhocQueryType }
      *     
      */
     public void setAdhocQuery(AdhocQueryType value) {
@@ -101,7 +101,7 @@ public class DeprecateObjectsRequest
      * 
      * @return
      *     possible object is
-     *     {@link ObjectRefListType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefListType }
      *     
      */
     public ObjectRefListType getObjectRefList() {
@@ -113,7 +113,7 @@ public class DeprecateObjectsRequest
      * 
      * @param value
      *     allowed object is
-     *     {@link ObjectRefListType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefListType }
      *     
      */
     public void setObjectRefList(ObjectRefListType value) {

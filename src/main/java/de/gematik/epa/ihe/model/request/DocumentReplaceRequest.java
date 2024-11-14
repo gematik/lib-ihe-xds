@@ -17,12 +17,12 @@
 package de.gematik.epa.ihe.model.request;
 
 import de.gematik.epa.ihe.model.document.ReplaceDocument;
-import de.gematik.epa.ihe.model.simple.RecordIdentifier;
+import de.gematik.epa.ihe.model.simple.InsurantId;
 import de.gematik.epa.ihe.model.simple.SubmissionSetMetadata;
 import java.util.List;
 
 public record DocumentReplaceRequest(
-    RecordIdentifier recordIdentifier,
+    InsurantId insurantId,
     List<ReplaceDocument> documents,
     SubmissionSetMetadata submissionSetMetadata)
     implements SubmissionRequestInterface<ReplaceDocument> {}

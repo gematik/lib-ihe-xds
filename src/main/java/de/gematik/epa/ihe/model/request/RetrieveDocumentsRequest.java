@@ -18,4 +18,4 @@ package de.gematik.epa.ihe.model.request;
 
 import java.util.List;
 
-public record RetrieveDocumentsRequest(String homeCommunityId, List<String> documentUniqueIds) {}
+public record RetrieveDocumentsRequest(String repositoryUniqueId, List<String> documentUniqueIds) {}

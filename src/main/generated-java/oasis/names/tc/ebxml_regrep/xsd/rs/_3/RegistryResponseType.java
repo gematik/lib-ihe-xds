@@ -86,7 +86,7 @@ public class RegistryResponseType {
      * 
      * @return
      *     possible object is
-     *     {@link SlotListType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotListType }
      *     
      */
     public SlotListType getResponseSlotList() {
@@ -98,7 +98,7 @@ public class RegistryResponseType {
      * 
      * @param value
      *     allowed object is
-     *     {@link SlotListType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotListType }
      *     
      */
     public void setResponseSlotList(SlotListType value) {

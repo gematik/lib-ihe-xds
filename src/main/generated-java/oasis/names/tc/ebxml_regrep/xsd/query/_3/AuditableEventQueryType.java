@@ -91,7 +91,7 @@ public class AuditableEventQueryType
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link RegistryObjectQueryType }
+     * {@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryObjectQueryType }
      * 
      * 
      */
@@ -107,7 +107,7 @@ public class AuditableEventQueryType
      * 
      * @return
      *     possible object is
-     *     {@link ClassificationNodeQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationNodeQueryType }
      *     
      */
     public ClassificationNodeQueryType getEventTypeQuery() {
@@ -119,7 +119,7 @@ public class AuditableEventQueryType
      * 
      * @param value
      *     allowed object is
-     *     {@link ClassificationNodeQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationNodeQueryType }
      *     
      */
     public void setEventTypeQuery(ClassificationNodeQueryType value) {

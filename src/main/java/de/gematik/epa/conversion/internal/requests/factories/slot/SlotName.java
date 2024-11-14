@@ -43,7 +43,10 @@ public enum SlotName {
   SOURCE_PATIENT_INFO("sourcePatientInfo"),
   SUBMISSION_TIME("submissionTime"),
   URI("URI"),
-  HOME_COMMUNITY_ID("homeCommunityId");
+  HOME_COMMUNITY_ID("homeCommunityId"),
+  PREVIOUS_VERSION("PreviousVersion"),
+  ASSOCIATION_PROPAGATION("AssociationPropagation"),
+  SUBMISSION_SET_STATUS("SubmissionSetStatus");
 
   private final String name;
 }

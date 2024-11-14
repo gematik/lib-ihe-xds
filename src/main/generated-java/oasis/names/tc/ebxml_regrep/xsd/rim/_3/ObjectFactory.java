@@ -99,7 +99,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link InternationalStringType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.InternationalStringType }
      * 
      */
     public InternationalStringType createInternationalStringType() {
@@ -107,7 +107,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link LocalizedStringType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.LocalizedStringType }
      * 
      */
     public LocalizedStringType createLocalizedStringType() {
@@ -123,7 +123,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ValueListType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ValueListType }
      * 
      */
     public ValueListType createValueListType() {
@@ -147,7 +147,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ObjectRefListType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefListType }
      * 
      */
     public ObjectRefListType createObjectRefListType() {
@@ -155,7 +155,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ObjectRefType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefType }
      * 
      */
     public ObjectRefType createObjectRefType() {
@@ -171,7 +171,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RegistryObjectListType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectListType }
      * 
      */
     public RegistryObjectListType createRegistryObjectListType() {
@@ -179,7 +179,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AssociationType1 }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.AssociationType1 }
      * 
      */
     public AssociationType1 createAssociationType1() {
@@ -187,7 +187,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AuditableEventType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.AuditableEventType }
      * 
      */
     public AuditableEventType createAuditableEventType() {
@@ -195,7 +195,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ClassificationType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ClassificationType }
      * 
      */
     public ClassificationType createClassificationType() {
@@ -203,7 +203,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ClassificationNodeType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ClassificationNodeType }
      * 
      */
     public ClassificationNodeType createClassificationNodeType() {
@@ -211,7 +211,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ClassificationSchemeType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ClassificationSchemeType }
      * 
      */
     public ClassificationSchemeType createClassificationSchemeType() {
@@ -219,7 +219,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ExternalIdentifierType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ExternalIdentifierType }
      * 
      */
     public ExternalIdentifierType createExternalIdentifierType() {
@@ -227,7 +227,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ExternalLinkType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ExternalLinkType }
      * 
      */
     public ExternalLinkType createExternalLinkType() {
@@ -235,7 +235,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ExtrinsicObjectType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ExtrinsicObjectType }
      * 
      */
     public ExtrinsicObjectType createExtrinsicObjectType() {
@@ -243,7 +243,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PostalAddressType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.PostalAddressType }
      * 
      */
     public PostalAddressType createPostalAddressType() {
@@ -251,7 +251,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OrganizationType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.OrganizationType }
      * 
      */
     public OrganizationType createOrganizationType() {
@@ -259,7 +259,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PersonNameType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.PersonNameType }
      * 
      */
     public PersonNameType createPersonNameType() {
@@ -267,7 +267,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link EmailAddressType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.EmailAddressType }
      * 
      */
     public EmailAddressType createEmailAddressType() {
@@ -275,7 +275,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RegistryPackageType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryPackageType }
      * 
      */
     public RegistryPackageType createRegistryPackageType() {
@@ -291,7 +291,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ServiceBindingType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ServiceBindingType }
      * 
      */
     public ServiceBindingType createServiceBindingType() {
@@ -299,7 +299,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SpecificationLinkType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.SpecificationLinkType }
      * 
      */
     public SpecificationLinkType createSpecificationLinkType() {
@@ -307,7 +307,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TelephoneNumberType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.TelephoneNumberType }
      * 
      */
     public TelephoneNumberType createTelephoneNumberType() {
@@ -339,7 +339,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link FederationType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.FederationType }
      * 
      */
     public FederationType createFederationType() {
@@ -355,7 +355,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link QueryExpressionType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.QueryExpressionType }
      * 
      */
     public QueryExpressionType createQueryExpressionType() {
@@ -363,7 +363,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link NotificationType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.NotificationType }
      * 
      */
     public NotificationType createNotificationType() {
@@ -371,7 +371,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SubscriptionType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.SubscriptionType }
      * 
      */
     public SubscriptionType createSubscriptionType() {
@@ -379,7 +379,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link NotifyActionType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.NotifyActionType }
      * 
      */
     public NotifyActionType createNotifyActionType() {
@@ -387,7 +387,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link VersionInfoType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.VersionInfoType }
      * 
      */
     public VersionInfoType createVersionInfoType() {
@@ -395,7 +395,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TelephoneNumberListType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.TelephoneNumberListType }
      * 
      */
     public TelephoneNumberListType createTelephoneNumberListType() {
@@ -403,12 +403,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link InternationalStringType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.InternationalStringType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link InternationalStringType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.InternationalStringType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "InternationalString")
     public JAXBElement<InternationalStringType> createInternationalString(InternationalStringType value) {
@@ -416,12 +416,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link InternationalStringType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.InternationalStringType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link InternationalStringType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.InternationalStringType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "Name")
     public JAXBElement<InternationalStringType> createName(InternationalStringType value) {
@@ -429,12 +429,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link InternationalStringType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.InternationalStringType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link InternationalStringType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.InternationalStringType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "Description")
     public JAXBElement<InternationalStringType> createDescription(InternationalStringType value) {
@@ -442,12 +442,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link LocalizedStringType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.LocalizedStringType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link LocalizedStringType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.LocalizedStringType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "LocalizedString")
     public JAXBElement<LocalizedStringType> createLocalizedString(LocalizedStringType value) {
@@ -455,12 +455,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SlotType1 }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link SlotType1 }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link SlotType1 }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link SlotType1 }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "Slot")
     public JAXBElement<SlotType1> createSlot(SlotType1 value) {
@@ -468,12 +468,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ValueListType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ValueListType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ValueListType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ValueListType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "ValueList")
     public JAXBElement<ValueListType> createValueList(ValueListType value) {
@@ -481,12 +481,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link String }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "Value")
     public JAXBElement<String> createValue(String value) {
@@ -494,12 +494,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SlotListType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link SlotListType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link SlotListType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link SlotListType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "SlotList")
     public JAXBElement<SlotListType> createSlotList(SlotListType value) {
@@ -507,12 +507,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link IdentifiableType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link IdentifiableType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link IdentifiableType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link IdentifiableType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "Identifiable")
     public JAXBElement<IdentifiableType> createIdentifiable(IdentifiableType value) {
@@ -520,12 +520,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ObjectRefListType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefListType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ObjectRefListType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefListType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "ObjectRefList")
     public JAXBElement<ObjectRefListType> createObjectRefList(ObjectRefListType value) {
@@ -533,12 +533,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ObjectRefType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ObjectRefType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "ObjectRef", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<ObjectRefType> createObjectRef(ObjectRefType value) {
@@ -546,12 +546,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistryObjectType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RegistryObjectType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link RegistryObjectType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RegistryObjectType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "RegistryObject", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<RegistryObjectType> createRegistryObject(RegistryObjectType value) {
@@ -559,12 +559,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistryObjectListType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectListType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link RegistryObjectListType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectListType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "RegistryObjectList")
     public JAXBElement<RegistryObjectListType> createRegistryObjectList(RegistryObjectListType value) {
@@ -572,12 +572,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AssociationType1 }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.AssociationType1 }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link AssociationType1 }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.AssociationType1 }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "Association", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<AssociationType1> createAssociation(AssociationType1 value) {
@@ -585,12 +585,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AuditableEventType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.AuditableEventType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link AuditableEventType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.AuditableEventType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "AuditableEvent", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<AuditableEventType> createAuditableEvent(AuditableEventType value) {
@@ -598,12 +598,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ClassificationType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ClassificationType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ClassificationType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ClassificationType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "Classification", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<ClassificationType> createClassification(ClassificationType value) {
@@ -611,12 +611,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ClassificationNodeType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ClassificationNodeType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ClassificationNodeType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ClassificationNodeType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "ClassificationNode", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<ClassificationNodeType> createClassificationNode(ClassificationNodeType value) {
@@ -624,12 +624,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ClassificationSchemeType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ClassificationSchemeType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ClassificationSchemeType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ClassificationSchemeType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "ClassificationScheme", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<ClassificationSchemeType> createClassificationScheme(ClassificationSchemeType value) {
@@ -637,12 +637,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ExternalIdentifierType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ExternalIdentifierType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ExternalIdentifierType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ExternalIdentifierType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "ExternalIdentifier", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<ExternalIdentifierType> createExternalIdentifier(ExternalIdentifierType value) {
@@ -650,12 +650,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ExternalLinkType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ExternalLinkType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ExternalLinkType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ExternalLinkType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "ExternalLink", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<ExternalLinkType> createExternalLink(ExternalLinkType value) {
@@ -663,12 +663,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ExtrinsicObjectType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ExtrinsicObjectType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ExtrinsicObjectType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ExtrinsicObjectType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "ExtrinsicObject", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<ExtrinsicObjectType> createExtrinsicObject(ExtrinsicObjectType value) {
@@ -676,12 +676,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link PostalAddressType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.PostalAddressType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link PostalAddressType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.PostalAddressType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "Address")
     public JAXBElement<PostalAddressType> createAddress(PostalAddressType value) {
@@ -689,12 +689,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link OrganizationType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.OrganizationType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link OrganizationType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.OrganizationType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "Organization", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<OrganizationType> createOrganization(OrganizationType value) {
@@ -702,12 +702,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link PersonNameType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.PersonNameType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link PersonNameType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.PersonNameType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "PersonName")
     public JAXBElement<PersonNameType> createPersonName(PersonNameType value) {
@@ -715,12 +715,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link EmailAddressType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.EmailAddressType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link EmailAddressType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.EmailAddressType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "EmailAddress")
     public JAXBElement<EmailAddressType> createEmailAddress(EmailAddressType value) {
@@ -728,12 +728,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link PostalAddressType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.PostalAddressType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link PostalAddressType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.PostalAddressType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "PostalAddress")
     public JAXBElement<PostalAddressType> createPostalAddress(PostalAddressType value) {
@@ -741,12 +741,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistryPackageType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryPackageType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link RegistryPackageType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryPackageType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "RegistryPackage", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<RegistryPackageType> createRegistryPackage(RegistryPackageType value) {
@@ -754,12 +754,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ServiceType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ServiceType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ServiceType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ServiceType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "Service", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<ServiceType> createService(ServiceType value) {
@@ -767,12 +767,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ServiceBindingType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ServiceBindingType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ServiceBindingType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ServiceBindingType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "ServiceBinding", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<ServiceBindingType> createServiceBinding(ServiceBindingType value) {
@@ -780,12 +780,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SpecificationLinkType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.SpecificationLinkType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link SpecificationLinkType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.SpecificationLinkType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "SpecificationLink", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<SpecificationLinkType> createSpecificationLink(SpecificationLinkType value) {
@@ -793,12 +793,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link InternationalStringType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.InternationalStringType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link InternationalStringType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.InternationalStringType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "UsageDescription")
     public JAXBElement<InternationalStringType> createUsageDescription(InternationalStringType value) {
@@ -806,12 +806,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link String }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link String }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link String }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "UsageParameter")
     public JAXBElement<String> createUsageParameter(String value) {
@@ -819,12 +819,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link TelephoneNumberType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.TelephoneNumberType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link TelephoneNumberType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.TelephoneNumberType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "TelephoneNumber")
     public JAXBElement<TelephoneNumberType> createTelephoneNumber(TelephoneNumberType value) {
@@ -832,12 +832,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link PersonType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link PersonType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link PersonType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link PersonType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "Person", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<PersonType> createPerson(PersonType value) {
@@ -845,12 +845,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UserType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link UserType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link UserType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link UserType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "User", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<UserType> createUser(UserType value) {
@@ -858,12 +858,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RegistryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link RegistryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RegistryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "Registry", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<RegistryType> createRegistry(RegistryType value) {
@@ -871,12 +871,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FederationType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.FederationType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link FederationType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.FederationType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "Federation", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<FederationType> createFederation(FederationType value) {
@@ -884,12 +884,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AdhocQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link AdhocQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link AdhocQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link AdhocQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "AdhocQuery", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "RegistryObject")
     public JAXBElement<AdhocQueryType> createAdhocQuery(AdhocQueryType value) {
@@ -897,12 +897,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link QueryExpressionType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.QueryExpressionType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link QueryExpressionType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.QueryExpressionType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "QueryExpression")
     public JAXBElement<QueryExpressionType> createQueryExpression(QueryExpressionType value) {
@@ -910,12 +910,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link NotificationType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.NotificationType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link NotificationType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.NotificationType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "Notification")
     public JAXBElement<NotificationType> createNotification(NotificationType value) {
@@ -923,12 +923,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ActionType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ActionType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ActionType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ActionType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "Action")
     public JAXBElement<ActionType> createAction(ActionType value) {
@@ -936,12 +936,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SubscriptionType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.SubscriptionType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link SubscriptionType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.SubscriptionType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "Subscription", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Identifiable")
     public JAXBElement<SubscriptionType> createSubscription(SubscriptionType value) {
@@ -949,12 +949,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link NotifyActionType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.NotifyActionType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link NotifyActionType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.NotifyActionType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", name = "NotifyAction", substitutionHeadNamespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rim:3.0", substitutionHeadName = "Action")
     public JAXBElement<NotifyActionType> createNotifyAction(NotifyActionType value) {

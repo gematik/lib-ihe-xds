@@ -19,7 +19,6 @@ package de.gematik.epa.conversion;
 import de.gematik.epa.conversion.internal.AssociationGenerator;
 import de.gematik.epa.conversion.internal.DateUtil;
 import de.gematik.epa.conversion.internal.requests.DocumentGenerator;
-import de.gematik.epa.conversion.internal.requests.DocumentGenerator.DocumentGeneratorList;
 import de.gematik.epa.conversion.internal.requests.ExtrinsicObjectGenerator;
 import de.gematik.epa.conversion.internal.requests.RegistryPackageGenerator;
 import de.gematik.epa.conversion.internal.requests.factories.classification.RegistryPackageTypeClassificationFactory;
@@ -41,7 +40,6 @@ import oasis.names.tc.ebxml_regrep.xsd.rim._3.ExtrinsicObjectType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectListType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryPackageType;
-import oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotListType;
 
 @UtilityClass
 public class ProvideAndRegisterUtils {
@@ -50,8 +48,7 @@ public class ProvideAndRegisterUtils {
       SubmissionRequestInterface<?> submissionRequest) {
 
     var docGenerators =
-        DocumentGenerator.generators(
-            submissionRequest.documents(), submissionRequest.recordIdentifier());
+        DocumentGenerator.generators(submissionRequest.documents(), submissionRequest.insurantId());
 
     var submitObjectRequest = createSubmitObjectsRequest(submissionRequest, docGenerators);
     var provideAndRegisterDocumentSetRequest = new ProvideAndRegisterDocumentSetRequestType();
@@ -61,11 +58,9 @@ public class ProvideAndRegisterUtils {
   }
 
   public static SubmitObjectsRequest createSubmitObjectsRequest(
-      SubmissionRequestInterface<?> submissionRequest, DocumentGeneratorList docGenerators) {
+      SubmissionRequestInterface<?> submissionRequest,
+      DocumentGenerator.DocumentGeneratorList docGenerators) {
     var submitObjectRequest = new SubmitObjectsRequest();
-
-    var slotList = createRequestSlotList(submissionRequest);
-    submitObjectRequest.setRequestSlotList(slotList);
 
     var registryObjectList = new RegistryObjectListType();
     submitObjectRequest.setRegistryObjectList(registryObjectList);
@@ -93,7 +88,9 @@ public class ProvideAndRegisterUtils {
     registryObjectList
         .getIdentifiable()
         .add(
-            0, RegistryPackageGenerator.toRegistryPackageJaxbElement(submissionSetRegistryPackage));
+            0,
+            de.gematik.epa.conversion.internal.requests.RegistryPackageGenerator
+                .toRegistryPackageJaxbElement(submissionSetRegistryPackage));
 
     return submitObjectRequest;
   }
@@ -101,10 +98,10 @@ public class ProvideAndRegisterUtils {
   public static RegistryPackageType createSubmissionSetRegistryPackage(
       SubmissionRequestInterface<?> submissionRequestInterface) {
     var submissionSetMetadata = submissionRequestInterface.submissionSetMetadata();
-    var recordIdentifier = submissionRequestInterface.recordIdentifier();
 
     var registryPackage =
-        RegistryPackageGenerator.createNewRegistryPackage(recordIdentifier.getHomeCommunityId());
+        de.gematik.epa.conversion.internal.requests.RegistryPackageGenerator
+            .createNewRegistryPackage();
     registryPackage.setId(UUID.randomUUID().toString());
 
     registryPackage
@@ -114,20 +111,21 @@ public class ProvideAndRegisterUtils {
     RegistryPackageTypeClassificationFactory.createSubmissionSetClassifications(
         submissionSetMetadata, registryPackage);
 
-    ExternalIdentifierFactory.forSubmissionSet(registryPackage, recordIdentifier.getInsurantId());
+    ExternalIdentifierFactory.forSubmissionSet(
+        registryPackage, submissionRequestInterface.insurantId());
 
     return registryPackage;
   }
 
   public static List<JAXBElement<ExtrinsicObjectType>> createExtrinsicObjects(
-      DocumentGeneratorList docGenerators) {
+      DocumentGenerator.DocumentGeneratorList docGenerators) {
     return ExtrinsicObjectGenerator.toJaxbElements(docGenerators.extrinsicObjects());
   }
 
   public static List<JAXBElement<? extends RegistryObjectType>>
       createFolderRegistryPackagesAndAssociations(
           DocumentSubmissionRequest documentSubmissionRequest,
-          DocumentGeneratorList docGenerators) {
+          DocumentGenerator.DocumentGeneratorList docGenerators) {
     var associations = AssociationGenerator.createFolderToDocumentAssociations(docGenerators);
 
     var folderRegistryPackages =
@@ -151,7 +149,8 @@ public class ProvideAndRegisterUtils {
         .map(
             identifiable -> {
               var association =
-                  AssociationGenerator.createNewMemberAssociation(identifiable.getId());
+                  de.gematik.epa.conversion.internal.AssociationGenerator
+                      .createNewMemberAssociation(identifiable.getId());
               association.setSourceObject(submissionSet.getId());
               return association;
             })
@@ -160,19 +159,8 @@ public class ProvideAndRegisterUtils {
   }
 
   private static List<JAXBElement<AssociationType1>> createReplaceAssociations(
-      DocumentGeneratorList docGenerators) {
+      DocumentGenerator.DocumentGeneratorList docGenerators) {
     return AssociationGenerator.toAssociationJaxbElements(
         AssociationGenerator.createDocumentReplaceAssociations(docGenerators));
-  }
-
-  private static SlotListType createRequestSlotList(
-      SubmissionRequestInterface<?> submissionRequestInterface) {
-    var recordIdentifier = submissionRequestInterface.recordIdentifier();
-    SlotListType slot = new SlotListType();
-    slot.getSlot()
-        .add(
-            SlotFactory.slot(
-                SlotName.HOME_COMMUNITY_ID.getName(), recordIdentifier.getHomeCommunityId()));
-    return slot;
   }
 }

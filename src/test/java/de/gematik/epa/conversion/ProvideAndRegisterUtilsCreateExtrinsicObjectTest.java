@@ -59,8 +59,7 @@ class ProvideAndRegisterUtilsCreateExtrinsicObjectTest extends AbstractRegistryO
 
     final DocumentMetadata documentMetadata =
         documentSubmissionRequest.documents().get(0).documentMetadata();
-
-    assertHomeCommunityId(extrinsicObjectType, documentSubmissionRequest);
+    assertHomeCommunityIdIsNull(extrinsicObjectType);
     assertMimeType(extrinsicObjectType, documentMetadata);
     assertName(extrinsicObjectType, documentMetadata.title());
     assertDescription(extrinsicObjectType, documentMetadata);
@@ -74,7 +73,6 @@ class ProvideAndRegisterUtilsCreateExtrinsicObjectTest extends AbstractRegistryO
   }
 
   @Test
-  // Test basiert auf xml Datei von Iryna
   void createExtrinsicObjectsWithCustomAttributes() {
     createSubmissionRequest(PUT_DOCUMENTS_WITHOUT_ATTRIBUTES_REQUEST);
 

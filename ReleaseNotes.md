@@ -2,6 +2,20 @@
 
 # Release notes lib-ihe-xds
 
+## Release 2.0.0
+
+### added
+- Adapted implementation to comply with EPA 3 specification
+- The datatype RecordIdentifier was replaced with InsurantId
+- Update some classes ExtrinsicObjectGenerator, AssociationGenerator, etc.
+- Update some test classes 
+- Added support for new operation RestrictedUpdateDocumentRequest
+- Added Support IHE Query FindDocumentxByComment
+- Added Support RestrictedUpdateDocuementSet
+- Added Support for FindDocumentByReferenceId query
+- Added Support for FindDocumentsByComment query
+
+
 ## Release 1.0.5
 
 ### fixed

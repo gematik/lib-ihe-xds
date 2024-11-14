@@ -17,13 +17,13 @@
 package de.gematik.epa.ihe.model.request;
 
 import de.gematik.epa.ihe.model.document.DocumentInterface;
-import de.gematik.epa.ihe.model.simple.RecordIdentifier;
+import de.gematik.epa.ihe.model.simple.InsurantId;
 import de.gematik.epa.ihe.model.simple.SubmissionSetMetadata;
 import java.util.List;
 
 public interface SubmissionRequestInterface<T extends DocumentInterface> {
 
-  RecordIdentifier recordIdentifier();
+  InsurantId insurantId();
 
   List<T> documents();
 

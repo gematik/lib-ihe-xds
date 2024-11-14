@@ -51,7 +51,7 @@ class ProvideAndRegisterUtilsCreateFolderTest extends AbstractRegistryObjectTest
     final List<JAXBElement<? extends RegistryObjectType>> folders =
         filter(folderAndAssociations, REGISTRY_PACKAGE);
 
-    folders.forEach(f -> assertHomeCommunityId(f.getValue(), documentSubmissionRequest));
+    folders.forEach(f -> assertHomeCommunityIdIsNull(f.getValue()));
     folders.forEach(f -> assertStatus(f.getValue()));
     folders.forEach(f -> assertName(f.getValue(), folderMetadata.title()));
     folders.forEach(f -> assertDescription(f.getValue(), folderMetadata.comments()));
@@ -80,7 +80,7 @@ class ProvideAndRegisterUtilsCreateFolderTest extends AbstractRegistryObjectTest
     final RegistryObjectType value = folders.get(0).getValue();
 
     assertNull(value.getName());
-    assertHomeCommunityId(value, documentSubmissionRequest);
+    assertHomeCommunityIdIsNull(value);
     assertNull(value.getStatus());
     // this folder classification is alsways there
     assertEquals(1, value.getClassification().size());

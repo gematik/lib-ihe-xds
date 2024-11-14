@@ -6,7 +6,7 @@
     <groupId>de.gematik.epa</groupId>
     <artifactId>lib-ihe-xds</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.8</version>
+    <version>2.0.1</version>
     <name>lib-ihe-xds</name>
     <description>A lib to create and process IHE requests from/to more descriptive Java records</description>
     <url>https://github.com/gematik/lib-ihe-xds</url>
@@ -27,23 +27,23 @@
         <sonar.language>java</sonar.language>
         <sonar.exclusions>${generated.sources.path}/*,${generated.sources.path}/**/*</sonar.exclusions>
         <!-- Dependencies -->
-        <asm.version>9.3</asm.version>
-        <jacoco.version>0.8.8</jacoco.version>
-        <junit.version>5.9.0</junit.version>
-        <junit.platform.version>1.9.0</junit.platform.version>
-        <pmd-java.version>6.46.0</pmd-java.version>
+        <asm.version>9.7.1</asm.version>
+        <jacoco.version>0.8.12</jacoco.version>
+        <pmd-java.version>7.7.0</pmd-java.version>
+        <junit.version>5.11.3</junit.version>
+        <junit.platform.version>1.11.3</junit.platform.version>
         <!-- Plugin Versions -->
-        <compiler.plugin.version>3.8.1</compiler.plugin.version>
-        <fmt.maven.plugin.version>2.19</fmt.maven.plugin.version>
-        <pmd.plugin.version>3.21.0</pmd.plugin.version>
-        <surefire.plugin.version>3.0.0-M7</surefire.plugin.version>
-        <enforcer.plugin.version>3.0.0</enforcer.plugin.version>
-        <helper.plugin.version>3.4.0</helper.plugin.version>
-        <source.plugin.version>3.2.1</source.plugin.version>
-        <javadoc.plugin.version>3.4.1</javadoc.plugin.version>
-        <cxf-xjc.version>4.0.0</cxf-xjc.version>
+        <compiler.plugin.version>3.13.0</compiler.plugin.version>
+        <fmt.maven.plugin.version>2.25</fmt.maven.plugin.version>
+        <pmd.plugin.version>3.26.0</pmd.plugin.version>
+        <surefire.plugin.version>3.5.2</surefire.plugin.version>
+        <enforcer.plugin.version>3.5.0</enforcer.plugin.version>
+        <helper.plugin.version>3.6.0</helper.plugin.version>
+        <source.plugin.version>3.3.1</source.plugin.version>
+        <javadoc.plugin.version>3.11.1</javadoc.plugin.version>
+        <cxf-xjc.version>4.0.2</cxf-xjc.version>
         <xml.bind.jaxb.version>2.3.1</xml.bind.jaxb.version>
-        <jackson.version>2.15.2</jackson.version>
+        <jackson.version>2.18.1</jackson.version>
     </properties>
 
 
@@ -51,7 +51,7 @@
         <dependency>
             <groupId>jakarta.xml.bind</groupId>
             <artifactId>jakarta.xml.bind-api</artifactId>
-            <version>4.0.0</version>
+            <version>4.0.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.cxf.xjc-utils</groupId>
@@ -66,7 +66,7 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>2.11.0</version>
+            <version>2.17.0</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -101,7 +101,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.24</version>
+            <version>1.18.34</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -112,7 +112,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-text</artifactId>
-            <version>1.10.0</version>
+            <version>1.12.0</version>
         </dependency>
     </dependencies>
 
@@ -354,7 +354,7 @@
                         <artifactId>cxf-xjc-plugin</artifactId>
                         <version>${cxf-xjc.version}</version>
                         <configuration>
-                            <additionalJvmArgs>-Djavax.xml.accessExternalDTD=file</additionalJvmArgs>
+                            <additionalJvmArgs>-Djavax.xml.accessExternalDTD=file -Duser.language=en</additionalJvmArgs>
                             <extensions>
                                 <extension>org.apache.cxf.xjcplugins:cxf-xjc-ts:${cxf-xjc.version}</extension>
                                 <extension>org.jvnet.jaxb2_commons:jaxb2-fluent-api:3.0</extension>
@@ -397,7 +397,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
+                        <version>3.2.7</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -418,7 +418,7 @@
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>
                         <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.13</version>
+                        <version>1.7.0</version>
                         <extensions>true</extensions>
                         <configuration>
                             <serverId>ossrh</serverId>

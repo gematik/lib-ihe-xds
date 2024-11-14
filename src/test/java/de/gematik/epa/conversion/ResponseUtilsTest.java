@@ -115,6 +115,15 @@ class ResponseUtilsTest {
             .toArray(),
         result.documents().stream().map(RetrieveDocumentElement::documentUniqueId).toArray());
 
+    assertEquals(
+        iheResponse.getDocumentResponse().stream()
+            .map(DocumentResponse::getRepositoryUniqueId)
+            .findFirst()
+            .orElse(null),
+        result.documents().stream()
+            .map(RetrieveDocumentElement::repositoryUniqueId)
+            .findFirst()
+            .orElse(null));
     assertArrayEquals(
         iheResponse.getDocumentResponse().stream().map(DocumentResponse::getDocument).toArray(),
         result.documents().stream()

@@ -16,7 +16,9 @@
 
 package de.gematik.epa.conversion;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import de.gematik.epa.ihe.model.document.Document;
 import de.gematik.epa.ihe.model.request.DocumentSubmissionRequest;
@@ -25,10 +27,8 @@ import java.util.Objects;
 import org.junit.jupiter.api.Test;
 
 class ProvideAndRegisterUtilsTest {
-
   @Test
   void toProvideAndRegisterDocumentSetRequestTest() {
-    final String homeCommunityId = "urn:oid:1.2.276.0.76.3.1.321.12.1.60.22";
     var testdata =
         ResourceLoader.documentSubmissionRequest(
             ResourceLoader.PUT_DOCUMENTS_WITH_FOLDER_METADATA_REQUEST);
@@ -40,17 +40,13 @@ class ProvideAndRegisterUtilsTest {
     assertNotNull(testResult.getSubmitObjectsRequest());
     assertNotNull(testResult.getSubmitObjectsRequest().getRegistryObjectList());
 
-    var requestSlotList = testResult.getSubmitObjectsRequest().getRequestSlotList();
-    assertNotNull(requestSlotList);
-    assertEquals(1, requestSlotList.getSlot().size());
+    assertNull(testResult.getSubmitObjectsRequest().getRequestSlotList());
 
     var registryObjectList = testResult.getSubmitObjectsRequest().getRegistryObjectList();
     // +1 for the SubmissionSet RegistryPackage
     //   this will need further modification, once folder and associations are added to the request
     assertEquals(
         calculateNumberOfRegistryObjects(testdata), registryObjectList.getIdentifiable().size());
-    var actualHomeCommunityId = requestSlotList.getSlot().get(0).getValueList().getValue().get(0);
-    assertEquals(homeCommunityId, actualHomeCommunityId);
   }
 
   private long calculateNumberOfRegistryObjects(DocumentSubmissionRequest testdata) {

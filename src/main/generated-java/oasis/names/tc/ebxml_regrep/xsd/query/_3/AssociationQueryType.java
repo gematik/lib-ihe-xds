@@ -76,7 +76,7 @@ public class AssociationQueryType
      * 
      * @return
      *     possible object is
-     *     {@link ClassificationNodeQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationNodeQueryType }
      *     
      */
     public ClassificationNodeQueryType getAssociationTypeQuery() {
@@ -88,7 +88,7 @@ public class AssociationQueryType
      * 
      * @param value
      *     allowed object is
-     *     {@link ClassificationNodeQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationNodeQueryType }
      *     
      */
     public void setAssociationTypeQuery(ClassificationNodeQueryType value) {
@@ -100,7 +100,7 @@ public class AssociationQueryType
      * 
      * @return
      *     possible object is
-     *     {@link RegistryObjectQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryObjectQueryType }
      *     
      */
     public RegistryObjectQueryType getSourceObjectQuery() {
@@ -112,7 +112,7 @@ public class AssociationQueryType
      * 
      * @param value
      *     allowed object is
-     *     {@link RegistryObjectQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryObjectQueryType }
      *     
      */
     public void setSourceObjectQuery(RegistryObjectQueryType value) {
@@ -124,7 +124,7 @@ public class AssociationQueryType
      * 
      * @return
      *     possible object is
-     *     {@link RegistryObjectQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryObjectQueryType }
      *     
      */
     public RegistryObjectQueryType getTargetObjectQuery() {
@@ -136,7 +136,7 @@ public class AssociationQueryType
      * 
      * @param value
      *     allowed object is
-     *     {@link RegistryObjectQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryObjectQueryType }
      *     
      */
     public void setTargetObjectQuery(RegistryObjectQueryType value) {

@@ -50,8 +50,6 @@ class ProvideAndRegisterUtilsCreateSubmissionSetTest {
         ProvideAndRegisterUtils.createSubmissionSetRegistryPackage(documentSubmissionRequest);
 
     assertEquals(submissionSet.getObjectType(), OasisObjectType.REGISTRY_PACKAGE.getValue());
-    assertEquals(
-        submissionSet.getHome(), documentSubmissionRequest.recordIdentifier().getHomeCommunityId());
     assertEquals(1, submissionSet.getSlot().size());
     assertEquals(submissionSet.getSlot().get(0).getName(), SlotName.SUBMISSION_TIME.getName());
     // in beispiel xml befinden sich derzeit 3, aber die Classification

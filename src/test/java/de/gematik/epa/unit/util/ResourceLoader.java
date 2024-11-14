@@ -25,9 +25,9 @@ import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import de.gematik.epa.ihe.model.request.DocumentReplaceRequest;
 import de.gematik.epa.ihe.model.request.DocumentSubmissionRequest;
+import de.gematik.epa.ihe.model.request.RestrictedUpdateDocumentRequest;
 import de.gematik.epa.ihe.model.request.RetrieveDocumentsRequest;
 import de.gematik.epa.ihe.model.simple.InsurantId;
-import de.gematik.epa.ihe.model.simple.RecordIdentifier;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
@@ -37,23 +37,35 @@ import org.apache.commons.io.FileUtils;
 
 public class ResourceLoader {
   public static final String REQUEST_PATH = "src/test/resources/";
+
   public static final String PUT_DOCUMENTS_WITH_FOLDER_METADATA_REQUEST =
       REQUEST_PATH + "documentSubmissionRequest.json";
 
   public static final String PUT_DOCUMENTS_WITHOUT_ATTRIBUTES_REQUEST =
       REQUEST_PATH + "documentSubmissionRequestWithoutAttributes.json";
 
+  public static final String REPLACE_DOCUMENTS_REQUEST =
+      REQUEST_PATH + "documentReplaceRequest.json";
+
   public static final String RETRIEVE_DOCUMENTS_REQUEST_PATH =
       REQUEST_PATH + "retrieveDocumentsRequest.json";
 
-  public static final String REPLACE_DOCUMENTS_REQUEST =
-      REQUEST_PATH + "documentReplaceRequest.json";
+  public static final String RESTRICTED_UPDATE_DOCUMENT_REQUEST =
+      REQUEST_PATH + "updateDocumentRequest.json";
+
+  public static final String RESTRICTED_UPDATE_DOCUMENT_LIST_REQUEST =
+      REQUEST_PATH + "updateDocumentListRequest.json";
 
   private static ObjectMapper objMapper;
 
   @SneakyThrows
   public static DocumentSubmissionRequest documentSubmissionRequest(String template) {
     return loadDtoFromJsonFile(DocumentSubmissionRequest.class, template);
+  }
+
+  @SneakyThrows
+  public static RestrictedUpdateDocumentRequest updateDocumentSetRequest(String template) {
+    return loadDtoFromJsonFile(RestrictedUpdateDocumentRequest.class, template);
   }
 
   @SneakyThrows
@@ -88,10 +100,7 @@ public class ResourceLoader {
                       .registerModule(
                           new SimpleModule()
                               .addDeserializer(
-                                  InsurantId.class, new InsurantIdInterfaceDeserializer())
-                              .addDeserializer(
-                                  RecordIdentifier.class,
-                                  new RecordIdentifierInterfaceDeserializer()));
+                                  InsurantId.class, new InsurantIdInterfaceDeserializer()));
               return objMapper;
             });
   }
@@ -112,29 +121,6 @@ public class ResourceLoader {
         @Override
         public String getExtension() {
           return extension;
-        }
-      };
-    }
-  }
-
-  private static class RecordIdentifierInterfaceDeserializer
-      extends JsonDeserializer<RecordIdentifier> {
-    @Override
-    public RecordIdentifier deserialize(
-        JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
-      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-      InsurantId insurantId =
-          deserializationContext.readTreeAsValue(node.get("insurantId"), InsurantId.class);
-      String homeCommunityId = node.get("homeCommunityId").asText();
-      return new RecordIdentifier() {
-        @Override
-        public InsurantId getInsurantId() {
-          return insurantId;
-        }
-
-        @Override
-        public String getHomeCommunityId() {
-          return homeCommunityId;
         }
       };
     }

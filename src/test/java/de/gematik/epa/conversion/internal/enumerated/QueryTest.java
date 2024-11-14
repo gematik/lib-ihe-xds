@@ -37,12 +37,8 @@ class QueryTest {
   void fillPatientIdSlotForFindFolders() {
     var insurantId = MessageUtils.createInsurantId();
     FindRequest request =
-        new FindRequest(
-            MessageUtils.createRecordIdentifier(insurantId, "urn:oid:1.2.276.0.76.3.1.315.3.2.1.1"),
-            ReturnType.LEAF_CLASS,
-            Query.FIND_FOLDERS,
-            Map.of());
-    var actual = assertDoesNotThrow(() -> request.query().fillPatientIdSlot(request));
+        new FindRequest(insurantId, ReturnType.LEAF_CLASS, Query.FIND_FOLDERS, Map.of());
+    var actual = assertDoesNotThrow(() -> request.query().fillPatientIdSlot(request.insurantId()));
     assertNotNull(actual);
     assertEquals(1, actual.size());
     assertEquals(
@@ -56,13 +52,11 @@ class QueryTest {
     queryMetadata.put(QueryKey.XDS_FOLDER_ENTRY_UUID, List.of("1.2.3"));
     FindRequest request =
         new FindRequest(
-            MessageUtils.createRecordIdentifier(),
-            null,
-            Query.GET_FOLDER_AND_CONTENTS,
-            queryMetadata);
+            MessageUtils.createInsurantId(), null, Query.GET_FOLDER_AND_CONTENTS, queryMetadata);
     assertNull(Query.GET_FOLDER_AND_CONTENTS.getPatientIdSlotName());
     var slotType1 =
-        assertDoesNotThrow(() -> Query.GET_FOLDER_AND_CONTENTS.fillPatientIdSlot(request));
+        assertDoesNotThrow(
+            () -> Query.GET_FOLDER_AND_CONTENTS.fillPatientIdSlot(request.insurantId()));
     assertEquals(0, slotType1.size());
   }
 
@@ -72,13 +66,48 @@ class QueryTest {
     queryMetadata.put(QueryKey.XDS_DOCUMENT_ENTRY_ENTRY_UUID, List.of("1.2.3"));
     FindRequest request =
         new FindRequest(
-            MessageUtils.createRecordIdentifier(),
+            MessageUtils.createInsurantId(),
             null,
             Query.GET_RELATED_APPROVED_DOCUMENTS,
             queryMetadata);
     assertNull(Query.GET_RELATED_APPROVED_DOCUMENTS.getPatientIdSlotName());
     var slotType1 =
-        assertDoesNotThrow(() -> Query.GET_RELATED_APPROVED_DOCUMENTS.fillPatientIdSlot(request));
+        assertDoesNotThrow(
+            () -> Query.GET_RELATED_APPROVED_DOCUMENTS.fillPatientIdSlot(request.insurantId()));
     assertEquals(0, slotType1.size());
+  }
+
+  @Test
+  void fillPatientIdSlotForFindDocumentsByComment() {
+    var insurantId = MessageUtils.createInsurantId();
+    FindRequest request =
+        new FindRequest(
+            insurantId, ReturnType.LEAF_CLASS, Query.FIND_DOCUMENTS_BY_COMMENT, Map.of());
+    var query = request.query();
+    assertEquals("FindDocumentsByComment", query.getKeyword());
+    assertEquals("urn:uuid:2609dda5-2b97-44d5-a795-3e999c24ca99", query.getUrn());
+    var actual = assertDoesNotThrow(() -> request.query().fillPatientIdSlot(request.insurantId()));
+    assertNotNull(actual);
+    assertEquals(1, actual.size());
+    assertEquals(
+        "('" + insurantId.getPatientIdValue() + "')",
+        actual.get(0).getValueList().getValue().get(0));
+  }
+
+  @Test
+  void fillPatientIdSlotForFindDocumentsByReferenceId() {
+    var insurantId = MessageUtils.createInsurantId();
+    FindRequest request =
+        new FindRequest(
+            insurantId, ReturnType.LEAF_CLASS, Query.FIND_DOCUMENTS_BY_REFERENCE_ID, Map.of());
+    var query = request.query();
+    assertEquals("FindDocumentsByReferenceId", query.getKeyword());
+    assertEquals("urn:uuid:12941a89-e02e-4be5-967c-ce4bfc8fe492", query.getUrn());
+    var actual = assertDoesNotThrow(() -> request.query().fillPatientIdSlot(request.insurantId()));
+    assertNotNull(actual);
+    assertEquals(1, actual.size());
+    assertEquals(
+        "('" + insurantId.getPatientIdValue() + "')",
+        actual.get(0).getValueList().getValue().get(0));
   }
 }

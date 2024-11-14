@@ -68,7 +68,7 @@ public class NotificationQueryType
      * 
      * @return
      *     possible object is
-     *     {@link RegistryObjectQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryObjectQueryType }
      *     
      */
     public RegistryObjectQueryType getRegistryObjectQuery() {
@@ -80,7 +80,7 @@ public class NotificationQueryType
      * 
      * @param value
      *     allowed object is
-     *     {@link RegistryObjectQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryObjectQueryType }
      *     
      */
     public void setRegistryObjectQuery(RegistryObjectQueryType value) {

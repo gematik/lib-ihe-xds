@@ -83,7 +83,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ProvideAndRegisterDocumentSetRequestType.Document }
+     * Create an instance of {@link ihe.iti.xds_b._2007.ProvideAndRegisterDocumentSetRequestType.Document }
      * 
      */
     public ProvideAndRegisterDocumentSetRequestType.Document createProvideAndRegisterDocumentSetRequestTypeDocument() {
@@ -91,7 +91,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RetrieveDocumentSetResponseType.DocumentResponse }
+     * Create an instance of {@link ihe.iti.xds_b._2007.RetrieveDocumentSetResponseType.DocumentResponse }
      * 
      */
     public RetrieveDocumentSetResponseType.DocumentResponse createRetrieveDocumentSetResponseTypeDocumentResponse() {
@@ -99,7 +99,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RetrieveDocumentSetRequestType.DocumentRequest }
+     * Create an instance of {@link ihe.iti.xds_b._2007.RetrieveDocumentSetRequestType.DocumentRequest }
      * 
      */
     public RetrieveDocumentSetRequestType.DocumentRequest createRetrieveDocumentSetRequestTypeDocumentRequest() {
@@ -107,12 +107,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RetrieveDocumentSetRequestType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RetrieveDocumentSetRequestType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link RetrieveDocumentSetRequestType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RetrieveDocumentSetRequestType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:ihe:iti:xds-b:2007", name = "RetrieveDocumentSetRequest")
     public JAXBElement<RetrieveDocumentSetRequestType> createRetrieveDocumentSetRequest(RetrieveDocumentSetRequestType value) {
@@ -120,12 +120,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RetrieveDocumentSetResponseType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RetrieveDocumentSetResponseType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link RetrieveDocumentSetResponseType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RetrieveDocumentSetResponseType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:ihe:iti:xds-b:2007", name = "RetrieveDocumentSetResponse")
     public JAXBElement<RetrieveDocumentSetResponseType> createRetrieveDocumentSetResponse(RetrieveDocumentSetResponseType value) {
@@ -133,12 +133,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ProvideAndRegisterDocumentSetRequestType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ProvideAndRegisterDocumentSetRequestType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ProvideAndRegisterDocumentSetRequestType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ProvideAndRegisterDocumentSetRequestType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:ihe:iti:xds-b:2007", name = "ProvideAndRegisterDocumentSetRequest")
     public JAXBElement<ProvideAndRegisterDocumentSetRequestType> createProvideAndRegisterDocumentSetRequest(ProvideAndRegisterDocumentSetRequestType value) {

@@ -81,7 +81,7 @@ public class SpecificationLinkType
      * 
      * @return
      *     possible object is
-     *     {@link InternationalStringType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.InternationalStringType }
      *     
      */
     public InternationalStringType getUsageDescription() {
@@ -93,7 +93,7 @@ public class SpecificationLinkType
      * 
      * @param value
      *     allowed object is
-     *     {@link InternationalStringType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.InternationalStringType }
      *     
      */
     public void setUsageDescription(InternationalStringType value) {

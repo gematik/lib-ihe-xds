@@ -66,7 +66,7 @@ public class DateTimeFilterType
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link javax.xml.datatype.XMLGregorianCalendar }
      *     
      */
     public XMLGregorianCalendar getValue() {
@@ -78,7 +78,7 @@ public class DateTimeFilterType
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link javax.xml.datatype.XMLGregorianCalendar }
      *     
      */
     public void setValue(XMLGregorianCalendar value) {
