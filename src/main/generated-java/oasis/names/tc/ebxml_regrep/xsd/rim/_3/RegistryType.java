@@ -137,7 +137,7 @@ public class RegistryType
      * 
      * @return
      *     possible object is
-     *     {@link Duration }
+     *     {@link javax.xml.datatype.Duration }
      *     
      */
     public Duration getReplicationSyncLatency() {
@@ -149,7 +149,7 @@ public class RegistryType
      * 
      * @param value
      *     allowed object is
-     *     {@link Duration }
+     *     {@link javax.xml.datatype.Duration }
      *     
      */
     public void setReplicationSyncLatency(Duration value) {
@@ -161,7 +161,7 @@ public class RegistryType
      * 
      * @return
      *     possible object is
-     *     {@link Duration }
+     *     {@link javax.xml.datatype.Duration }
      *     
      */
     public Duration getCatalogingLatency() {
@@ -173,7 +173,7 @@ public class RegistryType
      * 
      * @param value
      *     allowed object is
-     *     {@link Duration }
+     *     {@link javax.xml.datatype.Duration }
      *     
      */
     public void setCatalogingLatency(Duration value) {

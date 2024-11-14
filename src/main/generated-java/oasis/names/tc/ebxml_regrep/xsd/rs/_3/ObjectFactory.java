@@ -66,7 +66,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RegistryErrorList }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryErrorList }
      * 
      */
     public RegistryErrorList createRegistryErrorList() {
@@ -74,7 +74,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RegistryError }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryError }
      * 
      */
     public RegistryError createRegistryError() {
@@ -82,7 +82,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RegistryResponseType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryResponseType }
      * 
      */
     public RegistryResponseType createRegistryResponseType() {
@@ -90,12 +90,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistryRequestType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RegistryRequestType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link RegistryRequestType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RegistryRequestType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0", name = "RegistryRequest")
     public JAXBElement<RegistryRequestType> createRegistryRequest(RegistryRequestType value) {
@@ -103,12 +103,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistryResponseType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryResponseType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link RegistryResponseType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryResponseType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0", name = "RegistryResponse")
     public JAXBElement<RegistryResponseType> createRegistryResponse(RegistryResponseType value) {

@@ -61,7 +61,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UpdateObjectsRequest }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.lcm._3.UpdateObjectsRequest }
      * 
      */
     public UpdateObjectsRequest createUpdateObjectsRequest() {
@@ -69,7 +69,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ApproveObjectsRequest }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.lcm._3.ApproveObjectsRequest }
      * 
      */
     public ApproveObjectsRequest createApproveObjectsRequest() {
@@ -77,7 +77,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DeprecateObjectsRequest }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.lcm._3.DeprecateObjectsRequest }
      * 
      */
     public DeprecateObjectsRequest createDeprecateObjectsRequest() {
@@ -85,7 +85,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UndeprecateObjectsRequest }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.lcm._3.UndeprecateObjectsRequest }
      * 
      */
     public UndeprecateObjectsRequest createUndeprecateObjectsRequest() {
@@ -93,7 +93,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RemoveObjectsRequest }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.lcm._3.RemoveObjectsRequest }
      * 
      */
     public RemoveObjectsRequest createRemoveObjectsRequest() {
@@ -101,7 +101,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RelocateObjectsRequest }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.lcm._3.RelocateObjectsRequest }
      * 
      */
     public RelocateObjectsRequest createRelocateObjectsRequest() {
@@ -109,7 +109,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AcceptObjectsRequest }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.lcm._3.AcceptObjectsRequest }
      * 
      */
     public AcceptObjectsRequest createAcceptObjectsRequest() {

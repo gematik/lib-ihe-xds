@@ -101,7 +101,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AdhocQueryResponse }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryResponse }
      * 
      */
     public AdhocQueryResponse createAdhocQueryResponse() {
@@ -109,7 +109,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RegistryObjectQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryObjectQueryType }
      * 
      */
     public RegistryObjectQueryType createRegistryObjectQueryType() {
@@ -117,7 +117,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AssociationQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.AssociationQueryType }
      * 
      */
     public AssociationQueryType createAssociationQueryType() {
@@ -125,7 +125,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AuditableEventQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.AuditableEventQueryType }
      * 
      */
     public AuditableEventQueryType createAuditableEventQueryType() {
@@ -133,7 +133,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ClassificationQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationQueryType }
      * 
      */
     public ClassificationQueryType createClassificationQueryType() {
@@ -141,7 +141,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ClassificationNodeQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationNodeQueryType }
      * 
      */
     public ClassificationNodeQueryType createClassificationNodeQueryType() {
@@ -149,7 +149,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ClassificationSchemeQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationSchemeQueryType }
      * 
      */
     public ClassificationSchemeQueryType createClassificationSchemeQueryType() {
@@ -157,7 +157,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ExternalIdentifierQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ExternalIdentifierQueryType }
      * 
      */
     public ExternalIdentifierQueryType createExternalIdentifierQueryType() {
@@ -165,7 +165,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ExternalLinkQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ExternalLinkQueryType }
      * 
      */
     public ExternalLinkQueryType createExternalLinkQueryType() {
@@ -173,7 +173,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ExtrinsicObjectQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ExtrinsicObjectQueryType }
      * 
      */
     public ExtrinsicObjectQueryType createExtrinsicObjectQueryType() {
@@ -181,7 +181,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link OrganizationQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.OrganizationQueryType }
      * 
      */
     public OrganizationQueryType createOrganizationQueryType() {
@@ -189,7 +189,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RegistryPackageQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryPackageQueryType }
      * 
      */
     public RegistryPackageQueryType createRegistryPackageQueryType() {
@@ -197,7 +197,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ServiceQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ServiceQueryType }
      * 
      */
     public ServiceQueryType createServiceQueryType() {
@@ -205,7 +205,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ServiceBindingQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ServiceBindingQueryType }
      * 
      */
     public ServiceBindingQueryType createServiceBindingQueryType() {
@@ -213,7 +213,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SpecificationLinkQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.SpecificationLinkQueryType }
      * 
      */
     public SpecificationLinkQueryType createSpecificationLinkQueryType() {
@@ -221,7 +221,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link PersonQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.PersonQueryType }
      * 
      */
     public PersonQueryType createPersonQueryType() {
@@ -229,7 +229,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link UserQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.UserQueryType }
      * 
      */
     public UserQueryType createUserQueryType() {
@@ -237,7 +237,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RegistryQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryQueryType }
      * 
      */
     public RegistryQueryType createRegistryQueryType() {
@@ -245,7 +245,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link FederationQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.FederationQueryType }
      * 
      */
     public FederationQueryType createFederationQueryType() {
@@ -253,7 +253,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AdhocQueryQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryQueryType }
      * 
      */
     public AdhocQueryQueryType createAdhocQueryQueryType() {
@@ -261,7 +261,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link NotificationQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.NotificationQueryType }
      * 
      */
     public NotificationQueryType createNotificationQueryType() {
@@ -269,7 +269,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SubscriptionQueryType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.SubscriptionQueryType }
      * 
      */
     public SubscriptionQueryType createSubscriptionQueryType() {
@@ -285,7 +285,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link CompoundFilterType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.CompoundFilterType }
      * 
      */
     public CompoundFilterType createCompoundFilterType() {
@@ -293,7 +293,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link BooleanFilterType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.BooleanFilterType }
      * 
      */
     public BooleanFilterType createBooleanFilterType() {
@@ -301,7 +301,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link IntegerFilterType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.IntegerFilterType }
      * 
      */
     public IntegerFilterType createIntegerFilterType() {
@@ -309,7 +309,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link FloatFilterType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.FloatFilterType }
      * 
      */
     public FloatFilterType createFloatFilterType() {
@@ -317,7 +317,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link DateTimeFilterType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.DateTimeFilterType }
      * 
      */
     public DateTimeFilterType createDateTimeFilterType() {
@@ -325,7 +325,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link StringFilterType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.StringFilterType }
      * 
      */
     public StringFilterType createStringFilterType() {
@@ -333,7 +333,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link InternationalStringBranchType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.InternationalStringBranchType }
      * 
      */
     public InternationalStringBranchType createInternationalStringBranchType() {
@@ -341,7 +341,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SlotBranchType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.SlotBranchType }
      * 
      */
     public SlotBranchType createSlotBranchType() {
@@ -349,7 +349,7 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link QueryExpressionBranchType }
+     * Create an instance of {@link oasis.names.tc.ebxml_regrep.xsd.query._3.QueryExpressionBranchType }
      * 
      */
     public QueryExpressionBranchType createQueryExpressionBranchType() {
@@ -357,12 +357,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ResponseOptionType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ResponseOptionType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ResponseOptionType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ResponseOptionType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "ResponseOption")
     public JAXBElement<ResponseOptionType> createResponseOption(ResponseOptionType value) {
@@ -370,12 +370,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistryObjectQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryObjectQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link RegistryObjectQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryObjectQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "RegistryObjectQuery")
     public JAXBElement<RegistryObjectQueryType> createRegistryObjectQuery(RegistryObjectQueryType value) {
@@ -383,12 +383,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AssociationQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.AssociationQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link AssociationQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.AssociationQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "AssociationQuery")
     public JAXBElement<AssociationQueryType> createAssociationQuery(AssociationQueryType value) {
@@ -396,12 +396,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AuditableEventQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.AuditableEventQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link AuditableEventQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.AuditableEventQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "AuditableEventQuery")
     public JAXBElement<AuditableEventQueryType> createAuditableEventQuery(AuditableEventQueryType value) {
@@ -409,12 +409,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ClassificationQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ClassificationQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "ClassificationQuery")
     public JAXBElement<ClassificationQueryType> createClassificationQuery(ClassificationQueryType value) {
@@ -422,12 +422,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ClassificationNodeQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationNodeQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ClassificationNodeQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationNodeQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "ClassificationNodeQuery")
     public JAXBElement<ClassificationNodeQueryType> createClassificationNodeQuery(ClassificationNodeQueryType value) {
@@ -435,12 +435,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ClassificationSchemeQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationSchemeQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ClassificationSchemeQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationSchemeQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "ClassificationSchemeQuery")
     public JAXBElement<ClassificationSchemeQueryType> createClassificationSchemeQuery(ClassificationSchemeQueryType value) {
@@ -448,12 +448,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ExternalIdentifierQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.ExternalIdentifierQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ExternalIdentifierQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.ExternalIdentifierQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "ExternalIdentifierQuery")
     public JAXBElement<ExternalIdentifierQueryType> createExternalIdentifierQuery(ExternalIdentifierQueryType value) {
@@ -461,12 +461,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ExternalLinkQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.ExternalLinkQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ExternalLinkQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.ExternalLinkQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "ExternalLinkQuery")
     public JAXBElement<ExternalLinkQueryType> createExternalLinkQuery(ExternalLinkQueryType value) {
@@ -474,12 +474,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ExtrinsicObjectQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.ExtrinsicObjectQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ExtrinsicObjectQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.ExtrinsicObjectQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "ExtrinsicObjectQuery")
     public JAXBElement<ExtrinsicObjectQueryType> createExtrinsicObjectQuery(ExtrinsicObjectQueryType value) {
@@ -487,12 +487,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link OrganizationQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.OrganizationQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link OrganizationQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.OrganizationQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "OrganizationQuery")
     public JAXBElement<OrganizationQueryType> createOrganizationQuery(OrganizationQueryType value) {
@@ -500,12 +500,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistryPackageQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryPackageQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link RegistryPackageQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryPackageQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "RegistryPackageQuery")
     public JAXBElement<RegistryPackageQueryType> createRegistryPackageQuery(RegistryPackageQueryType value) {
@@ -513,12 +513,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ServiceQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.ServiceQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ServiceQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.ServiceQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "ServiceQuery")
     public JAXBElement<ServiceQueryType> createServiceQuery(ServiceQueryType value) {
@@ -526,12 +526,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ServiceBindingQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.ServiceBindingQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link ServiceBindingQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.ServiceBindingQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "ServiceBindingQuery")
     public JAXBElement<ServiceBindingQueryType> createServiceBindingQuery(ServiceBindingQueryType value) {
@@ -539,12 +539,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SpecificationLinkQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.SpecificationLinkQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link SpecificationLinkQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.SpecificationLinkQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "SpecificationLinkQuery")
     public JAXBElement<SpecificationLinkQueryType> createSpecificationLinkQuery(SpecificationLinkQueryType value) {
@@ -552,12 +552,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link PersonQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.PersonQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link PersonQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.PersonQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "PersonQuery")
     public JAXBElement<PersonQueryType> createPersonQuery(PersonQueryType value) {
@@ -565,12 +565,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link UserQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.UserQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link UserQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.UserQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "UserQuery")
     public JAXBElement<UserQueryType> createUserQuery(UserQueryType value) {
@@ -578,12 +578,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegistryQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link RegistryQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.RegistryQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "RegistryQuery")
     public JAXBElement<RegistryQueryType> createRegistryQuery(RegistryQueryType value) {
@@ -591,12 +591,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FederationQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.FederationQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link FederationQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.FederationQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "FederationQuery")
     public JAXBElement<FederationQueryType> createFederationQuery(FederationQueryType value) {
@@ -604,12 +604,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AdhocQueryQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link AdhocQueryQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "AdhocQueryQuery")
     public JAXBElement<AdhocQueryQueryType> createAdhocQueryQuery(AdhocQueryQueryType value) {
@@ -617,12 +617,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link NotificationQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.NotificationQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link NotificationQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.NotificationQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "NotificationQuery")
     public JAXBElement<NotificationQueryType> createNotificationQuery(NotificationQueryType value) {
@@ -630,12 +630,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link SubscriptionQueryType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.SubscriptionQueryType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link SubscriptionQueryType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.SubscriptionQueryType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "SubscriptionQuery")
     public JAXBElement<SubscriptionQueryType> createSubscriptionQuery(SubscriptionQueryType value) {
@@ -643,12 +643,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FilterType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link FilterType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link FilterType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link FilterType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "Filter")
     public JAXBElement<FilterType> createFilter(FilterType value) {
@@ -656,12 +656,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CompoundFilterType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.CompoundFilterType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link CompoundFilterType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.CompoundFilterType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "CompoundFilter")
     public JAXBElement<CompoundFilterType> createCompoundFilter(CompoundFilterType value) {
@@ -669,12 +669,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link BooleanFilterType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.BooleanFilterType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link BooleanFilterType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.BooleanFilterType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "BooleanFilter")
     public JAXBElement<BooleanFilterType> createBooleanFilter(BooleanFilterType value) {
@@ -682,12 +682,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link IntegerFilterType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.IntegerFilterType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link IntegerFilterType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.IntegerFilterType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "IntegerFilter")
     public JAXBElement<IntegerFilterType> createIntegerFilter(IntegerFilterType value) {
@@ -695,12 +695,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FloatFilterType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.FloatFilterType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link FloatFilterType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.FloatFilterType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "FloatFilter")
     public JAXBElement<FloatFilterType> createFloatFilter(FloatFilterType value) {
@@ -708,12 +708,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DateTimeFilterType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.DateTimeFilterType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link DateTimeFilterType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.DateTimeFilterType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "DateTimeFilter")
     public JAXBElement<DateTimeFilterType> createDateTimeFilter(DateTimeFilterType value) {
@@ -721,12 +721,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link StringFilterType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.StringFilterType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link StringFilterType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.query._3.StringFilterType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0", name = "StringFilter")
     public JAXBElement<StringFilterType> createStringFilter(StringFilterType value) {

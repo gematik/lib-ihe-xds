@@ -83,7 +83,7 @@ public class ServiceQueryType
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link ServiceBindingQueryType }
+     * {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ServiceBindingQueryType }
      * 
      * 
      */

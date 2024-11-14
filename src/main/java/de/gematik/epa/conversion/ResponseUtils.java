@@ -115,6 +115,7 @@ public class ResponseUtils {
   private static RetrieveDocumentElement createRetrieveDocumentElement(
       RetrieveDocumentSetResponseType.DocumentResponse iheDocResponse) {
     return new RetrieveDocumentElement(
+        iheDocResponse.getRepositoryUniqueId(),
         iheDocResponse.getDocumentUniqueId(),
         iheDocResponse.getMimeType(),
         iheDocResponse.getDocument());

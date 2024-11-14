@@ -134,7 +134,7 @@ public class AuditableEventType
      * 
      * @return
      *     possible object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link javax.xml.datatype.XMLGregorianCalendar }
      *     
      */
     public XMLGregorianCalendar getTimestamp() {
@@ -146,7 +146,7 @@ public class AuditableEventType
      * 
      * @param value
      *     allowed object is
-     *     {@link XMLGregorianCalendar }
+     *     {@link javax.xml.datatype.XMLGregorianCalendar }
      *     
      */
     public void setTimestamp(XMLGregorianCalendar value) {

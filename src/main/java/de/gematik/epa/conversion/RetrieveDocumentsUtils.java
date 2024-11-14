@@ -34,8 +34,7 @@ public class RetrieveDocumentsUtils {
                     docUniqueId ->
                         new RetrieveDocumentSetRequestType.DocumentRequest()
                             .withDocumentUniqueId(docUniqueId)
-                            .withHomeCommunityId(retrieveDocumentsRequest.homeCommunityId())
-                            .withRepositoryUniqueId(retrieveDocumentsRequest.homeCommunityId()))
+                            .withRepositoryUniqueId(retrieveDocumentsRequest.repositoryUniqueId()))
                 .toList());
   }
 }

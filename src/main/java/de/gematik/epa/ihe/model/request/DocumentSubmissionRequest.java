@@ -17,12 +17,10 @@
 package de.gematik.epa.ihe.model.request;
 
 import de.gematik.epa.ihe.model.document.Document;
-import de.gematik.epa.ihe.model.simple.RecordIdentifier;
+import de.gematik.epa.ihe.model.simple.InsurantId;
 import de.gematik.epa.ihe.model.simple.SubmissionSetMetadata;
 import java.util.List;
 
 public record DocumentSubmissionRequest(
-    RecordIdentifier recordIdentifier,
-    List<Document> documents,
-    SubmissionSetMetadata submissionSetMetadata)
+    InsurantId insurantId, List<Document> documents, SubmissionSetMetadata submissionSetMetadata)
     implements SubmissionRequestInterface<Document> {}

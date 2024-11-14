@@ -116,7 +116,7 @@ public class AdhocQueryRequest
      * 
      * @return
      *     possible object is
-     *     {@link AdhocQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.AdhocQueryType }
      *     
      */
     public AdhocQueryType getAdhocQuery() {
@@ -128,7 +128,7 @@ public class AdhocQueryRequest
      * 
      * @param value
      *     allowed object is
-     *     {@link AdhocQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.AdhocQueryType }
      *     
      */
     public void setAdhocQuery(AdhocQueryType value) {
@@ -192,7 +192,7 @@ public class AdhocQueryRequest
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link java.math.BigInteger }
      *     
      */
     public BigInteger getStartIndex() {
@@ -208,7 +208,7 @@ public class AdhocQueryRequest
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link java.math.BigInteger }
      *     
      */
     public void setStartIndex(BigInteger value) {
@@ -220,7 +220,7 @@ public class AdhocQueryRequest
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link java.math.BigInteger }
      *     
      */
     public BigInteger getMaxResults() {
@@ -236,7 +236,7 @@ public class AdhocQueryRequest
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link java.math.BigInteger }
      *     
      */
     public void setMaxResults(BigInteger value) {

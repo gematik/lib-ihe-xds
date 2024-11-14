@@ -98,7 +98,7 @@ public class RegistryRequestType {
      * 
      * @return
      *     possible object is
-     *     {@link SlotListType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotListType }
      *     
      */
     public SlotListType getRequestSlotList() {
@@ -110,7 +110,7 @@ public class RegistryRequestType {
      * 
      * @param value
      *     allowed object is
-     *     {@link SlotListType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotListType }
      *     
      */
     public void setRequestSlotList(SlotListType value) {

@@ -96,7 +96,7 @@ public class ExternalIdentifierQueryType
      * 
      * @return
      *     possible object is
-     *     {@link ClassificationSchemeQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationSchemeQueryType }
      *     
      */
     public ClassificationSchemeQueryType getIdentificationSchemeQuery() {
@@ -108,7 +108,7 @@ public class ExternalIdentifierQueryType
      * 
      * @param value
      *     allowed object is
-     *     {@link ClassificationSchemeQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationSchemeQueryType }
      *     
      */
     public void setIdentificationSchemeQuery(ClassificationSchemeQueryType value) {

@@ -90,7 +90,7 @@ public class QueryExpressionType {
      * Objects of the following type(s) are allowed in the list
      * {@link Object }
      * {@link String }
-     * {@link Element }
+     * {@link org.w3c.dom.Element }
      * 
      * 
      */

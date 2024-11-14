@@ -16,23 +16,28 @@
 
 package de.gematik.epa.conversion.internal;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import de.gematik.epa.conversion.internal.requests.DocumentGenerator;
 import de.gematik.epa.unit.util.ResourceLoader;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.AssociationType1;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class AssociationGeneratorTest {
+  private static final String ASSOCIATION_TYPE_HAS_MEMBER =
+      "urn:oasis:names:tc:ebxml-regrep:AssociationType:HasMember";
 
   @Test
   void createDocumentReplaceAssociationsTest() {
     var request = ResourceLoader.documentsReplaceRequest(ResourceLoader.REPLACE_DOCUMENTS_REQUEST);
-    var docGenerators =
-        DocumentGenerator.generators(request.documents(), request.recordIdentifier());
+    var docGenerators = DocumentGenerator.generators(request.documents(), request.insurantId());
 
     var associations =
-        assertDoesNotThrow(
+        Assertions.assertDoesNotThrow(
             () -> AssociationGenerator.createDocumentReplaceAssociations(docGenerators));
 
     assertNotNull(associations);
@@ -40,5 +45,19 @@ class AssociationGeneratorTest {
     assertArrayEquals(
         docGenerators.stream().map(DocumentGenerator::idOfDocumentToReplace).toArray(),
         associations.stream().map(AssociationType1::getTargetObject).toArray());
+  }
+
+  @Test
+  void createRMUAssociationTest() {
+    String targetId = "targetId";
+    var association =
+        Assertions.assertDoesNotThrow(
+            () -> AssociationGenerator.createNewMemberUpdateDocumentAssociation(targetId));
+
+    assertNotNull(association);
+    assertEquals(ASSOCIATION_TYPE_HAS_MEMBER, association.getAssociationType());
+    assertFalse(association.getSlot().isEmpty());
+    assertEquals(3, association.getSlot().size());
+    assertEquals(targetId, association.getTargetObject());
   }
 }

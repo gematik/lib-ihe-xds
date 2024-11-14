@@ -64,7 +64,7 @@ public class IntegerFilterType
      * 
      * @return
      *     possible object is
-     *     {@link BigInteger }
+     *     {@link java.math.BigInteger }
      *     
      */
     public BigInteger getValue() {
@@ -76,7 +76,7 @@ public class IntegerFilterType
      * 
      * @param value
      *     allowed object is
-     *     {@link BigInteger }
+     *     {@link java.math.BigInteger }
      *     
      */
     public void setValue(BigInteger value) {

@@ -14,15 +14,16 @@
  * limitations under the License.
  */
 
-package de.gematik.epa.ihe.model.response;
+package de.gematik.epa.ihe.model.document;
 
 import de.gematik.epa.ihe.model.simple.ByteArray;
 
-public record RetrieveDocumentElement(
-    String repositoryUniqueId, String documentUniqueId, String mimeType, ByteArray document) {
+public record RestrictedUpdateDocument(
+    ByteArray documentData, DocumentMetadata documentMetadata, String entryUUIDOfDocumentToUpdate)
+    implements DocumentInterface {
 
-  public RetrieveDocumentElement(
-      String repositoryUniqueId, String documentUniqueId, String mimeType, byte[] document) {
-    this(repositoryUniqueId, documentUniqueId, mimeType, ByteArray.of(document));
+  public RestrictedUpdateDocument(
+      DocumentMetadata documentMetadata, String entryUUIDOfDocumentToUpdate) {
+    this(null, documentMetadata, entryUUIDOfDocumentToUpdate);
   }
 }

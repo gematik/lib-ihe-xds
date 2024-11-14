@@ -67,7 +67,7 @@ public class QueryExpressionBranchType
      * 
      * @return
      *     possible object is
-     *     {@link ClassificationNodeQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationNodeQueryType }
      *     
      */
     public ClassificationNodeQueryType getQueryLanguageQuery() {
@@ -79,7 +79,7 @@ public class QueryExpressionBranchType
      * 
      * @param value
      *     allowed object is
-     *     {@link ClassificationNodeQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.ClassificationNodeQueryType }
      *     
      */
     public void setQueryLanguageQuery(ClassificationNodeQueryType value) {

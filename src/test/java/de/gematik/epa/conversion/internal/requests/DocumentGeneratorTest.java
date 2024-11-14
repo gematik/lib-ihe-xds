@@ -16,7 +16,11 @@
 
 package de.gematik.epa.conversion.internal.requests;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import de.gematik.epa.ihe.model.document.Document;
 import de.gematik.epa.ihe.model.document.DocumentInterface;
@@ -26,6 +30,7 @@ import de.gematik.epa.ihe.model.simple.FolderMetadata;
 import de.gematik.epa.unit.util.ResourceLoader;
 import java.util.ArrayList;
 import java.util.List;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class DocumentGeneratorTest {
@@ -37,9 +42,9 @@ class DocumentGeneratorTest {
   @Test
   void generatorsTest() {
     var documents = documents();
-    var recordIdentifier = request.recordIdentifier();
     var result =
-        assertDoesNotThrow(() -> DocumentGenerator.generators(documents, recordIdentifier));
+        Assertions.assertDoesNotThrow(
+            () -> DocumentGenerator.generators(documents, request.insurantId()));
 
     assertNotNull(result);
     assertEquals(documents.size(), result.size());
@@ -49,28 +54,27 @@ class DocumentGeneratorTest {
   void generatorTest() {
     var document = request.documents().get(0);
     var result =
-        assertDoesNotThrow(() -> DocumentGenerator.generator(document, request.recordIdentifier()));
+        assertDoesNotThrow(() -> DocumentGenerator.generator(document, request.insurantId()));
 
     assertNotNull(result);
     assertEquals(document, result.document());
-    assertEquals(request.recordIdentifier(), result.recordIdentifier());
+    assertEquals(request.insurantId(), result.insurantId());
   }
 
   @Test
   void idTest() {
     var replaceRequest =
-        ResourceLoader.documentsReplaceRequest(ResourceLoader.REPLACE_DOCUMENTS_REQUEST);
+        de.gematik.epa.unit.util.ResourceLoader.documentsReplaceRequest(
+            de.gematik.epa.unit.util.ResourceLoader.REPLACE_DOCUMENTS_REQUEST);
     DocumentGenerator docGenerator =
-        DocumentGenerator.generator(
-            replaceRequest.documents().get(0), replaceRequest.recordIdentifier());
+        DocumentGenerator.generator(replaceRequest.documents().get(0), replaceRequest.insurantId());
 
     String id = assertDoesNotThrow(docGenerator::id);
 
     assertEquals(replaceRequest.documents().get(0).documentMetadata().entryUUID(), id);
     assertId(docGenerator);
 
-    docGenerator =
-        DocumentGenerator.generator(request.documents().get(0), request.recordIdentifier());
+    docGenerator = DocumentGenerator.generator(request.documents().get(0), request.insurantId());
     id = assertDoesNotThrow(docGenerator::id);
 
     assertNotNull(id);
@@ -80,7 +84,7 @@ class DocumentGeneratorTest {
   @Test
   void iheDocumentTest() {
     var docGenerator =
-        DocumentGenerator.generator(request.documents().get(0), request.recordIdentifier());
+        DocumentGenerator.generator(request.documents().get(0), request.insurantId());
 
     var result = assertDoesNotThrow(docGenerator::iheDocument);
 
@@ -91,7 +95,7 @@ class DocumentGeneratorTest {
   @Test
   void extrinsicObjectTest() {
     var docGenerator =
-        DocumentGenerator.generator(request.documents().get(0), request.recordIdentifier());
+        DocumentGenerator.generator(request.documents().get(0), request.insurantId());
 
     var result = assertDoesNotThrow(docGenerator::extrinsicObject);
 
@@ -101,11 +105,12 @@ class DocumentGeneratorTest {
   @Test
   void folderMetadataTest() {
     var replaceRequest =
-        ResourceLoader.documentsReplaceRequest(ResourceLoader.REPLACE_DOCUMENTS_REQUEST);
+        de.gematik.epa.unit.util.ResourceLoader.documentsReplaceRequest(
+            de.gematik.epa.unit.util.ResourceLoader.REPLACE_DOCUMENTS_REQUEST);
 
     var minimalRequest =
         new DocumentSubmissionRequest(
-            request.recordIdentifier(), new ArrayList<>(), request.submissionSetMetadata());
+            request.insurantId(), new ArrayList<>(), request.submissionSetMetadata());
     minimalRequest
         .documents()
         .add(
@@ -115,21 +120,19 @@ class DocumentGeneratorTest {
                 null));
 
     DocumentGenerator docGenerator =
-        DocumentGenerator.generator(request.documents().get(0), request.recordIdentifier());
+        DocumentGenerator.generator(request.documents().get(0), request.insurantId());
 
     FolderMetadata folderMetadata = assertDoesNotThrow(docGenerator::folderMetadata);
     assertNotNull(folderMetadata);
 
     docGenerator =
-        DocumentGenerator.generator(
-            replaceRequest.documents().get(0), replaceRequest.recordIdentifier());
+        DocumentGenerator.generator(replaceRequest.documents().get(0), replaceRequest.insurantId());
 
     folderMetadata = assertDoesNotThrow(docGenerator::folderMetadata);
     assertNull(folderMetadata);
 
     docGenerator =
-        DocumentGenerator.generator(
-            minimalRequest.documents().get(0), minimalRequest.recordIdentifier());
+        DocumentGenerator.generator(minimalRequest.documents().get(0), minimalRequest.insurantId());
 
     folderMetadata = assertDoesNotThrow(docGenerator::folderMetadata);
     assertNull(folderMetadata);
@@ -138,17 +141,17 @@ class DocumentGeneratorTest {
   @Test
   void idOfDocumentToReplaceTest() {
     var replaceRequest =
-        ResourceLoader.documentsReplaceRequest(ResourceLoader.REPLACE_DOCUMENTS_REQUEST);
+        de.gematik.epa.unit.util.ResourceLoader.documentsReplaceRequest(
+            de.gematik.epa.unit.util.ResourceLoader.REPLACE_DOCUMENTS_REQUEST);
 
     DocumentGenerator docGenerator =
-        DocumentGenerator.generator(request.documents().get(0), request.recordIdentifier());
+        DocumentGenerator.generator(request.documents().get(0), request.insurantId());
 
     String idToReplace = assertDoesNotThrow(docGenerator::idOfDocumentToReplace);
     assertNull(idToReplace);
 
     docGenerator =
-        DocumentGenerator.generator(
-            replaceRequest.documents().get(0), replaceRequest.recordIdentifier());
+        DocumentGenerator.generator(replaceRequest.documents().get(0), replaceRequest.insurantId());
 
     idToReplace = assertDoesNotThrow(docGenerator::idOfDocumentToReplace);
     assertNotNull(idToReplace);
@@ -157,8 +160,7 @@ class DocumentGeneratorTest {
   @Test
   void documentGeneratorListTest() {
     var documents = documents();
-    var recordIdentifier = request.recordIdentifier();
-    var docGeneratorList = DocumentGenerator.generators(documents, recordIdentifier);
+    var docGeneratorList = DocumentGenerator.generators(documents, request.insurantId());
 
     var iheDocuments = assertDoesNotThrow(docGeneratorList::iheDocuments);
 

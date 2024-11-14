@@ -16,16 +16,11 @@
 
 package de.gematik.epa;
 
-import de.gematik.epa.conversion.AdhocQueryUtils;
 import de.gematik.epa.conversion.DeleteObjectsUtils;
-import de.gematik.epa.conversion.ProvideAndRegisterUtils;
 import de.gematik.epa.conversion.ResponseUtils;
-import de.gematik.epa.conversion.RetrieveDocumentsUtils;
+import de.gematik.epa.conversion.RestrictedUpdateDocumentUtils;
 import de.gematik.epa.ihe.model.request.DeleteObjectsRequest;
-import de.gematik.epa.ihe.model.request.DocumentReplaceRequest;
-import de.gematik.epa.ihe.model.request.DocumentSubmissionRequest;
-import de.gematik.epa.ihe.model.request.FindRequest;
-import de.gematik.epa.ihe.model.request.RetrieveDocumentsRequest;
+import de.gematik.epa.ihe.model.request.RestrictedUpdateDocumentRequest;
 import de.gematik.epa.ihe.model.response.ProxyFindResponse;
 import de.gematik.epa.ihe.model.response.ProxyResponse;
 import de.gematik.epa.ihe.model.response.RetrieveDocumentsResponse;
@@ -34,6 +29,7 @@ import ihe.iti.xds_b._2007.RetrieveDocumentSetRequestType;
 import ihe.iti.xds_b._2007.RetrieveDocumentSetResponseType;
 import lombok.experimental.UtilityClass;
 import oasis.names.tc.ebxml_regrep.xsd.lcm._3.RemoveObjectsRequest;
+import oasis.names.tc.ebxml_regrep.xsd.lcm._3.SubmitObjectsRequest;
 import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryRequest;
 import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryResponse;
 import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryResponseType;
@@ -44,34 +40,35 @@ public class LibIheXdsMain {
 
   /**
    * Create a {@code urn:ihe:iti:xds-b:2007:ProvideAndRegisterDocumentSetRequestType} from a {@link
-   * DocumentSubmissionRequest}.<br>
+   * de.gematik.epa.ihe.model.request.DocumentSubmissionRequest}.<br>
    * The request created can provide and register documents as well as folders.
    *
    * @param documentSubmissionRequest input data
    * @return {@link ProvideAndRegisterDocumentSetRequestType}
    */
   public static ProvideAndRegisterDocumentSetRequestType convertDocumentSubmissionRequest(
-      DocumentSubmissionRequest documentSubmissionRequest) {
-    return ProvideAndRegisterUtils.toProvideAndRegisterDocumentSetRequest(
+      de.gematik.epa.ihe.model.request.DocumentSubmissionRequest documentSubmissionRequest) {
+    return de.gematik.epa.conversion.ProvideAndRegisterUtils.toProvideAndRegisterDocumentSetRequest(
         documentSubmissionRequest);
   }
 
   /**
    * Create a {@code urn:ihe:iti:xds-b:2007:ProvideAndRegisterDocumentSetRequestType} from a {@link
-   * DocumentReplaceRequest}<br>
+   * de.gematik.epa.ihe.model.request.DocumentReplaceRequest}<br>
    * The request created is meant to replace documents already registered with newer versions.
    *
    * @param documentReplaceRequest input data
    * @return {@link ProvideAndRegisterDocumentSetRequestType}
    */
   public static ProvideAndRegisterDocumentSetRequestType convertDocumentReplaceRequest(
-      DocumentReplaceRequest documentReplaceRequest) {
-    return ProvideAndRegisterUtils.toProvideAndRegisterDocumentSetRequest(documentReplaceRequest);
+      de.gematik.epa.ihe.model.request.DocumentReplaceRequest documentReplaceRequest) {
+    return de.gematik.epa.conversion.ProvideAndRegisterUtils.toProvideAndRegisterDocumentSetRequest(
+        documentReplaceRequest);
   }
 
   /**
    * Create a {@code urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0:AdhocQueryRequest} from a {@link
-   * FindRequest}<br>
+   * de.gematik.epa.ihe.model.request.FindRequest}<br>
    * The created request is meant to query an IHE registry for documents and folders. Supported
    * query types are FindDocuments, FindDocumentsByTitle, FindFolders, GetAll, GetFolderAndContents
    * & GetRelatedApprovedDocuments
@@ -79,21 +76,23 @@ public class LibIheXdsMain {
    * @param findRequest input data
    * @return {@link AdhocQueryRequest}
    */
-  public static AdhocQueryRequest convertFindRequest(FindRequest findRequest) {
-    return AdhocQueryUtils.generateFindRequestBody(findRequest);
+  public static AdhocQueryRequest convertFindRequest(
+      de.gematik.epa.ihe.model.request.FindRequest findRequest) {
+    return de.gematik.epa.conversion.AdhocQueryUtils.generateFindRequestBody(findRequest);
   }
 
   /**
    * Create a {@code urn:ihe:iti:xds-b:2007:RetrieveDocumentSetRequestType} from a {@link
-   * RetrieveDocumentsRequest}.<br>
+   * de.gematik.epa.ihe.model.request.RetrieveDocumentsRequest}.<br>
    * The created request is meant to retrieve documents from an IHE repository
    *
    * @param retrieveDocumentsRequest input data
    * @return {@link RetrieveDocumentSetResponseType}
    */
   public static RetrieveDocumentSetRequestType convertRetrieveDocumentsRequest(
-      RetrieveDocumentsRequest retrieveDocumentsRequest) {
-    return RetrieveDocumentsUtils.toRetrieveDocumentSetRequest(retrieveDocumentsRequest);
+      de.gematik.epa.ihe.model.request.RetrieveDocumentsRequest retrieveDocumentsRequest) {
+    return de.gematik.epa.conversion.RetrieveDocumentsUtils.toRetrieveDocumentSetRequest(
+        retrieveDocumentsRequest);
   }
 
   /**
@@ -147,5 +146,19 @@ public class LibIheXdsMain {
   public static RetrieveDocumentsResponse convertRetrieveDocumentSetResponse(
       RetrieveDocumentSetResponseType retrieveDocumentSetResponse) {
     return ResponseUtils.toRetrieveDocumentResponse(retrieveDocumentSetResponse);
+  }
+
+  /**
+   * Create a {@code urn:oasis:names:tc:ebxml-regrep:xsd:lcm:3.0:SubmitObjectsRequest} from a {@link
+   * RestrictedUpdateDocumentRequest}.<br>
+   * The request created can update documents metadata
+   *
+   * @param restrictedUpdateDocumentRequest input data
+   * @return {@link SubmitObjectsRequest}
+   */
+  public static SubmitObjectsRequest convertRestrictedUpdateDocumentSetRequest(
+      RestrictedUpdateDocumentRequest restrictedUpdateDocumentRequest) {
+    return RestrictedUpdateDocumentUtils.toUpdateDocumentSetRequest(
+        restrictedUpdateDocumentRequest);
   }
 }

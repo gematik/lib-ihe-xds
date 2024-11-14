@@ -67,7 +67,7 @@ public class FederationType
      * 
      * @return
      *     possible object is
-     *     {@link Duration }
+     *     {@link javax.xml.datatype.Duration }
      *     
      */
     public Duration getReplicationSyncLatency() {
@@ -79,7 +79,7 @@ public class FederationType
      * 
      * @param value
      *     allowed object is
-     *     {@link Duration }
+     *     {@link javax.xml.datatype.Duration }
      *     
      */
     public void setReplicationSyncLatency(Duration value) {

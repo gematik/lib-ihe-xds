@@ -120,7 +120,7 @@ public class RegistryObjectType
      * 
      * @return
      *     possible object is
-     *     {@link InternationalStringType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.InternationalStringType }
      *     
      */
     public InternationalStringType getName() {
@@ -132,7 +132,7 @@ public class RegistryObjectType
      * 
      * @param value
      *     allowed object is
-     *     {@link InternationalStringType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.InternationalStringType }
      *     
      */
     public void setName(InternationalStringType value) {
@@ -144,7 +144,7 @@ public class RegistryObjectType
      * 
      * @return
      *     possible object is
-     *     {@link InternationalStringType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.InternationalStringType }
      *     
      */
     public InternationalStringType getDescription() {
@@ -156,7 +156,7 @@ public class RegistryObjectType
      * 
      * @param value
      *     allowed object is
-     *     {@link InternationalStringType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.InternationalStringType }
      *     
      */
     public void setDescription(InternationalStringType value) {
@@ -234,7 +234,7 @@ public class RegistryObjectType
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link ExternalIdentifierType }
+     * {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ExternalIdentifierType }
      * 
      * 
      */

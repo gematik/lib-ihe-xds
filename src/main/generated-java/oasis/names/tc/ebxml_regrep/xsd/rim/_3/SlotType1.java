@@ -72,7 +72,7 @@ public class SlotType1 {
      * 
      * @return
      *     possible object is
-     *     {@link ValueListType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ValueListType }
      *     
      */
     public ValueListType getValueList() {
@@ -84,7 +84,7 @@ public class SlotType1 {
      * 
      * @param value
      *     allowed object is
-     *     {@link ValueListType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ValueListType }
      *     
      */
     public void setValueList(ValueListType value) {

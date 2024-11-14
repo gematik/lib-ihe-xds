@@ -58,12 +58,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RetrieveDocumentSetRequestType }{@code >}
+     * Create an instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ihe.iti.xds_b._2007.RetrieveDocumentSetRequestType }{@code >}
      * 
      * @param value
      *     Java instance representing xml element's value.
      * @return
-     *     the new instance of {@link JAXBElement }{@code <}{@link RetrieveDocumentSetRequestType }{@code >}
+     *     the new instance of {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ihe.iti.xds_b._2007.RetrieveDocumentSetRequestType }{@code >}
      */
     @XmlElementDecl(namespace = "urn:ihe:iti:rmd:2017", name = "RemoveDocumentsRequest")
     public JAXBElement<RetrieveDocumentSetRequestType> createRemoveDocumentsRequest(RetrieveDocumentSetRequestType value) {

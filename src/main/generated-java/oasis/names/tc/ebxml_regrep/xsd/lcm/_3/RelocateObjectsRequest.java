@@ -89,7 +89,7 @@ public class RelocateObjectsRequest
      * 
      * @return
      *     possible object is
-     *     {@link AdhocQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.AdhocQueryType }
      *     
      */
     public AdhocQueryType getAdhocQuery() {
@@ -101,7 +101,7 @@ public class RelocateObjectsRequest
      * 
      * @param value
      *     allowed object is
-     *     {@link AdhocQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.AdhocQueryType }
      *     
      */
     public void setAdhocQuery(AdhocQueryType value) {
@@ -113,7 +113,7 @@ public class RelocateObjectsRequest
      * 
      * @return
      *     possible object is
-     *     {@link ObjectRefType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefType }
      *     
      */
     public ObjectRefType getSourceRegistry() {
@@ -125,7 +125,7 @@ public class RelocateObjectsRequest
      * 
      * @param value
      *     allowed object is
-     *     {@link ObjectRefType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefType }
      *     
      */
     public void setSourceRegistry(ObjectRefType value) {
@@ -137,7 +137,7 @@ public class RelocateObjectsRequest
      * 
      * @return
      *     possible object is
-     *     {@link ObjectRefType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefType }
      *     
      */
     public ObjectRefType getDestinationRegistry() {
@@ -149,7 +149,7 @@ public class RelocateObjectsRequest
      * 
      * @param value
      *     allowed object is
-     *     {@link ObjectRefType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefType }
      *     
      */
     public void setDestinationRegistry(ObjectRefType value) {
@@ -161,7 +161,7 @@ public class RelocateObjectsRequest
      * 
      * @return
      *     possible object is
-     *     {@link ObjectRefType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefType }
      *     
      */
     public ObjectRefType getOwnerAtSource() {
@@ -173,7 +173,7 @@ public class RelocateObjectsRequest
      * 
      * @param value
      *     allowed object is
-     *     {@link ObjectRefType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefType }
      *     
      */
     public void setOwnerAtSource(ObjectRefType value) {
@@ -185,7 +185,7 @@ public class RelocateObjectsRequest
      * 
      * @return
      *     possible object is
-     *     {@link ObjectRefType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefType }
      *     
      */
     public ObjectRefType getOwnerAtDestination() {
@@ -197,7 +197,7 @@ public class RelocateObjectsRequest
      * 
      * @param value
      *     allowed object is
-     *     {@link ObjectRefType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ObjectRefType }
      *     
      */
     public void setOwnerAtDestination(ObjectRefType value) {

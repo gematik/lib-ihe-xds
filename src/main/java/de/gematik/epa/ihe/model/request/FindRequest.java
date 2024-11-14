@@ -19,12 +19,12 @@ package de.gematik.epa.ihe.model.request;
 import de.gematik.epa.ihe.model.query.Query;
 import de.gematik.epa.ihe.model.query.QueryKey;
 import de.gematik.epa.ihe.model.query.ReturnType;
-import de.gematik.epa.ihe.model.simple.RecordIdentifier;
+import de.gematik.epa.ihe.model.simple.InsurantId;
 import java.util.List;
 import java.util.Map;
 
 public record FindRequest(
-    RecordIdentifier recordIdentifier,
+    InsurantId insurantId,
     ReturnType returnType,
     Query query,
     Map<QueryKey, List<String>> queryMetadata) {}

@@ -101,7 +101,7 @@ public class PersonType
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link PostalAddressType }
+     * {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.PostalAddressType }
      * 
      * 
      */
@@ -117,7 +117,7 @@ public class PersonType
      * 
      * @return
      *     possible object is
-     *     {@link PersonNameType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.PersonNameType }
      *     
      */
     public PersonNameType getPersonName() {
@@ -129,7 +129,7 @@ public class PersonType
      * 
      * @param value
      *     allowed object is
-     *     {@link PersonNameType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.PersonNameType }
      *     
      */
     public void setPersonName(PersonNameType value) {
@@ -154,7 +154,7 @@ public class PersonType
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link TelephoneNumberType }
+     * {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.TelephoneNumberType }
      * 
      * 
      */
@@ -183,7 +183,7 @@ public class PersonType
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link EmailAddressType }
+     * {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.EmailAddressType }
      * 
      * 
      */

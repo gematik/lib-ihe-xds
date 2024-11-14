@@ -95,7 +95,7 @@ public class ServiceBindingType
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link SpecificationLinkType }
+     * {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.SpecificationLinkType }
      * 
      * 
      */

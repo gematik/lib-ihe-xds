@@ -73,7 +73,7 @@ import org.apache.cxf.xjc.runtime.JAXBToStringStyle;
 public class RetrieveDocumentSetRequestType {
 
     @XmlElement(name = "DocumentRequest", required = true)
-    protected List<RetrieveDocumentSetRequestType.DocumentRequest> documentRequest;
+    protected List<DocumentRequest> documentRequest;
 
     /**
      * Gets the value of the documentRequest property.
@@ -93,27 +93,27 @@ public class RetrieveDocumentSetRequestType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link RetrieveDocumentSetRequestType.DocumentRequest }
+     * {@link ihe.iti.xds_b._2007.RetrieveDocumentSetRequestType.DocumentRequest }
      * 
      * 
      */
-    public List<RetrieveDocumentSetRequestType.DocumentRequest> getDocumentRequest() {
+    public List<DocumentRequest> getDocumentRequest() {
         if (documentRequest == null) {
-            documentRequest = new ArrayList<RetrieveDocumentSetRequestType.DocumentRequest>();
+            documentRequest = new ArrayList<DocumentRequest>();
         }
         return this.documentRequest;
     }
 
-    public RetrieveDocumentSetRequestType withDocumentRequest(RetrieveDocumentSetRequestType.DocumentRequest... values) {
+    public RetrieveDocumentSetRequestType withDocumentRequest(DocumentRequest... values) {
         if (values!= null) {
-            for (RetrieveDocumentSetRequestType.DocumentRequest value: values) {
+            for (DocumentRequest value: values) {
                 getDocumentRequest().add(value);
             }
         }
         return this;
     }
 
-    public RetrieveDocumentSetRequestType withDocumentRequest(Collection<RetrieveDocumentSetRequestType.DocumentRequest> values) {
+    public RetrieveDocumentSetRequestType withDocumentRequest(Collection<DocumentRequest> values) {
         if (values!= null) {
             getDocumentRequest().addAll(values);
         }
@@ -130,9 +130,9 @@ public class RetrieveDocumentSetRequestType {
         }
         final RetrieveDocumentSetRequestType that = ((RetrieveDocumentSetRequestType) object);
         {
-            List<RetrieveDocumentSetRequestType.DocumentRequest> leftDocumentRequest;
+            List<DocumentRequest> leftDocumentRequest;
             leftDocumentRequest = (((this.documentRequest!= null)&&(!this.documentRequest.isEmpty()))?this.getDocumentRequest():null);
-            List<RetrieveDocumentSetRequestType.DocumentRequest> rightDocumentRequest;
+            List<DocumentRequest> rightDocumentRequest;
             rightDocumentRequest = (((that.documentRequest!= null)&&(!that.documentRequest.isEmpty()))?that.getDocumentRequest():null);
             if ((this.documentRequest!= null)&&(!this.documentRequest.isEmpty())) {
                 if ((that.documentRequest!= null)&&(!that.documentRequest.isEmpty())) {
@@ -156,7 +156,7 @@ public class RetrieveDocumentSetRequestType {
         int currentHashCode = 1;
         {
             currentHashCode = (currentHashCode* 31);
-            List<RetrieveDocumentSetRequestType.DocumentRequest> theDocumentRequest;
+            List<DocumentRequest> theDocumentRequest;
             theDocumentRequest = (((this.documentRequest!= null)&&(!this.documentRequest.isEmpty()))?this.getDocumentRequest():null);
             if ((this.documentRequest!= null)&&(!this.documentRequest.isEmpty())) {
                 currentHashCode += theDocumentRequest.hashCode();
@@ -284,17 +284,17 @@ public class RetrieveDocumentSetRequestType {
             this.documentUniqueId = value;
         }
 
-        public RetrieveDocumentSetRequestType.DocumentRequest withHomeCommunityId(String value) {
+        public DocumentRequest withHomeCommunityId(String value) {
             setHomeCommunityId(value);
             return this;
         }
 
-        public RetrieveDocumentSetRequestType.DocumentRequest withRepositoryUniqueId(String value) {
+        public DocumentRequest withRepositoryUniqueId(String value) {
             setRepositoryUniqueId(value);
             return this;
         }
 
-        public RetrieveDocumentSetRequestType.DocumentRequest withDocumentUniqueId(String value) {
+        public DocumentRequest withDocumentUniqueId(String value) {
             setDocumentUniqueId(value);
             return this;
         }
@@ -307,7 +307,7 @@ public class RetrieveDocumentSetRequestType {
             if (this == object) {
                 return true;
             }
-            final RetrieveDocumentSetRequestType.DocumentRequest that = ((RetrieveDocumentSetRequestType.DocumentRequest) object);
+            final DocumentRequest that = ((DocumentRequest) object);
             {
                 String leftHomeCommunityId;
                 leftHomeCommunityId = this.getHomeCommunityId();

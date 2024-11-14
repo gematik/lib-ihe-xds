@@ -20,7 +20,7 @@ import static de.gematik.epa.conversion.AdhocQueryUtils.formatIfUnformattedListE
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import de.gematik.epa.ihe.model.request.FindRequest;
+import de.gematik.epa.ihe.model.simple.InsurantId;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -53,7 +53,15 @@ public enum Query {
   GET_FOLDER_AND_CONTENTS(
       "GetFolderAndContents", "urn:uuid:b909a503-523d-4517-8acf-8e5834dfc4c7", null),
   GET_RELATED_APPROVED_DOCUMENTS(
-      "GetRelatedApprovedDocuments", "urn:uuid:1c1f1cea-ad3a-11ed-afa1-0242ac120002", null);
+      "GetRelatedApprovedDocuments", "urn:uuid:1c1f1cea-ad3a-11ed-afa1-0242ac120002", null),
+  FIND_DOCUMENTS_BY_COMMENT(
+      "FindDocumentsByComment",
+      "urn:uuid:2609dda5-2b97-44d5-a795-3e999c24ca99",
+      PatientIdNames.XDS_DOCUMENT_ENTRY_PATIENT_ID),
+  FIND_DOCUMENTS_BY_REFERENCE_ID(
+      "FindDocumentsByReferenceId",
+      "urn:uuid:12941a89-e02e-4be5-967c-ce4bfc8fe492",
+      PatientIdNames.XDS_DOCUMENT_ENTRY_PATIENT_ID);
 
   private final String keyword;
   private final String urn;
@@ -65,17 +73,13 @@ public enum Query {
     this.patientIdSlotName = patientIdSlotName;
   }
 
-  public List<SlotType1> fillPatientIdSlot(FindRequest request) {
+  public List<SlotType1> fillPatientIdSlot(InsurantId insurantId) {
     List<SlotType1> slots = new ArrayList<>();
     if (this.patientIdSlotName != null) {
       var slot = new SlotType1();
       var valueListType = new ValueListType();
       slot.setName(patientIdSlotName.value());
-      valueListType
-          .getValue()
-          .add(
-              formatIfUnformattedListElement(
-                  request.recordIdentifier().getInsurantId().getPatientIdValue()));
+      valueListType.getValue().add(formatIfUnformattedListElement(insurantId.getPatientIdValue()));
       slot.setValueList(valueListType);
       slots.add(slot);
     }

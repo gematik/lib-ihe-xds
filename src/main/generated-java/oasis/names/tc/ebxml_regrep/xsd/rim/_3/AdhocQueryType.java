@@ -73,7 +73,7 @@ public class AdhocQueryType
      * 
      * @return
      *     possible object is
-     *     {@link QueryExpressionType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.QueryExpressionType }
      *     
      */
     public QueryExpressionType getQueryExpression() {
@@ -85,7 +85,7 @@ public class AdhocQueryType
      * 
      * @param value
      *     allowed object is
-     *     {@link QueryExpressionType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.QueryExpressionType }
      *     
      */
     public void setQueryExpression(QueryExpressionType value) {

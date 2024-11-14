@@ -18,11 +18,10 @@ package de.gematik.epa.conversion;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import de.gematik.epa.conversion.internal.requests.DocumentGenerator;
-import de.gematik.epa.conversion.internal.requests.DocumentGenerator.DocumentGeneratorList;
 import de.gematik.epa.ihe.model.request.DocumentSubmissionRequest;
-import de.gematik.epa.ihe.model.request.SubmissionRequestInterface;
 import de.gematik.epa.unit.util.ResourceLoader;
 import jakarta.xml.bind.JAXBElement;
 import java.util.List;
@@ -33,13 +32,13 @@ import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectType;
 public abstract class AbstractRegistryObjectTest {
 
   DocumentSubmissionRequest documentSubmissionRequest;
-  DocumentGeneratorList documentGenerators;
+  DocumentGenerator.DocumentGeneratorList documentGenerators;
 
   public void createSubmissionRequest(String template) {
     documentSubmissionRequest = ResourceLoader.documentSubmissionRequest(template);
     documentGenerators =
         DocumentGenerator.generators(
-            documentSubmissionRequest.documents(), documentSubmissionRequest.recordIdentifier());
+            documentSubmissionRequest.documents(), documentSubmissionRequest.insurantId());
   }
 
   public List<JAXBElement<? extends RegistryObjectType>> filter(
@@ -49,11 +48,8 @@ public abstract class AbstractRegistryObjectTest {
         .toList();
   }
 
-  public void assertHomeCommunityId(
-      RegistryObjectType registryObjectType, SubmissionRequestInterface<?> submissionRequest) {
-    String expectedHomeCommunityId = submissionRequest.recordIdentifier().getHomeCommunityId();
-    String actualHomeCommunityId = registryObjectType.getHome();
-    assertEquals(expectedHomeCommunityId, actualHomeCommunityId);
+  public void assertHomeCommunityIdIsNull(RegistryObjectType registryObjectType) {
+    assertNull(registryObjectType.getHome());
   }
 
   public void assertName(RegistryObjectType registryObjectType, String expectedName) {

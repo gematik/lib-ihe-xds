@@ -85,14 +85,14 @@ public class RetrieveDocumentSetResponseType {
     @XmlElement(name = "RegistryResponse", namespace = "urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0", required = true)
     protected RegistryResponseType registryResponse;
     @XmlElement(name = "DocumentResponse")
-    protected List<RetrieveDocumentSetResponseType.DocumentResponse> documentResponse;
+    protected List<DocumentResponse> documentResponse;
 
     /**
      * Gets the value of the registryResponse property.
      * 
      * @return
      *     possible object is
-     *     {@link RegistryResponseType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryResponseType }
      *     
      */
     public RegistryResponseType getRegistryResponse() {
@@ -104,7 +104,7 @@ public class RetrieveDocumentSetResponseType {
      * 
      * @param value
      *     allowed object is
-     *     {@link RegistryResponseType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryResponseType }
      *     
      */
     public void setRegistryResponse(RegistryResponseType value) {
@@ -129,13 +129,13 @@ public class RetrieveDocumentSetResponseType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link RetrieveDocumentSetResponseType.DocumentResponse }
+     * {@link ihe.iti.xds_b._2007.RetrieveDocumentSetResponseType.DocumentResponse }
      * 
      * 
      */
-    public List<RetrieveDocumentSetResponseType.DocumentResponse> getDocumentResponse() {
+    public List<DocumentResponse> getDocumentResponse() {
         if (documentResponse == null) {
-            documentResponse = new ArrayList<RetrieveDocumentSetResponseType.DocumentResponse>();
+            documentResponse = new ArrayList<DocumentResponse>();
         }
         return this.documentResponse;
     }
@@ -145,16 +145,16 @@ public class RetrieveDocumentSetResponseType {
         return this;
     }
 
-    public RetrieveDocumentSetResponseType withDocumentResponse(RetrieveDocumentSetResponseType.DocumentResponse... values) {
+    public RetrieveDocumentSetResponseType withDocumentResponse(DocumentResponse... values) {
         if (values!= null) {
-            for (RetrieveDocumentSetResponseType.DocumentResponse value: values) {
+            for (DocumentResponse value: values) {
                 getDocumentResponse().add(value);
             }
         }
         return this;
     }
 
-    public RetrieveDocumentSetResponseType withDocumentResponse(Collection<RetrieveDocumentSetResponseType.DocumentResponse> values) {
+    public RetrieveDocumentSetResponseType withDocumentResponse(Collection<DocumentResponse> values) {
         if (values!= null) {
             getDocumentResponse().addAll(values);
         }
@@ -190,9 +190,9 @@ public class RetrieveDocumentSetResponseType {
             }
         }
         {
-            List<RetrieveDocumentSetResponseType.DocumentResponse> leftDocumentResponse;
+            List<DocumentResponse> leftDocumentResponse;
             leftDocumentResponse = (((this.documentResponse!= null)&&(!this.documentResponse.isEmpty()))?this.getDocumentResponse():null);
-            List<RetrieveDocumentSetResponseType.DocumentResponse> rightDocumentResponse;
+            List<DocumentResponse> rightDocumentResponse;
             rightDocumentResponse = (((that.documentResponse!= null)&&(!that.documentResponse.isEmpty()))?that.getDocumentResponse():null);
             if ((this.documentResponse!= null)&&(!this.documentResponse.isEmpty())) {
                 if ((that.documentResponse!= null)&&(!that.documentResponse.isEmpty())) {
@@ -224,7 +224,7 @@ public class RetrieveDocumentSetResponseType {
         }
         {
             currentHashCode = (currentHashCode* 31);
-            List<RetrieveDocumentSetResponseType.DocumentResponse> theDocumentResponse;
+            List<DocumentResponse> theDocumentResponse;
             theDocumentResponse = (((this.documentResponse!= null)&&(!this.documentResponse.isEmpty()))?this.getDocumentResponse():null);
             if ((this.documentResponse!= null)&&(!this.documentResponse.isEmpty())) {
                 currentHashCode += theDocumentResponse.hashCode();
@@ -462,37 +462,37 @@ public class RetrieveDocumentSetResponseType {
             this.document = value;
         }
 
-        public RetrieveDocumentSetResponseType.DocumentResponse withHomeCommunityId(String value) {
+        public DocumentResponse withHomeCommunityId(String value) {
             setHomeCommunityId(value);
             return this;
         }
 
-        public RetrieveDocumentSetResponseType.DocumentResponse withRepositoryUniqueId(String value) {
+        public DocumentResponse withRepositoryUniqueId(String value) {
             setRepositoryUniqueId(value);
             return this;
         }
 
-        public RetrieveDocumentSetResponseType.DocumentResponse withDocumentUniqueId(String value) {
+        public DocumentResponse withDocumentUniqueId(String value) {
             setDocumentUniqueId(value);
             return this;
         }
 
-        public RetrieveDocumentSetResponseType.DocumentResponse withNewRepositoryUniqueId(String value) {
+        public DocumentResponse withNewRepositoryUniqueId(String value) {
             setNewRepositoryUniqueId(value);
             return this;
         }
 
-        public RetrieveDocumentSetResponseType.DocumentResponse withNewDocumentUniqueId(String value) {
+        public DocumentResponse withNewDocumentUniqueId(String value) {
             setNewDocumentUniqueId(value);
             return this;
         }
 
-        public RetrieveDocumentSetResponseType.DocumentResponse withMimeType(String value) {
+        public DocumentResponse withMimeType(String value) {
             setMimeType(value);
             return this;
         }
 
-        public RetrieveDocumentSetResponseType.DocumentResponse withDocument(byte[] value) {
+        public DocumentResponse withDocument(byte[] value) {
             setDocument(value);
             return this;
         }
@@ -505,7 +505,7 @@ public class RetrieveDocumentSetResponseType {
             if (this == object) {
                 return true;
             }
-            final RetrieveDocumentSetResponseType.DocumentResponse that = ((RetrieveDocumentSetResponseType.DocumentResponse) object);
+            final DocumentResponse that = ((DocumentResponse) object);
             {
                 String leftHomeCommunityId;
                 leftHomeCommunityId = this.getHomeCommunityId();

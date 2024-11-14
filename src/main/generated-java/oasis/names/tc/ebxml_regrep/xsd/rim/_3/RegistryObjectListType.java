@@ -82,28 +82,28 @@ public class RegistryObjectListType {
      * 
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link JAXBElement }{@code <}{@link AdhocQueryType }{@code >}
-     * {@link JAXBElement }{@code <}{@link AssociationType1 }{@code >}
-     * {@link JAXBElement }{@code <}{@link AuditableEventType }{@code >}
-     * {@link JAXBElement }{@code <}{@link ClassificationNodeType }{@code >}
-     * {@link JAXBElement }{@code <}{@link ClassificationSchemeType }{@code >}
-     * {@link JAXBElement }{@code <}{@link ClassificationType }{@code >}
-     * {@link JAXBElement }{@code <}{@link ExternalIdentifierType }{@code >}
-     * {@link JAXBElement }{@code <}{@link ExternalLinkType }{@code >}
-     * {@link JAXBElement }{@code <}{@link ExtrinsicObjectType }{@code >}
-     * {@link JAXBElement }{@code <}{@link FederationType }{@code >}
-     * {@link JAXBElement }{@code <}{@link IdentifiableType }{@code >}
-     * {@link JAXBElement }{@code <}{@link ObjectRefType }{@code >}
-     * {@link JAXBElement }{@code <}{@link OrganizationType }{@code >}
-     * {@link JAXBElement }{@code <}{@link PersonType }{@code >}
-     * {@link JAXBElement }{@code <}{@link RegistryObjectType }{@code >}
-     * {@link JAXBElement }{@code <}{@link RegistryPackageType }{@code >}
-     * {@link JAXBElement }{@code <}{@link RegistryType }{@code >}
-     * {@link JAXBElement }{@code <}{@link ServiceBindingType }{@code >}
-     * {@link JAXBElement }{@code <}{@link ServiceType }{@code >}
-     * {@link JAXBElement }{@code <}{@link SpecificationLinkType }{@code >}
-     * {@link JAXBElement }{@code <}{@link SubscriptionType }{@code >}
-     * {@link JAXBElement }{@code <}{@link UserType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link AdhocQueryType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link AssociationType1 }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link AuditableEventType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ClassificationNodeType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ClassificationSchemeType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ClassificationType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ExternalIdentifierType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ExternalLinkType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ExtrinsicObjectType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link FederationType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link IdentifiableType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ObjectRefType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link OrganizationType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link PersonType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RegistryObjectType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RegistryPackageType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link RegistryType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ServiceBindingType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link ServiceType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link SpecificationLinkType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link SubscriptionType }{@code >}
+     * {@link jakarta.xml.bind.JAXBElement }{@code <}{@link UserType }{@code >}
      * 
      * 
      */

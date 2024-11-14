@@ -52,7 +52,7 @@ public class ExternalIdentifierTestUtils {
       RegistryObjectType registryObjectType,
       SubmissionRequestInterface<?> submissionRequest,
       String externalIdentifierScheme) {
-    var insurantId = submissionRequest.recordIdentifier().getInsurantId();
+    var insurantId = submissionRequest.insurantId();
     String patientId = getExternalIdentifier(registryObjectType, externalIdentifierScheme);
     String expectedPatientId = insurantId.getExtension() + "^^^&" + insurantId.getRoot() + "&ISO";
     assertEquals(expectedPatientId, patientId);

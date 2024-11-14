@@ -68,7 +68,7 @@ public class RegistryQueryType
      * 
      * @return
      *     possible object is
-     *     {@link OrganizationQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.OrganizationQueryType }
      *     
      */
     public OrganizationQueryType getOperatorQuery() {
@@ -80,7 +80,7 @@ public class RegistryQueryType
      * 
      * @param value
      *     allowed object is
-     *     {@link OrganizationQueryType }
+     *     {@link oasis.names.tc.ebxml_regrep.xsd.query._3.OrganizationQueryType }
      *     
      */
     public void setOperatorQuery(OrganizationQueryType value) {

@@ -35,7 +35,9 @@ public enum QueryKey {
   XDS_FOLDER_STATUS("$XDSFolderStatus"),
   XDS_SUBMISSION_SET_STATUS("$XDSSubmissionSetStatus"),
   XDS_FOLDER_ENTRY_UUID("$XDSFolderEntryUUID"),
-  XDS_FOLDER_UNIQUE_ID("$XDSFolderUniqueId");
+  XDS_FOLDER_UNIQUE_ID("$XDSFolderUniqueId"),
+  XDS_DOCUMENT_ENTRY_COMMENT("$XDSDocumentEntryComment"),
+  XDS_DOCUMENT_ENTRY_REFERENCE_ID_LIST("$XDSDocumentEntryReferenceIdList");
 
   private final String keyword;
 

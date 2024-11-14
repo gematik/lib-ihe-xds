@@ -16,6 +16,8 @@
 
 package de.gematik.epa.conversion;
 
+import de.gematik.epa.ihe.model.query.QueryKey;
+import de.gematik.epa.ihe.model.query.ReturnType;
 import de.gematik.epa.ihe.model.request.FindRequest;
 import java.math.BigInteger;
 import java.util.List;
@@ -32,44 +34,54 @@ public class AdhocQueryUtils {
   private AdhocQueryUtils() {}
 
   public static AdhocQueryRequest generateFindRequestBody(FindRequest request) {
-    var result = new AdhocQueryRequest();
-    result.setFederated(false);
-    result.setStartIndex(BigInteger.ZERO);
-    result.setMaxResults(BigInteger.valueOf(-1));
-    result.setResponseOption(addResponseOptions(request));
+    var adhocQueryRequest = createAdhocQueryRequest(request.returnType());
+    adhocQueryRequest.setResponseOption(addResponseOptions(request.returnType()));
     var adhocQuery = createAdhocQuery(request);
-    result.setAdhocQuery(adhocQuery);
+    adhocQueryRequest.setAdhocQuery(adhocQuery);
     request
         .queryMetadata()
         .forEach(
             (key, value) -> {
-              var slot = new SlotType1();
-              var valueListType = new ValueListType();
-              slot.setName(key.getKeyword());
-              valueListType.getValue().addAll(getFormattedValues(value));
-              slot.setValueList(valueListType);
+              var slot = createSlotType(key, value);
               adhocQuery.getSlot().add(slot);
             });
-    adhocQuery.getSlot().addAll(request.query().fillPatientIdSlot(request));
-    return result;
-  }
-
-  public static List<String> getFormattedValues(List<String> value) {
-    return value.stream().map(AdhocQueryUtils::formatIfUnformattedListElement).toList();
-  }
-
-  private static ResponseOptionType addResponseOptions(FindRequest request) {
-    var responseOption = new ResponseOptionType();
-    responseOption.setReturnType(request.returnType().getKeyword());
-    responseOption.setReturnComposedObjects(true);
-    return responseOption;
+    adhocQuery.getSlot().addAll(request.query().fillPatientIdSlot(request.insurantId()));
+    return adhocQueryRequest;
   }
 
   private static AdhocQueryType createAdhocQuery(FindRequest request) {
     var adhocQuery = new AdhocQueryType();
     adhocQuery.setId(request.query().getUrn());
-    adhocQuery.setHome(request.recordIdentifier().getHomeCommunityId());
     return adhocQuery;
+  }
+
+  public static SlotType1 createSlotType(QueryKey key, List<String> value) {
+    var slot = new SlotType1();
+    var valueListType = new ValueListType();
+    slot.setName(key.getKeyword());
+    valueListType.getValue().addAll(getFormattedValues(value));
+    slot.setValueList(valueListType);
+    return slot;
+  }
+
+  public static AdhocQueryRequest createAdhocQueryRequest(final ReturnType returnType) {
+    var result = new AdhocQueryRequest();
+    result.setFederated(false);
+    result.setStartIndex(BigInteger.ZERO);
+    result.setMaxResults(BigInteger.valueOf(-1));
+    result.setResponseOption(addResponseOptions(returnType));
+    return result;
+  }
+
+  protected static List<String> getFormattedValues(List<String> value) {
+    return value.stream().map(AdhocQueryUtils::formatIfUnformattedListElement).toList();
+  }
+
+  public static ResponseOptionType addResponseOptions(ReturnType returnType) {
+    var responseOption = new ResponseOptionType();
+    responseOption.setReturnType(returnType.getKeyword());
+    responseOption.setReturnComposedObjects(true);
+    return responseOption;
   }
 
   private static String formatAsList(@NonNull String value) {
