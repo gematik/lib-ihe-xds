@@ -21,6 +21,8 @@ import static de.gematik.epa.unit.util.GetXDSAttributesUtil.getNodeRepresentatio
 import static de.gematik.epa.unit.util.GetXDSAttributesUtil.getNodeRepresentationValueList;
 import static de.gematik.epa.unit.util.GetXDSAttributesUtil.getSlotTimeValue;
 import static de.gematik.epa.unit.util.GetXDSAttributesUtil.getValueFromSlot;
+import static de.gematik.epa.unit.util.GetXDSAttributesUtil.getValueFromSlotList;
+import static de.gematik.epa.unit.util.ResourceLoader.PUT_DOCUMENTS_RMU_REQUEST;
 import static de.gematik.epa.unit.util.ResourceLoader.PUT_DOCUMENTS_WITHOUT_ATTRIBUTES_REQUEST;
 import static de.gematik.epa.unit.util.ResourceLoader.PUT_DOCUMENTS_WITH_FOLDER_METADATA_REQUEST;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -41,7 +43,7 @@ import org.junit.jupiter.api.Test;
 
 class ProvideAndRegisterUtilsCreateExtrinsicObjectTest extends AbstractRegistryObjectTest {
 
-  private static final int MAX_SLOT_NUMBER = 5;
+  private static final int MAX_SLOT_NUMBER = 6;
   // 2x eventCode, 2x confCode, 2x author, rest codes 1x
   private static final int EXPECTED_CLASSIFICATION_NUMBER = 11;
   private static final int EMPTY = 0;
@@ -70,6 +72,40 @@ class ProvideAndRegisterUtilsCreateExtrinsicObjectTest extends AbstractRegistryO
         documentSubmissionRequest,
         ExternalIdentifierScheme.DOCUMENT_ENTRY_PATIENT.getName(),
         ExternalIdentifierScheme.DOCUMENT_ENTRY_UNIQUE.getName());
+  }
+
+  @Test
+  void createExtrinsicObjectsRMUWithAllAttributes() {
+    createSubmissionRequest(PUT_DOCUMENTS_RMU_REQUEST);
+    final List<JAXBElement<ExtrinsicObjectType>> extrinsicObjects =
+        ProvideAndRegisterUtils.createExtrinsicObjectsRMU(documentGenerators);
+
+    final ExtrinsicObjectType extrinsicObjectType = extrinsicObjects.get(0).getValue();
+
+    final DocumentMetadata documentMetadata =
+        documentSubmissionRequest.documents().get(0).documentMetadata();
+    assertHomeCommunityIdIsNull(extrinsicObjectType);
+
+    final int size = extrinsicObjectType.getSlot().size();
+    assertEquals(1, size);
+    final int descriptionSize = extrinsicObjectType.getDescription().getLocalizedString().size();
+    assertEquals(1, descriptionSize);
+    assertComments(extrinsicObjectType, documentMetadata);
+    assertReferenceIdList(extrinsicObjectType, documentMetadata);
+  }
+
+  private void assertComments(
+      ExtrinsicObjectType extrinsicObjectType, DocumentMetadata documentMetadata) {
+    assertEquals(
+        documentMetadata.comments(),
+        extrinsicObjectType.getDescription().getLocalizedString().get(0).getValue());
+  }
+
+  private void assertReferenceIdList(
+      ExtrinsicObjectType extrinsicObjectType, DocumentMetadata documentMetadata) {
+    assertEquals(
+        documentMetadata.referenceIdList(),
+        extrinsicObjectType.getSlot().get(0).getValueList().getValue());
   }
 
   @Test
@@ -113,6 +149,10 @@ class ProvideAndRegisterUtilsCreateExtrinsicObjectTest extends AbstractRegistryO
 
     String uri = getValueFromSlot(extrinsicObjectType, SlotName.URI.getName());
     assertEquals(documentMetadata.uri(), uri);
+
+    List<String> referenceIdList =
+        getValueFromSlotList(extrinsicObjectType, SlotName.REFERENCE_ID_LIST.getName());
+    assertEquals(documentMetadata.referenceIdList(), referenceIdList);
 
     assertSlotTime(
         extrinsicObjectType,

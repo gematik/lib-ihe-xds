@@ -2,7 +2,16 @@
 
 # Release notes lib-ihe-xds
 
-## Release 2.0.0
+## Release 2.0.2
+### fixed
+- Added missing mapping for documentEntry.referenceIdList
+- Added missing referenceIdList to createSlotTypes method
+
+### added
+- RestrictedMetadataUpdateRequest: The submitted DocumentEntry object can contain either all complete metadata attributes or only the metadata attributes that need to be changed.
+
+
+## Release 2.0.1
 
 ### added
 - Adapted implementation to comply with EPA 3 specification

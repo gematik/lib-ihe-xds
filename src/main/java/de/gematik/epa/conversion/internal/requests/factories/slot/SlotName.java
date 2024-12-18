@@ -45,7 +45,7 @@ public enum SlotName {
   URI("URI"),
   HOME_COMMUNITY_ID("homeCommunityId"),
   PREVIOUS_VERSION("PreviousVersion"),
-  ASSOCIATION_PROPAGATION("AssociationPropagation"),
+  ASSOCIATION_PROPAGATION("associationPropagation"),
   SUBMISSION_SET_STATUS("SubmissionSetStatus");
 
   private final String name;

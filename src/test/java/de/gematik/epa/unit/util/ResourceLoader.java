@@ -41,6 +41,8 @@ public class ResourceLoader {
   public static final String PUT_DOCUMENTS_WITH_FOLDER_METADATA_REQUEST =
       REQUEST_PATH + "documentSubmissionRequest.json";
 
+  public static final String PUT_DOCUMENTS_RMU_REQUEST =
+      REQUEST_PATH + "documentSubmissionRequestRMU.json";
   public static final String PUT_DOCUMENTS_WITHOUT_ATTRIBUTES_REQUEST =
       REQUEST_PATH + "documentSubmissionRequestWithoutAttributes.json";
 
@@ -52,6 +54,8 @@ public class ResourceLoader {
 
   public static final String RESTRICTED_UPDATE_DOCUMENT_REQUEST =
       REQUEST_PATH + "updateDocumentRequest.json";
+  public static final String RESTRICTED_UPDATE_DOCUMENT_DIFFERENCE_REQUEST =
+      REQUEST_PATH + "updateDocumentRequestDifference.json";
 
   public static final String RESTRICTED_UPDATE_DOCUMENT_LIST_REQUEST =
       REQUEST_PATH + "updateDocumentListRequest.json";

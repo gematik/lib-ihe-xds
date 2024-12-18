@@ -88,7 +88,17 @@ public enum EventCode implements CodeInterface {
   KONSIL("E280", CodeSystem.FALLKONTEXT_DOKUMENTENERSTELLUNG, "Konsil"),
   BEHANDLUNG_HAEUSLICH(
       "E300", CodeSystem.FALLKONTEXT_DOKUMENTENERSTELLUNG, "Behandlung im häuslichen Umfeld"),
-  VIRTUAL_ENCOUNTER("E400", CodeSystem.FALLKONTEXT_DOKUMENTENERSTELLUNG, "Virtual Encounter");
+  VIRTUAL_ENCOUNTER("E400", CodeSystem.FALLKONTEXT_DOKUMENTENERSTELLUNG, "Virtual Encounter"),
+  EDMP_DATENSATZ("01", CodeSystem.DMP, "DM2"),
+  KRANKENHAUS_ENTLASSUNGS_BERICHT("AD010104", CodeSystem.KDL, "Krankenhausentlassungsbericht"),
+  NEUGEBORENEN_SCREENING("SD070104", CodeSystem.KDL, "Neugeborenenscreening"),
+  NOTFALL_DATENMANAGEMENT("ED110102", CodeSystem.KDL, "Notfalldatenmanagement"),
+  NOTFALL_DATENSATZ("AU190104", CodeSystem.KDL, "Notfalldatensatz"),
+  NOTFALL_VERTRETUNGS_SCHEIN("AD020105", CodeSystem.KDL, "Notfall-/Vertretungsschein"),
+  GESAMTDOKUMENTATION_STATIONAERE_VERSORGUNG(
+      "UB999997", CodeSystem.KDL, "Gesamtdokumentation stationäre Versorgung"),
+  GESAMTDOKUMENTATION_AMBULANTE_VERSORGUNG(
+      "UB999998", CodeSystem.KDL, "Gesamtdokumentation ambulante Versorgung");
 
   private final String value;
   private final String codingScheme;
@@ -102,5 +112,7 @@ public enum EventCode implements CodeInterface {
     public static final String DOKUMENTEN_WARNHINWEISE = "1.3.6.1.4.1.19376.3.276.1.5.15";
     public static final String FALLKONTEXT_DOKUMENTENERSTELLUNG = "1.3.6.1.4.1.19376.3.276.1.5.16";
     public static final String IHE_FORMAT_CODES = "1.3.6.1.4.1.19376.1.2.3";
+    public static final String DMP = "1.2.276.0.76.5.223";
+    public static final String KDL = "1.2.276.0.76.5.552";
   }
 }

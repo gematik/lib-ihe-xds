@@ -30,8 +30,21 @@ class RestrictedUpdateDocumentUtilsTest {
         ResourceLoader.updateDocumentSetRequest(ResourceLoader.RESTRICTED_UPDATE_DOCUMENT_REQUEST);
 
     var testResult = RestrictedUpdateDocumentUtils.toUpdateDocumentSetRequest(testdata);
-    assertNull(testResult.getRequestSlotList());
     assertNotNull(testResult);
+    assertNull(testResult.getRequestSlotList());
+    assertEquals(3, testResult.getRegistryObjectList().getIdentifiable().size());
+    assertNotNull(testResult.getRegistryObjectList());
+  }
+
+  @Test
+  void toUpdateDocumentDifferenceRequest() {
+    var testdata =
+        ResourceLoader.updateDocumentSetRequest(
+            ResourceLoader.RESTRICTED_UPDATE_DOCUMENT_DIFFERENCE_REQUEST);
+
+    var testResult = RestrictedUpdateDocumentUtils.toUpdateDocumentSetRequest(testdata);
+    assertNotNull(testResult);
+    assertNull(testResult.getRequestSlotList());
     assertEquals(3, testResult.getRegistryObjectList().getIdentifiable().size());
     assertNotNull(testResult.getRegistryObjectList());
   }

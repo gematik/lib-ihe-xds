@@ -16,7 +16,7 @@
 
 package de.gematik.epa.conversion;
 
-import static de.gematik.epa.conversion.ProvideAndRegisterUtils.createExtrinsicObjects;
+import static de.gematik.epa.conversion.ProvideAndRegisterUtils.createExtrinsicObjectsRMU;
 import static de.gematik.epa.conversion.ProvideAndRegisterUtils.createSubmissionSetRegistryPackage;
 
 import de.gematik.epa.conversion.internal.AssociationGenerator;
@@ -49,7 +49,7 @@ public class RestrictedUpdateDocumentUtils {
     var submitObjectRequest = new SubmitObjectsRequest();
     var registryObjectList = new RegistryObjectListType();
     submitObjectRequest.setRegistryObjectList(registryObjectList);
-    registryObjectList.getIdentifiable().addAll(createExtrinsicObjects(docGenerators));
+    registryObjectList.getIdentifiable().addAll(createExtrinsicObjectsRMU(docGenerators));
 
     var submissionSetRegistryPackage = createSubmissionSetRegistryPackage(submissionRequest);
     registryObjectList

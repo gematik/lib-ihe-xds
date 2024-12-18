@@ -54,6 +54,8 @@ class ResponseFindUtilTest extends RegistryObjectListUtils {
   private final String title = "Musterkind, Max 03.03.2017";
   private final String comments = "Beispiel eines Dokument von PS geschickt";
   private final List<String> codeList = List.of("childsrecord^^1.2.276.0.76.5.512");
+  private final List<String> referenceIdList =
+      List.of("1.2.3.12.78.23^^^&1.2.3.4&ISO^urn:ihe:iti:xds:2013:uniqueId");
   private final String uniqueId = "2.25.193805246743443392003";
   private final String entryUUID = "urn:uuid:b5b5a11b-56ff-4b9f-82ca-13ff85fe5197";
   private final String availabilityStatus = "urn:oasis:names:tc:ebxml-regrep:StatusType:Approved";
@@ -146,6 +148,8 @@ class ResponseFindUtilTest extends RegistryObjectListUtils {
     assertNull(documentMetadata.practiceSettingCode());
     assertEquals(languageCode, documentMetadata.languageCode());
     assertEquals(uri, documentMetadata.uri());
+    assertEquals(1, documentMetadata.referenceIdList().size());
+    assertEquals(referenceIdList, documentMetadata.referenceIdList());
   }
 
   private void assertSubmissionSetList(ProxyFindResponse proxyResponse) {
@@ -244,6 +248,7 @@ class ResponseFindUtilTest extends RegistryObjectListUtils {
 
     createSlot(extrinsicObjectType, SlotName.LANGUAGE_CODE, languageCode);
     createSlot(extrinsicObjectType, SlotName.URI, uri);
+    createSlot(extrinsicObjectType, SlotName.REFERENCE_ID_LIST, referenceIdList.get(0));
 
     return List.of(extrinsicObjectType);
   }

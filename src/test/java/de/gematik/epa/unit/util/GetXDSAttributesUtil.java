@@ -35,6 +35,13 @@ public class GetXDSAttributesUtil {
         .orElse(null);
   }
 
+  public static List<String> getValueFromSlotList(RegistryObjectType objectType, String slotName) {
+    SlotType1 slot = getSlotFromRegistryObject(objectType, slotName);
+    return Optional.ofNullable(slot)
+        .map(currentSlot -> currentSlot.getValueList().getValue())
+        .orElse(List.of());
+  }
+
   public static SlotType1 getSlotFromRegistryObject(
       RegistryObjectType objectType, String slotName) {
     return objectType.getSlot().stream()

@@ -19,6 +19,7 @@ package de.gematik.epa.conversion.internal.requests;
 import de.gematik.epa.ihe.model.document.DocumentInterface;
 import de.gematik.epa.ihe.model.document.DocumentMetadata;
 import de.gematik.epa.ihe.model.document.ReplaceDocument;
+import de.gematik.epa.ihe.model.document.RestrictedUpdateDocument;
 import de.gematik.epa.ihe.model.simple.FolderMetadata;
 import de.gematik.epa.ihe.model.simple.InsurantId;
 import ihe.iti.xds_b._2007.ProvideAndRegisterDocumentSetRequestType.Document;
@@ -84,6 +85,15 @@ public class DocumentGenerator {
       ExtrinsicObjectGenerator.createExtrinsicObject(document, id(), insurantId);
 
   /**
+   * Get the {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ExtrinsicObjectType} generated from the
+   * provided {@link de.gematik.epa.ihe.model.document.DocumentInterface} implementation for RMU.
+   */
+  @Getter(lazy = true)
+  private final ExtrinsicObjectType extrinsicObjectRMU =
+      ExtrinsicObjectGenerator.createExtrinsicObjectRMU(
+          document, idOfDocumentToUpdate(), insurantId);
+
+  /**
    * Get the {@link de.gematik.epa.ihe.model.simple.FolderMetadata} from the provided document.<br>
    * This will only return a value, if the provided document is of type {@link
    * de.gematik.epa.ihe.model.document.Document} otherwise null will be returned.
@@ -109,6 +119,19 @@ public class DocumentGenerator {
           .map(ReplaceDocument::entryUUIDOfDocumentToReplace)
           .orElse(null);
 
+  /**
+   * Get the id of the document, which is to be updated by the provided document.<br>
+   * This will only return a value, if the provided document is of type {@link
+   * de.gematik.epa.ihe.model.document.RestrictedUpdateDocument} otherwise null will be returned.
+   */
+  @Getter(lazy = true)
+  private final String idOfDocumentToUpdate =
+      Optional.of(document)
+          .filter(RestrictedUpdateDocument.class::isInstance)
+          .map(RestrictedUpdateDocument.class::cast)
+          .map(RestrictedUpdateDocument::entryUUIDOfDocumentToUpdate)
+          .orElse(null);
+
   private static Document toIheDocument(DocumentInterface document, String id) {
     var iheDocument = new Document();
     iheDocument.setValue(document.documentData().value());
@@ -128,6 +151,10 @@ public class DocumentGenerator {
 
     public List<ExtrinsicObjectType> extrinsicObjects() {
       return stream().map(DocumentGenerator::extrinsicObject).toList();
+    }
+
+    public List<ExtrinsicObjectType> extrinsicObjectsRMU() {
+      return stream().map(DocumentGenerator::extrinsicObjectRMU).toList();
     }
   }
 }

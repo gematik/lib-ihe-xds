@@ -74,7 +74,7 @@ public class DocumentMetadataMapper {
               null,
               mimeType(value),
               practiceSettingCode(value),
-              new ArrayList<>(),
+              referenceIdList(value),
               serviceStartTime(value),
               serviceStopTime(value),
               size(value),
@@ -147,6 +147,13 @@ public class DocumentMetadataMapper {
 
   static String uri(ExtrinsicObjectType value) {
     return SlotFactory.getValueFromSlot(value.getSlot(), SlotName.URI);
+  }
+
+  static List<String> referenceIdList(ExtrinsicObjectType value) {
+    return value.getSlot().stream()
+        .filter(slot -> SlotName.REFERENCE_ID_LIST.getName().equals(slot.getName()))
+        .flatMap(slot -> slot.getValueList().getValue().stream())
+        .toList();
   }
 
   static String repositoryUniqueId(ExtrinsicObjectType value) {

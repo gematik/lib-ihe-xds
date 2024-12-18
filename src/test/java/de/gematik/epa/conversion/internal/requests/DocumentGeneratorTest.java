@@ -30,6 +30,7 @@ import de.gematik.epa.ihe.model.simple.FolderMetadata;
 import de.gematik.epa.unit.util.ResourceLoader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -158,8 +159,27 @@ class DocumentGeneratorTest {
   }
 
   @Test
-  void documentGeneratorListTest() {
-    var documents = documents();
+  void idOfDocumentToUpdateTest() {
+    var updateRequest =
+        de.gematik.epa.unit.util.ResourceLoader.updateDocumentSetRequest(
+            ResourceLoader.RESTRICTED_UPDATE_DOCUMENT_DIFFERENCE_REQUEST);
+
+    DocumentGenerator docGenerator =
+        DocumentGenerator.generator(request.documents().get(0), request.insurantId());
+
+    String idToUpdated = assertDoesNotThrow(docGenerator::idOfDocumentToUpdate);
+    assertNull(idToUpdated);
+
+    docGenerator =
+        DocumentGenerator.generator(updateRequest.documents().get(0), updateRequest.insurantId());
+
+    idToUpdated = assertDoesNotThrow(docGenerator::idOfDocumentToUpdate);
+    assertNotNull(idToUpdated);
+  }
+
+  private void assertDocumentGeneratorList(
+      List<DocumentInterface> documents,
+      Function<DocumentGenerator.DocumentGeneratorList, List<?>> extrinsicObjectsFunction) {
     var docGeneratorList = DocumentGenerator.generators(documents, request.insurantId());
 
     var iheDocuments = assertDoesNotThrow(docGeneratorList::iheDocuments);
@@ -167,10 +187,23 @@ class DocumentGeneratorTest {
     assertNotNull(iheDocuments);
     assertEquals(documents.size(), iheDocuments.size());
 
-    var extrinsicObjects = assertDoesNotThrow(docGeneratorList::extrinsicObjects);
+    var extrinsicObjects =
+        assertDoesNotThrow(() -> extrinsicObjectsFunction.apply(docGeneratorList));
 
     assertNotNull(extrinsicObjects);
     assertEquals(documents.size(), extrinsicObjects.size());
+  }
+
+  @Test
+  void documentGeneratorListTest() {
+    assertDocumentGeneratorList(
+        documents(), DocumentGenerator.DocumentGeneratorList::extrinsicObjects);
+  }
+
+  @Test
+  void documentGeneratorListRMUTest() {
+    assertDocumentGeneratorList(
+        documents(), DocumentGenerator.DocumentGeneratorList::extrinsicObjectsRMU);
   }
 
   private List<DocumentInterface> documents() {

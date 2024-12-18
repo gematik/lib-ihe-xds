@@ -24,9 +24,9 @@ import lombok.NonNull;
 @Getter
 public enum FormatCode implements CodeInterface {
   ARBEITSUNFAEHIGKEITSBESCHEINIGUNG(
-      "urn:gematik:ig:Arbeitsunfähigkeitsbescheinigung:r4.0",
+      "urn:gematik:ig:Arbeitsunfaehigkeitsbescheinigung:v1.1",
       CodingScheme.DOK_DE,
-      "Arbeitsunfähigkeitsbescheinigung"),
+      "Arbeitsunfähigkeitsbescheinigung (gematik) v1.1"),
   ARZTBRIEF("urn:gematik:ig:Arztbrief:r3.1", CodingScheme.DOK_DE, "Arztbrief"),
   IMPFPASS("urn:gematik:ig:Impfausweis:v1.1.0", CodingScheme.DOK_DE, "Impfpass"),
   KINDERUNTERSUCHUNGSHEFT_NOTIZEN(
@@ -50,7 +50,7 @@ public enum FormatCode implements CodeInterface {
       CodingScheme.DOK_DE,
       "Kinderuntersuchungsheft Untersuchungen"),
   MEDIKATIONSPLAN("urn:gematik:ig:Medikationsplan:r3.1", CodingScheme.DOK_DE, "Medikationsplan"),
-  MUTTERPASS("urn:gematik:ig:Mutterpass:v1.0.0", CodingScheme.DOK_DE, "Mutterpass"),
+  MUTTERPASS("urn:gematik:ig:Mutterpass:v1.1.0", CodingScheme.DOK_DE, "Mutterpass"),
   NOTFALLDATENSATZ("urn:gematik:ig:Notfalldatensatz:r3.1", CodingScheme.DOK_DE, "Notfalldatensatz"),
   PERSOENLICHE_ERKLAERUNGEN(
       "urn:gematik:ig:DatensatzPersoenlicheErklaerungen:r3.1",
@@ -60,7 +60,9 @@ public enum FormatCode implements CodeInterface {
   ZAHNBONUSHEFT("urn:gematik:ig:Zahnbonusheft:v1.1.0", CodingScheme.DOK_DE, "Zahnbonusheft"),
   BEFUND("urn:ihe:iti:xds:2017:mimeTypeSufficient", CodingScheme.IHE, "Befund"),
   PATIENTEN_KURZ_AKTE("urn:gematik:ig:pka:v1.0", CodingScheme.DOK_DE, "Patientenkurzakte"),
-  DIGA("urn:gematik:ig:diga:v1.1", CodingScheme.DOK_DE, "DiGA (gematik) v1.1");
+  DIGA("urn:gematik:ig:diga:v1.1", CodingScheme.DOK_DE, "DiGA (gematik) v1.1"),
+  EDMP_DATENSATZ(
+      "urn:gematik:ig:DMP-DM2:v6", CodingScheme.DOK_DE, "eDMP Diabetes mellitus Typ 2 (gematik)");
 
   private final String value;
   private final String codingScheme;
