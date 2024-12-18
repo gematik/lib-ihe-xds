@@ -1,0 +1,34 @@
+{
+  "insurantId": {
+    "root": "1.2.276.0.76.4.8",
+    "extension": "X110425143"
+  },
+  "documents": [
+    {
+      "documentMetadata": {
+        "comments": "NotizReplaced",
+        "referenceIdList": ["2.25.28266447456188406888^^^^urn:gematik:iti:xds:2023:rootDocumentUniqueId"]
+      },
+      "documentData": "PD94bWwgdmV0KDAB4Qo="
+    }
+  ],
+  "submissionSetMetadata": {
+    "authors": [
+      {
+        "identifier": "30432750",
+        "familyName": "Dunkelbaum",
+        "givenName": "Marta",
+        "title": "Prof. Dr.",
+        "authorInstitution": [
+          {
+            "name": "arztpraxis",
+            "identifier": "1-SMC-B-Testkarte-883110000092397"
+          }
+        ],
+        "authorRole": [
+          "11^^^&1.3.6.1.4.1.19376.3.276.1.5.13&ISO"
+        ]
+      }
+    ]
+  }
+}

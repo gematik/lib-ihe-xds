@@ -38,6 +38,22 @@ class AuthorTest {
   }
 
   @Test
+  void formatAuthorWithFamilyAndGivenName() {
+    Author nullAuthor =
+        new Author(null, "Blankenburg", "Sigrid", null, null, null, null, null, null, null, null);
+    assertEquals("^Blankenburg^Sigrid^^^^^^", nullAuthor.formatted());
+  }
+
+  @Test
+  void formatAuthorWithFamilyAndGivenNameIdentifier() {
+    Author nullAuthor =
+        new Author(
+            "123456789", "Blankenburg", "Sigrid", null, null, null, null, null, null, null, null);
+    assertEquals(
+        "123456789^Blankenburg^Sigrid^^^^^^&1.2.276.0.76.4.16&ISO", nullAuthor.formatted());
+  }
+
+  @Test
   void formatDefaultOidAuthor() {
     Author defaultOidAuthor =
         new Author(

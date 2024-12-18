@@ -102,6 +102,18 @@ class DocumentMetadataMapperTest extends RegistryObjectListUtils {
   }
 
   @Test
+  void testToEDMPFormatCode() {
+    ExtrinsicObjectType extrinsicObjectType = new ExtrinsicObjectType();
+    createClassification(
+        extrinsicObjectType,
+        ClassificationScheme.DOCUMENT_ENTRY_FORMAT,
+        FormatCode.EDMP_DATENSATZ.getValue());
+
+    final String formatCode = DocumentMetadataMapper.formatCode(extrinsicObjectType);
+    assertEquals("urn:gematik:ig:DMP-DM2:v6", formatCode);
+  }
+
+  @Test
   void testToHealthcareFacilityCode() {
     ExtrinsicObjectType extrinsicObjectType = new ExtrinsicObjectType();
     createClassification(
@@ -190,6 +202,20 @@ class DocumentMetadataMapperTest extends RegistryObjectListUtils {
 
     final String uri = DocumentMetadataMapper.uri(extrinsicObjectType);
     assertEquals("Medikationsplan.xml", uri);
+  }
+
+  @Test
+  void testReferenceIdList() {
+    var extrinsicObjectType = new ExtrinsicObjectType();
+    createSlot(
+        extrinsicObjectType,
+        SlotName.REFERENCE_ID_LIST,
+        "1.2.3.12.78.23^^^&1.2.3.4&ISO^urn:ihe:iti:xds:2013:uniqueId");
+
+    final List<String> referenceIdList =
+        DocumentMetadataMapper.referenceIdList(extrinsicObjectType);
+    assertEquals(
+        "1.2.3.12.78.23^^^&1.2.3.4&ISO^urn:ihe:iti:xds:2013:uniqueId", referenceIdList.get(0));
   }
 
   @Test

@@ -122,6 +122,11 @@ public class ProvideAndRegisterUtils {
     return ExtrinsicObjectGenerator.toJaxbElements(docGenerators.extrinsicObjects());
   }
 
+  public static List<JAXBElement<ExtrinsicObjectType>> createExtrinsicObjectsRMU(
+      DocumentGenerator.DocumentGeneratorList docGenerators) {
+    return ExtrinsicObjectGenerator.toJaxbElements(docGenerators.extrinsicObjectsRMU());
+  }
+
   public static List<JAXBElement<? extends RegistryObjectType>>
       createFolderRegistryPackagesAndAssociations(
           DocumentSubmissionRequest documentSubmissionRequest,

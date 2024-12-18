@@ -16,8 +16,6 @@
 
 package de.gematik.epa.conversion.internal.requests;
 
-import static de.gematik.epa.conversion.internal.requests.ExtrinsicObjectGenerator.toExtrinsicObject;
-
 import de.gematik.epa.conversion.internal.requests.factories.RegistryObjectFactory;
 import de.gematik.epa.conversion.internal.requests.factories.classification.ExtrinsicObjectClassificationFactory;
 import de.gematik.epa.conversion.internal.requests.factories.externalidentifier.ExternalIdentifierFactory;
@@ -33,8 +31,8 @@ public class ExtrinsicObjectGenerator {
 
   private ExtrinsicObjectGenerator() {}
 
-  public static void fillExtrinsicObject(
-      ExtrinsicObjectType extrinsicObject, DocumentInterface document, InsurantId insurantId) {
+  public static void fillCommonExtrinsicObject(
+      ExtrinsicObjectType extrinsicObject, DocumentInterface document) {
     extrinsicObject.setMimeType(document.documentMetadata().mimeType());
     extrinsicObject.setIsOpaque(false);
     extrinsicObject.setObjectType(ObjectType.DOCUMENT_ENTRY.getId());
@@ -43,8 +41,12 @@ public class ExtrinsicObjectGenerator {
     RegistryObjectFactory.setDescription(extrinsicObject, document.documentMetadata().comments());
 
     ExtrinsicObjectSlotFactory.createSlotTypes(extrinsicObject, document);
-
     ExtrinsicObjectClassificationFactory.createClassifications(extrinsicObject, document);
+  }
+
+  public static void fillExtrinsicObject(
+      ExtrinsicObjectType extrinsicObject, DocumentInterface document, InsurantId insurantId) {
+    fillCommonExtrinsicObject(extrinsicObject, document);
     ExternalIdentifierFactory.forDocumentEntry(extrinsicObject, document, insurantId);
   }
 
@@ -53,6 +55,19 @@ public class ExtrinsicObjectGenerator {
     var extrinsicObject = toExtrinsicObject(documentId);
     fillExtrinsicObject(extrinsicObject, document, insurantId);
     return extrinsicObject;
+  }
+
+  public static ExtrinsicObjectType createExtrinsicObjectRMU(
+      DocumentInterface document, String documentId, InsurantId insurantId) {
+    var extrinsicObject = toExtrinsicObject(documentId);
+    fillExtrinsicObjectRMU(extrinsicObject, document, insurantId);
+    return extrinsicObject;
+  }
+
+  public static void fillExtrinsicObjectRMU(
+      ExtrinsicObjectType extrinsicObject, DocumentInterface document, InsurantId insurantId) {
+    fillCommonExtrinsicObject(extrinsicObject, document);
+    ExternalIdentifierFactory.forDocumentEntryRMU(extrinsicObject, document, insurantId);
   }
 
   public static ExtrinsicObjectType toExtrinsicObject(String documentId) {

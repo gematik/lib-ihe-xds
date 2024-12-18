@@ -40,6 +40,10 @@ public final class ExtrinsicObjectSlotFactory {
                 SlotFactory.slotIf(
                     SlotName.LANGUAGE_CODE, Objects::nonNull, documentMetadata.languageCode()),
                 SlotFactory.slotIf(SlotName.URI, Objects::nonNull, documentMetadata.uri()),
+                SlotFactory.slotIf(
+                    SlotName.REFERENCE_ID_LIST,
+                    Objects::nonNull,
+                    documentMetadata.referenceIdList()),
                 SlotFactory.slotIf(SlotName.SERVICE_START_TIME, Objects::nonNull, serviceStartTime),
                 SlotFactory.slotIf(SlotName.SERVICE_STOP_TIME, Objects::nonNull, serviceStopTime)));
     slots.removeIf(slotType1 -> slotType1.equals(SlotFactory.REMOVE_ME));

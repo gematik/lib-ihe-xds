@@ -22,8 +22,8 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public enum DynamicFolderCode implements CodeInterface {
-  CHILDSRECORD("childsrecord", "Kinderuntersuchungsheft"),
-  MOTHERSRECORD("mothersrecord", "Mutterpass");
+  DIGA("diga", "DiGA"),
+  PREGNANCY_CHILDBIRTH("pregnancy_childbirth", "Schwangerschaft und Geburt");
 
   private static final String CODING_SCHEME = "1.2.276.0.76.5.512";
 

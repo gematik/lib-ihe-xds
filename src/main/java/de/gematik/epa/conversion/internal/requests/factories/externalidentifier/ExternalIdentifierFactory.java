@@ -43,6 +43,21 @@ public class ExternalIdentifierFactory {
         ExternalIdentifierScheme.DOCUMENT_ENTRY_UNIQUE);
   }
 
+  public static void forDocumentEntryRMU(
+      ExtrinsicObjectType extrinsicObject,
+      DocumentInterface originalDocument,
+      InsurantId insurantId) {
+    if (originalDocument.documentMetadata().patientId() != null) {
+      createPatientId(extrinsicObject, insurantId, ExternalIdentifierScheme.DOCUMENT_ENTRY_PATIENT);
+    }
+    if (originalDocument.documentMetadata().uniqueId() != null) {
+      createUniqueId(
+          extrinsicObject,
+          originalDocument.documentMetadata().uniqueId(),
+          ExternalIdentifierScheme.DOCUMENT_ENTRY_UNIQUE);
+    }
+  }
+
   public static void forSubmissionSet(RegistryPackageType registryPackage, InsurantId insurantId) {
     createPatientId(registryPackage, insurantId, ExternalIdentifierScheme.SUBMISSION_SET_PATIENT);
     createUniqueId(
