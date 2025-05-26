@@ -1,6 +1,9 @@
-/*
- * Copyright 2023 gematik GmbH
- *
+/*-
+ * #%L
+ * lib-ihe-xds
+ * %%
+ * Copyright (C) 2023 - 2025 gematik GmbH
+ * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,8 +15,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * *******
+ *
+ * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * #L%
  */
-
 package de.gematik.epa.unit.util;
 
 import de.gematik.epa.conversion.internal.requests.factories.UniqueIdFactory;
@@ -119,7 +126,8 @@ public class MessageUtils {
         "uri",
         "1.2.3.45.6",
         "hci",
-        "X123456");
+        "X123456",
+        "j98789");
   }
 
   private static List<Author> getAuthors() {
@@ -127,7 +135,7 @@ public class MessageUtils {
     return List.of(nullAuthor);
   }
 
-  protected static SubmissionSetMetadata getSubmissionSetMetadata() {
+  private static SubmissionSetMetadata getSubmissionSetMetadata() {
     List<Author> authors = getAuthors();
     return new SubmissionSetMetadata(
         authors, "title", LocalDateTime.now(), "Approved", "1.2.3", "uuid");

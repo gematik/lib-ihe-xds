@@ -4,5 +4,5 @@
 *.iml
 **/*.jar
 
-*.jenkinsfile
+jenkinsfiles
 README_INTERNAL.md

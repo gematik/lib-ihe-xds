@@ -1,6 +1,9 @@
-/*
- * Copyright 2023 gematik GmbH
- *
+/*-
+ * #%L
+ * lib-ihe-xds
+ * %%
+ * Copyright (C) 2023 - 2025 gematik GmbH
+ * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,8 +15,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * *******
+ *
+ * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * #L%
  */
-
 package de.gematik.epa.conversion.internal.requests.factories.slot;
 
 import de.gematik.epa.conversion.internal.DateUtil;
@@ -45,7 +52,11 @@ public final class ExtrinsicObjectSlotFactory {
                     Objects::nonNull,
                     documentMetadata.referenceIdList()),
                 SlotFactory.slotIf(SlotName.SERVICE_START_TIME, Objects::nonNull, serviceStartTime),
-                SlotFactory.slotIf(SlotName.SERVICE_STOP_TIME, Objects::nonNull, serviceStopTime)));
+                SlotFactory.slotIf(SlotName.SERVICE_STOP_TIME, Objects::nonNull, serviceStopTime),
+                SlotFactory.slotIf(
+                    SlotName.SOURCE_PATIENT_ID,
+                    Objects::nonNull,
+                    documentMetadata.sourcePatientId())));
     slots.removeIf(slotType1 -> slotType1.equals(SlotFactory.REMOVE_ME));
     extrinsicObject.getSlot().addAll(slots);
   }

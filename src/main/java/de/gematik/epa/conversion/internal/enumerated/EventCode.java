@@ -1,6 +1,9 @@
-/*
- * Copyright 2023 gematik GmbH
- *
+/*-
+ * #%L
+ * lib-ihe-xds
+ * %%
+ * Copyright (C) 2023 - 2025 gematik GmbH
+ * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,8 +15,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * *******
+ *
+ * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * #L%
  */
-
 package de.gematik.epa.conversion.internal.enumerated;
 
 import lombok.AllArgsConstructor;
@@ -90,15 +97,20 @@ public enum EventCode implements CodeInterface {
       "E300", CodeSystem.FALLKONTEXT_DOKUMENTENERSTELLUNG, "Behandlung im häuslichen Umfeld"),
   VIRTUAL_ENCOUNTER("E400", CodeSystem.FALLKONTEXT_DOKUMENTENERSTELLUNG, "Virtual Encounter"),
   EDMP_DATENSATZ("01", CodeSystem.DMP, "DM2"),
-  KRANKENHAUS_ENTLASSUNGS_BERICHT("AD010104", CodeSystem.KDL, "Krankenhausentlassungsbericht"),
-  NEUGEBORENEN_SCREENING("SD070104", CodeSystem.KDL, "Neugeborenenscreening"),
-  NOTFALL_DATENMANAGEMENT("ED110102", CodeSystem.KDL, "Notfalldatenmanagement"),
-  NOTFALL_DATENSATZ("AU190104", CodeSystem.KDL, "Notfalldatensatz"),
-  NOTFALL_VERTRETUNGS_SCHEIN("AD020105", CodeSystem.KDL, "Notfall-/Vertretungsschein"),
+  KRANKENHAUS_ENTLASSUNGS_BERICHT("AD010104", CodeSystem.KDL_2024, "Krankenhausentlassungsbericht"),
+  NEUGEBORENEN_SCREENING("SD070104", CodeSystem.KDL_2024, "Neugeborenenscreening"),
+  NOTFALL_DATENMANAGEMENT("ED110102", CodeSystem.KDL_2024, "Notfalldatenmanagement"),
+  EARZTBRIEF("ED110104", CodeSystem.KDL_2024, "eArztbrief"),
+  NOTFALL_DATENSATZ("AU190104", CodeSystem.KDL_2024, "Notfalldatensatz"),
+  NOTFALL_VERTRETUNGS_SCHEIN("AD020105", CodeSystem.KDL_2024, "Notfall-/Vertretungsschein"),
   GESAMTDOKUMENTATION_STATIONAERE_VERSORGUNG(
-      "UB999997", CodeSystem.KDL, "Gesamtdokumentation stationäre Versorgung"),
+      "UB999997", CodeSystem.KDL_2024, "Gesamtdokumentation stationäre Versorgung"),
   GESAMTDOKUMENTATION_AMBULANTE_VERSORGUNG(
-      "UB999998", CodeSystem.KDL, "Gesamtdokumentation ambulante Versorgung");
+      "UB999998", CodeSystem.KDL_2024, "Gesamtdokumentation ambulante Versorgung"),
+  ENTLASSUNGSBERICHT(
+      "AD010115", CodeSystem.KDL_2025, "Entlassungsbericht"), // allowed with epa 3.1.x
+  ARZTBERICHTE("AD0101", CodeSystem.KDL_2024, "Arztberichte"), // not allowed
+  SCT_NOSE("45206002", CodeSystem.SCT, "Nose");
 
   private final String value;
   private final String codingScheme;
@@ -113,6 +125,8 @@ public enum EventCode implements CodeInterface {
     public static final String FALLKONTEXT_DOKUMENTENERSTELLUNG = "1.3.6.1.4.1.19376.3.276.1.5.16";
     public static final String IHE_FORMAT_CODES = "1.3.6.1.4.1.19376.1.2.3";
     public static final String DMP = "1.2.276.0.76.5.223";
-    public static final String KDL = "1.2.276.0.76.5.552";
+    public static final String KDL_2024 = "1.2.276.0.76.5.552";
+    public static final String KDL_2025 = "1.2.276.0.76.5.553"; // allowed with epa 3.1.x
+    public static final String SCT = "\"http://snomed.info/sct\""; // CS as URL compare
   }
 }

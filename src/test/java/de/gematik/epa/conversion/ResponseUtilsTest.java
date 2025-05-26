@@ -1,6 +1,9 @@
-/*
- * Copyright 2023 gematik GmbH
- *
+/*-
+ * #%L
+ * lib-ihe-xds
+ * %%
+ * Copyright (C) 2023 - 2025 gematik GmbH
+ * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,8 +15,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * *******
+ *
+ * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * #L%
  */
-
 package de.gematik.epa.conversion;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -34,19 +41,9 @@ class ResponseUtilsTest {
       "urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Success";
   private static final String FAILURE =
       "urn:oasis:names:tc:ebxml-regrep:ResponseStatusType:Failure";
-  private static final String WITHOUT_VALUES =
-      "nn\turn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error\tnn\tnn\tunknown error";
+
   private static final String WITH_VALUES =
-      "FM\t"
-          + "urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error\t"
-          + "7400\t"
-          + "Fehler - Die Operation konnte nicht durchgeführt werden.\t"
-          + "titusMandant is marked non-null but is null\n"
-          + "PHRService\t"
-          + "urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error\t"
-          + "XDSRegistryError\t"
-          + "java.lang.NullPointerException\t"
-          + "titusMandant is marked non-null but is null";
+      "Severity: Error\t" + "ErrorCode: 123\t" + "CodeContext: Invalid input";
 
   @Test
   void testSuccessResponse() {
@@ -73,9 +70,39 @@ class ResponseUtilsTest {
   }
 
   @Test
-  void testFailedResponseWithEmptyError() {
+  void testFailedResponseWithAllAttributes() {
     var registryResponseType = new RegistryResponseType();
     registryResponseType.setStatus(FAILURE);
+
+    var registryError = new RegistryError();
+    registryError.setSeverity("Error");
+    registryError.setErrorCode("123");
+    registryError.setCodeContext("Invalid input");
+    registryError.setLocation("TestLocation");
+
+    var registryErrorList = new RegistryErrorList();
+    registryErrorList.getRegistryError().add(registryError);
+    registryResponseType.setRegistryErrorList(registryErrorList);
+
+    final ProxyResponse proxyResponse = ResponseUtils.toProxyResponse(registryResponseType);
+
+    String expectedMessage =
+        FAILURE
+            + "\n"
+            + "Severity: Error\t"
+            + "ErrorCode: 123\t"
+            + "CodeContext: Invalid input\t"
+            + "Location: TestLocation";
+
+    assertEquals(false, proxyResponse.success());
+    assertEquals(expectedMessage, proxyResponse.statusMessage());
+  }
+
+  @Test
+  void testFailedResponseWithCompletelyEmptyRegistryError() {
+    var registryResponseType = new RegistryResponseType();
+    registryResponseType.setStatus(FAILURE);
+
     var emptyError = new RegistryError();
     var registryErrorList = new RegistryErrorList();
     registryErrorList.getRegistryError().add(emptyError);
@@ -84,7 +111,34 @@ class ResponseUtilsTest {
     final ProxyResponse proxyResponse = ResponseUtils.toProxyResponse(registryResponseType);
 
     assertEquals(false, proxyResponse.success());
-    assertEquals(proxyResponse.statusMessage(), getStatusMessageWithoutValues());
+    assertEquals(FAILURE, proxyResponse.statusMessage());
+  }
+
+  @Test
+  void testFailedResponseWithPartiallyEmptyRegistryError() {
+    var registryResponseType = new RegistryResponseType();
+    registryResponseType.setStatus(FAILURE);
+
+    var emptyError = new RegistryError();
+    emptyError.setSeverity("urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error");
+    emptyError.setErrorCode("nn");
+    emptyError.setCodeContext("nn");
+    var registryErrorList = new RegistryErrorList();
+    registryErrorList.getRegistryError().add(emptyError);
+    registryResponseType.setRegistryErrorList(registryErrorList);
+
+    final ProxyResponse proxyResponse = ResponseUtils.toProxyResponse(registryResponseType);
+
+    assertEquals(false, proxyResponse.success());
+    assertEquals(FAILURE, proxyResponse.statusMessage());
+  }
+
+  @Test
+  void testDeleteLastTabCharacter() {
+    StringBuilder statusMessageBuilder = new StringBuilder("Test message\t");
+    statusMessageBuilder.deleteCharAt(statusMessageBuilder.lastIndexOf("\t"));
+
+    assertEquals("Test message", statusMessageBuilder.toString());
   }
 
   @Test
@@ -132,27 +186,13 @@ class ResponseUtilsTest {
   }
 
   private RegistryErrorList createRegistryErrorList() {
-    RegistryError error = new RegistryError();
-    error.setLocation("FM");
-    error.setSeverity("urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error");
-    error.setErrorCode("7400");
-    error.setCodeContext("Fehler - Die Operation konnte nicht durchgeführt werden.");
-    error.setValue("titusMandant is marked non-null but is null");
-    RegistryErrorList registryErrorList = new RegistryErrorList();
-    registryErrorList.getRegistryError().add(error);
-
-    RegistryError error2 = new RegistryError();
-    error2.setLocation("PHRService");
-    error2.setSeverity("urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error");
-    error2.setErrorCode("XDSRegistryError");
-    error2.setCodeContext("java.lang.NullPointerException");
-    error2.setValue("titusMandant is marked non-null but is null");
-    registryErrorList.getRegistryError().add(error2);
+    var registryErrorList = new RegistryErrorList();
+    var registryError = new RegistryError();
+    registryError.setSeverity("Error");
+    registryError.setErrorCode("123");
+    registryError.setCodeContext("Invalid input");
+    registryErrorList.getRegistryError().add(registryError);
     return registryErrorList;
-  }
-
-  private String getStatusMessageWithoutValues() {
-    return FAILURE + "\n" + WITHOUT_VALUES;
   }
 
   private String getStatusMessageWithValues() {
