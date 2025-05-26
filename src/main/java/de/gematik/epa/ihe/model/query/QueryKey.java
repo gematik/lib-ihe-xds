@@ -1,6 +1,9 @@
-/*
- * Copyright 2023 gematik GmbH
- *
+/*-
+ * #%L
+ * lib-ihe-xds
+ * %%
+ * Copyright (C) 2023 - 2025 gematik GmbH
+ * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,8 +15,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * *******
+ *
+ * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * #L%
  */
-
 package de.gematik.epa.ihe.model.query;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -37,7 +44,14 @@ public enum QueryKey {
   XDS_FOLDER_ENTRY_UUID("$XDSFolderEntryUUID"),
   XDS_FOLDER_UNIQUE_ID("$XDSFolderUniqueId"),
   XDS_DOCUMENT_ENTRY_COMMENT("$XDSDocumentEntryComment"),
-  XDS_DOCUMENT_ENTRY_REFERENCE_ID_LIST("$XDSDocumentEntryReferenceIdList");
+  XDS_DOCUMENT_ENTRY_REFERENCE_ID_LIST("$XDSDocumentEntryReferenceIdList"),
+  XDS_DOCUMENT_ENTRY_CREATION_TIME_FROM("$XDSDocumentEntryCreationTimeFrom"),
+  XDS_DOCUMENT_ENTRY_CREATION_TIME_TO("$XDSDocumentEntryCreationTimeTo"),
+  XDS_DOCUMENT_ENTRY_AUTHOR_INSTITUTION("$XDSDocumentEntryAuthorInstitution"),
+  XDS_DOCUMENT_ENTRY_PRACTICE_SETTINGS_CODE("$XDSDocumentEntryPracticeSettingCode"),
+  XDS_DOCUMENT_ENTRY_HEALTHCARE_FACILITY_TYPE_CODE("$XDSDocumentEntryHealthcareFacilityTypeCode"),
+  XDS_DOCUMENT_ENTRY_EVENT_CODE_LIST("$XDSDocumentEntryEventCodeList"),
+  XDS_DOCUMENT_ENTRY_CONFIDENTIALITY_CODE("$XDSDocumentEntryConfidentialityCode");
 
   private final String keyword;
 

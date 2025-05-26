@@ -1,6 +1,9 @@
-/*
- * Copyright 2023 gematik GmbH
- *
+/*-
+ * #%L
+ * lib-ihe-xds
+ * %%
+ * Copyright (C) 2023 - 2025 gematik GmbH
+ * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,8 +15,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * *******
+ *
+ * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * #L%
  */
-
 package de.gematik.epa.conversion;
 
 import static de.gematik.epa.conversion.internal.response.AssociationsMapper.mapAssociations;
@@ -30,13 +37,13 @@ import ihe.iti.xds_b._2007.RetrieveDocumentSetResponseType;
 import java.util.Objects;
 import lombok.experimental.UtilityClass;
 import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryResponse;
+import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryError;
 import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryResponseType;
 
 @UtilityClass
 public class ResponseUtils {
 
   private static final String NN = "nn";
-  private static final String UNKNOWN_ERROR = "unknown error";
   public static final String SUCCESS = "Success";
   private static final String FAILURE = "Failure";
 
@@ -82,20 +89,33 @@ public class ResponseUtils {
           .getRegistryError()
           .forEach(
               registryError -> {
+                if (isRegistryErrorEmpty(registryError)) {
+                  return; // Skip empty RegistryError
+                }
                 statusMessageBuilder.append("\n");
-                append(statusMessageBuilder, registryError.getLocation(), NN);
-                append(statusMessageBuilder, registryError.getSeverity(), NN);
-                append(statusMessageBuilder, registryError.getErrorCode(), NN);
-                append(statusMessageBuilder, registryError.getCodeContext(), NN);
-                append(statusMessageBuilder, registryError.getValue(), UNKNOWN_ERROR);
+                appendWithKey(statusMessageBuilder, "Severity", registryError.getSeverity());
+                appendWithKey(statusMessageBuilder, "ErrorCode", registryError.getErrorCode());
+                appendWithKey(statusMessageBuilder, "CodeContext", registryError.getCodeContext());
+                if (Objects.nonNull(registryError.getLocation())) {
+                  appendWithKey(statusMessageBuilder, "Location", registryError.getLocation());
+                }
                 statusMessageBuilder.deleteCharAt(statusMessageBuilder.lastIndexOf("\t"));
               });
     }
     return statusMessageBuilder.toString();
   }
 
-  private static void append(StringBuilder builder, String value, String nullDefault) {
-    builder.append(Objects.toString(value, nullDefault)).append("\t");
+  private static boolean isRegistryErrorEmpty(RegistryError registryError) {
+    return (registryError.getSeverity() == null
+            || registryError
+                .getSeverity()
+                .equals("urn:oasis:names:tc:ebxml-regrep:ErrorSeverityType:Error"))
+        && (registryError.getErrorCode() == null || registryError.getErrorCode().equals(NN))
+        && (registryError.getCodeContext() == null || registryError.getCodeContext().equals(NN));
+  }
+
+  private static void appendWithKey(StringBuilder builder, String key, String value) {
+    builder.append(key).append(": ").append(Objects.toString(value, ResponseUtils.NN)).append("\t");
   }
 
   private static boolean isSuccess(RegistryResponseType registryResponse) {

@@ -1,6 +1,9 @@
-/*
- * Copyright 2023 gematik GmbH
- *
+/*-
+ * #%L
+ * lib-ihe-xds
+ * %%
+ * Copyright (C) 2023 - 2025 gematik GmbH
+ * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,8 +15,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * *******
+ *
+ * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * #L%
  */
-
 package de.gematik.epa.conversion.internal.response;
 
 import static de.gematik.epa.conversion.internal.AuthorUtils.seperateAuthorName;
@@ -74,12 +81,12 @@ public class RegistryObjectListMapper {
       String[] name = seperateAuthorName(author);
       Author documentAuthor =
           new Author(
-              name[0], // identifier
-              name[1], // familyName
-              name[2], // givenName
-              name[3], // otherName
-              name[4], // nameAffix
-              name[5], // title
+              name.length > 0 ? name[0] : null, // identifier
+              name.length > 1 ? name[1] : null, // familyName
+              name.length > 2 ? name[2] : null, // givenName
+              name.length > 3 ? name[3] : null, // otherName
+              name.length > 4 ? name[4] : null, // nameAffix
+              name.length > 5 ? name[5] : null, // title
               toAuthorInstitution(author),
               toAuthorRole(author),
               toAuthorSpecialty(author),

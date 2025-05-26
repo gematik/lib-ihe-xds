@@ -1,6 +1,9 @@
-/*
- * Copyright 2023 gematik GmbH
- *
+/*-
+ * #%L
+ * lib-ihe-xds
+ * %%
+ * Copyright (C) 2023 - 2025 gematik GmbH
+ * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,8 +15,12 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * *******
+ *
+ * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * #L%
  */
-
 package de.gematik.epa.conversion.internal.response;
 
 import static de.gematik.epa.conversion.internal.requests.factories.slot.SlotName.AUTHOR_INSTITUTION;
@@ -22,7 +29,9 @@ import static de.gematik.epa.conversion.internal.requests.factories.slot.SlotNam
 import static de.gematik.epa.conversion.internal.requests.factories.slot.SlotName.AUTHOR_SPECIALTY;
 import static de.gematik.epa.conversion.internal.response.RegistryObjectListMapper.toAuthor;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
+import de.gematik.epa.conversion.internal.AuthorUtils;
 import de.gematik.epa.conversion.internal.requests.factories.classification.ClassificationScheme;
 import de.gematik.epa.ihe.model.Author;
 import java.util.List;
@@ -89,5 +98,94 @@ class DocumentMetadataMapperAutorTest extends RegistryObjectListUtils {
     classificationType.getSlot().get(3).getValueList().getValue().add(SPECIALTY_2);
 
     return classificationType;
+  }
+
+  @Test
+  void testSeparateAuthorNameWithNullAuthorName() {
+    ClassificationType classificationType = new ClassificationType();
+    String[] result = AuthorUtils.seperateAuthorName(classificationType);
+    assertEquals(0, result.length, "Expected an empty array when author name is null");
+  }
+
+  // A_21209-02
+  @Test
+  void testVerifyAuthor() {
+    final ExtrinsicObjectType extrinsicObjectType = createAuthorsTest();
+
+    final List<Author> authors =
+        toAuthor(extrinsicObjectType, ClassificationScheme.DOCUMENT_ENTRY_AUTHOR);
+    assertEquals(3, authors.size());
+    // Author 1
+    Author authorOne = authors.get(0);
+    assertEquals("Mustermann", authorOne.familyName());
+    assertEquals("", authorOne.otherName());
+    assertEquals("", authorOne.title());
+    assertEquals("", authorOne.nameAffix());
+    assertEquals("X110552837", authorOne.identifier());
+    assertEquals("Erika Sophie", authorOne.givenName());
+
+    assertEquals(1, authorOne.authorRole().size());
+    assertEquals(
+        "102^^^&amp;1.3.6.1.4.1.19376.3.276.1.5.14&amp;ISO", authorOne.authorRole().get(0));
+
+    // Author 2
+    Author authorTwo = authors.get(1);
+    assertEquals(1, authorTwo.authorSpecialty().size());
+    assertEquals("141903^^^&amp;1.2.276.0.76.5.514&amp;ISO", authorTwo.authorSpecialty().get(0));
+    assertEquals(1, authorTwo.authorInstitution().size());
+    assertEquals("Arztpraxis Dr. Thilo Weber", authorTwo.authorInstitution().get(0).name());
+    assertNull(authorTwo.authorInstitution().get(0).identifier());
+
+    // Author 3
+    Author authorThree = authors.get(2);
+    assertEquals(1, authorThree.authorInstitution().size());
+    assertEquals("Arztpraxis Dr. Thilo Weber", authorThree.authorInstitution().get(0).name());
+    assertEquals("1-2c47sd-e518", authorThree.authorInstitution().get(0).identifier());
+  }
+
+  private ClassificationType createAuthorWithAuthorPersonAndAuthorRole() {
+    final ClassificationType classificationType = new ClassificationType();
+    classificationType.setClassificationScheme(ClassificationScheme.DOCUMENT_ENTRY_AUTHOR.getUrn());
+    createSlot(
+        classificationType,
+        AUTHOR_PERSON,
+        "X110552837^Mustermann^Erika Sophie^^^^^^&amp;1.2.276.0.76.4.8&amp;");
+    createSlot(
+        classificationType, AUTHOR_ROLE, "102^^^&amp;1.3.6.1.4.1.19376.3.276.1.5.14&amp;ISO");
+    return classificationType;
+  }
+
+  private ClassificationType createAuthorWithAuthorRoleSpecialityInstitution() {
+    final ClassificationType classificationType = new ClassificationType();
+    classificationType.setClassificationScheme(ClassificationScheme.DOCUMENT_ENTRY_AUTHOR.getUrn());
+    createSlot(classificationType, AUTHOR_INSTITUTION, "Arztpraxis Dr. Thilo Weber");
+    createSlot(classificationType, AUTHOR_ROLE, "11^^^&amp;1.3.6.1.4.1.19376.3.276.1.5.13&amp;ISO");
+    createSlot(classificationType, AUTHOR_SPECIALTY, "141903^^^&amp;1.2.276.0.76.5.514&amp;ISO");
+    return classificationType;
+  }
+
+  private ClassificationType createAuthorWithAuthorInstitution() {
+    final ClassificationType classificationType = new ClassificationType();
+    classificationType.setClassificationScheme(ClassificationScheme.DOCUMENT_ENTRY_AUTHOR.getUrn());
+    createSlot(
+        classificationType,
+        AUTHOR_INSTITUTION,
+        "Arztpraxis Dr. Thilo Weber^^^^^&1.2.276.0.76.4.188&ISO^^^^1-2c47sd-e518");
+    createSlot(classificationType, AUTHOR_ROLE, "11^^^&amp;1.3.6.1.4.1.19376.3.276.1.5.13&amp;ISO");
+    createSlot(classificationType, AUTHOR_SPECIALTY, "141903^^^&amp;1.2.276.0.76.5.514&amp;ISO");
+    return classificationType;
+  }
+
+  private ExtrinsicObjectType createAuthorsTest() {
+    final ExtrinsicObjectType extrinsicObjectType = new ExtrinsicObjectType();
+
+    final ClassificationType authorOne = createAuthorWithAuthorPersonAndAuthorRole();
+    final ClassificationType authorTwo = createAuthorWithAuthorRoleSpecialityInstitution();
+    final ClassificationType authorThree = createAuthorWithAuthorInstitution();
+
+    extrinsicObjectType.getClassification().add(authorOne);
+    extrinsicObjectType.getClassification().add(authorTwo);
+    extrinsicObjectType.getClassification().add(authorThree);
+    return extrinsicObjectType;
   }
 }

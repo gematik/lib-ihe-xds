@@ -1,6 +1,9 @@
-/*
- * Copyright 2023 gematik GmbH
- *
+/*-
+ * #%L
+ * lib-ihe-xds
+ * %%
+ * Copyright (C) 2023 - 2025 gematik GmbH
+ * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,13 +15,15 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * *******
+ *
+ * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * #L%
  */
-
 package de.gematik.epa.conversion.internal.response;
 
-import static de.gematik.epa.conversion.internal.response.RegistryObjectListMapper.getCodeFromClassification;
-import static de.gematik.epa.conversion.internal.response.RegistryObjectListMapper.getCodeFromClassifications;
-import static de.gematik.epa.conversion.internal.response.RegistryObjectListMapper.toAuthor;
+import static de.gematik.epa.conversion.internal.response.RegistryObjectListMapper.*;
 
 import de.gematik.epa.conversion.internal.requests.factories.classification.ClassificationScheme;
 import de.gematik.epa.conversion.internal.requests.factories.externalidentifier.ExternalIdentifierScheme;
@@ -86,7 +91,8 @@ public class DocumentMetadataMapper {
               repositoryUniqueId(value),
               RegistryObjectListMapper.homeCommunityId(value),
               RegistryObjectListMapper.externalIdentifierValue(
-                  value, ExternalIdentifierScheme.DOCUMENT_ENTRY_PATIENT));
+                  value, ExternalIdentifierScheme.DOCUMENT_ENTRY_PATIENT),
+              sourcePatientId(value));
       documentMetadataList.add(documentMetadata);
     }
   }
@@ -158,5 +164,9 @@ public class DocumentMetadataMapper {
 
   static String repositoryUniqueId(ExtrinsicObjectType value) {
     return SlotFactory.getValueFromSlot(value.getSlot(), SlotName.REPOSITORY_UNIQUE_ID);
+  }
+
+  static String sourcePatientId(ExtrinsicObjectType value) {
+    return SlotFactory.getValueFromSlot(value.getSlot(), SlotName.SOURCE_PATIENT_ID);
   }
 }
