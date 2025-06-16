@@ -127,6 +127,6 @@ public enum EventCode implements CodeInterface {
     public static final String DMP = "1.2.276.0.76.5.223";
     public static final String KDL_2024 = "1.2.276.0.76.5.552";
     public static final String KDL_2025 = "1.2.276.0.76.5.553"; // allowed with epa 3.1.x
-    public static final String SCT = "\"http://snomed.info/sct\""; // CS as URL compare
+    public static final String SCT = "http://snomed.info/sct"; // CS as URL compare
   }
 }

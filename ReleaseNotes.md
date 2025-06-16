@@ -2,6 +2,16 @@
 
 # Release notes lib-ihe-xds
 
+## Release 3.0.0
+
+### Updated
+
+- Changed release of artifact to Maven Central
+
+### fixed
+
+- Removed unnecessary quotes from the SCT URL in EventCode for correct comparison
+
 ## Release 2.0.3
 
 ### fixed

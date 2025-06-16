@@ -6,7 +6,7 @@
     <groupId>de.gematik.epa</groupId>
     <artifactId>lib-ihe-xds</artifactId>
     <packaging>jar</packaging>
-    <version>2.0.3</version>
+    <version>3.0.0</version>
     <name>lib-ihe-xds</name>
     <description>A lib to create and process IHE requests from/to more descriptive Java records</description>
     <url>https://github.com/gematik/lib-ihe-xds</url>
@@ -29,21 +29,23 @@
         <!-- Dependencies -->
         <asm.version>9.8</asm.version>
         <jacoco.version>0.8.13</jacoco.version>
-        <pmd-java.version>7.13.0</pmd-java.version>
-        <junit.version>5.12.2</junit.version>
-        <junit.platform.version>1.12.2</junit.platform.version>
+        <pmd-java.version>7.14.0</pmd-java.version>
+        <junit.version>5.13.1</junit.version>
+        <junit.platform.version>1.13.1</junit.platform.version>
         <!-- Plugin Versions -->
         <compiler.plugin.version>3.14.0</compiler.plugin.version>
         <fmt.maven.plugin.version>2.27</fmt.maven.plugin.version>
         <pmd.plugin.version>3.26.0</pmd.plugin.version>
         <surefire.plugin.version>3.5.3</surefire.plugin.version>
         <enforcer.plugin.version>3.5.0</enforcer.plugin.version>
-        <helper.plugin.version>3.6.0</helper.plugin.version>
+        <helper.plugin.version>3.6.1</helper.plugin.version>
         <source.plugin.version>3.3.1</source.plugin.version>
         <javadoc.plugin.version>3.11.2</javadoc.plugin.version>
         <cxf-xjc.version>4.1.0</cxf-xjc.version>
         <xml.bind.jaxb.version>2.3.1</xml.bind.jaxb.version>
-        <jackson.version>2.19.0</jackson.version>
+        <jackson.version>2.19.1</jackson.version>
+        <maven-gpg-plugin.version>3.2.7</maven-gpg-plugin.version>
+        <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
     </properties>
 
 
@@ -463,7 +465,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>3.2.7</version>
+                        <version>${maven-gpg-plugin.version}</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
@@ -482,15 +484,13 @@
                         </executions>
                     </plugin>
                     <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.7.0</version>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>${central-publishing-maven-plugin.version}</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <serverId>ossrh</serverId>
-                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                            <stagingProgressTimeoutMinutes>20</stagingProgressTimeoutMinutes>
+                            <publishingServerId>central</publishingServerId>
+                            <autoPublish>true</autoPublish>
                         </configuration>
                     </plugin>
                 </plugins>
