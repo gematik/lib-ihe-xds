@@ -18,7 +18,8 @@
  *
  * *******
  *
- * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * For additional notes and disclaimer from gematik and in case of changes
+ * by gematik, find details in the "Readme" file.
  * #L%
  */
 package de.gematik.epa.conversion.internal.enumerated;
@@ -56,6 +57,7 @@ class CodeInterfaceTest {
           case "N" -> ConfidentialityCode.NORMAL;
           case "R" -> ConfidentialityCode.RESTRICTED;
           case "V" -> ConfidentialityCode.VERY_RESTRICTED;
+          case "CON" -> ConfidentialityCode.CON;
           default -> null;
         };
     ConfidentialityCode actual = CodeInterface.fromValue(value, enumClass);
