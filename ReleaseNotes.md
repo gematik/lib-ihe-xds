@@ -2,6 +2,13 @@
 
 # Release notes lib-ihe-xds
 
+## Release 3.0.1
+
+### added
+
+- Support Confidentiality Code "CON" in DocumentMetadata
+- Support PracticeSettingCode "NPSY"
+
 ## Release 3.0.0
 
 ### Updated

@@ -18,7 +18,8 @@
  *
  * *******
  *
- * For additional notes and disclaimer from gematik and in case of changes by gematik find details in the "Readme" file.
+ * For additional notes and disclaimer from gematik and in case of changes
+ * by gematik, find details in the "Readme" file.
  * #L%
  */
 package de.gematik.epa.conversion.internal.enumerated;
@@ -165,7 +166,9 @@ public enum PracticeSettingCode implements CodeInterface {
   ALLGEMEINE_ZAHNHEILKUNDE(
       "MZAH", Fachrichtung.ZAHNAERZTLICHE_FACHRICHTUNGEN, "Allgemeine Zahnheilkunde"),
   FZA_OEFFENTLICHES_GESUNDHEITSWESEN(
-      "ZGES", Fachrichtung.ZAHNAERZTLICHE_FACHRICHTUNGEN, "FZA Öffentliches Gesundheitswesen");
+      "ZGES", Fachrichtung.ZAHNAERZTLICHE_FACHRICHTUNGEN, "FZA Öffentliches Gesundheitswesen"),
+  NEUROPSYCHIATRIE_NEUROPSYCHOTHERAPIE(
+      "NPSY", Fachrichtung.AERZTLICHE_FACHRICHTUNGEN, "Neuropsychiatrie/Neuropsychotherapie");
 
   private final String value;
   private final String codingScheme;
