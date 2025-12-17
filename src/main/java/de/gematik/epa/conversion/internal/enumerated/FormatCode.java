@@ -35,6 +35,10 @@ public enum FormatCode implements CodeInterface {
       "urn:gematik:ig:Arbeitsunfaehigkeitsbescheinigung:v1.1",
       CodingScheme.DOK_DE,
       "Arbeitsunfähigkeitsbescheinigung (gematik) v1.1"),
+  ARBEITSUNFAEHIGKEITSBESCHEINIGUNG_V12(
+      "urn:gematik:ig:Arbeitsunfaehigkeitsbescheinigung:v1.2",
+      CodingScheme.DOK_DE,
+      "Arbeitsunfähigkeitsbescheinigung (gematik) v1.2"),
   ARZTBRIEF("urn:gematik:ig:Arztbrief:r3.1", CodingScheme.DOK_DE, "Arztbrief"),
   IMPFPASS("urn:gematik:ig:Impfausweis:v1.1.0", CodingScheme.DOK_DE, "Impfpass"),
   KINDERUNTERSUCHUNGSHEFT_NOTIZEN(
@@ -47,6 +51,10 @@ public enum FormatCode implements CodeInterface {
       "Kinderuntersuchungsheft Notizen"),
   KINDERUNTERSUCHUNGSHEFT_TEILNAHMEKARTE(
       "urn:gematik:ig:KinderuntersuchungsheftTeilnahmekarte:v1.0.0",
+      CodingScheme.DOK_DE,
+      "Kinderuntersuchungsheft Teilnahmekarte"),
+  KINDERUNTERSUCHUNGSHEFT_TEILNAHMEKARTE_V101(
+      "urn:gematik:ig:KinderuntersuchungsheftTeilnahmekarte:v1.0.1",
       CodingScheme.DOK_DE,
       "Kinderuntersuchungsheft Teilnahmekarte"),
   KINDERUNTERSUCHUNGSHEFT_UNTERSUCHUNGEN(
@@ -69,7 +77,27 @@ public enum FormatCode implements CodeInterface {
   BEFUND("urn:ihe:iti:xds:2017:mimeTypeSufficient", CodingScheme.IHE, "Befund"),
   PATIENTEN_KURZ_AKTE("urn:gematik:ig:pka:v1.0", CodingScheme.DOK_DE, "Patientenkurzakte"),
   DIGA("urn:gematik:ig:diga:v1.1", CodingScheme.DOK_DE, "DiGA (gematik) v1.1"),
-  EDMP_DATENSATZ(
+
+  // eDMP
+  EDMP_ASTHMA("urn:gematik:ig:DMP-Asthma:v4", CodingScheme.DOK_DE, "eDMP Asthma (gematik)"),
+  EDMP_BRK("urn:gematik:ig:DMP-BRK:v4", CodingScheme.DOK_DE, "eDMP Brustkrebs (gematik)"),
+  EDMP_COPD(
+      "urn:gematik:ig:DMP-COPD:v4",
+      CodingScheme.DOK_DE,
+      "eDMP Chronic Obstrusive Pulmonary Disease (gematik)"),
+  EDMP_CR(
+      "urn:gematik:ig:DMP-Rueckenschmerz:v1", CodingScheme.DOK_DE, "eDMP Rückenschmerz (gematik)"),
+  EDMP_DEPRESSION(
+      "urn:gematik:ig:DMP-Depression:v1", CodingScheme.DOK_DE, "eDMP Depression (gematik)"),
+  EDMP_HI("urn:gematik:ig:DMP-HI:v1", CodingScheme.DOK_DE, "eDMP Herzinsuffizienz (gematik)"),
+  EDMP_KHK(
+      "urn:gematik:ig:DMP-KHK:v4", CodingScheme.DOK_DE, "eDMP Koronare Herzkrankheit (gematik)"),
+  EDMP_OST("urn:gematik:ig:DMP-OST:v1", CodingScheme.DOK_DE, "eDMP Osteoporose (gematik)"),
+  EDMP_RHEUMA(
+      "urn:gematik:ig:DMP-Rheuma:v1", CodingScheme.DOK_DE, "eDMP Rheumatoide Arthritis (gematik)"),
+  EDMP_DM1(
+      "urn:gematik:ig:DMP-DM1:v5", CodingScheme.DOK_DE, "eDMP Diabetes mellitus Typ 1 (gematik)"),
+  EDMP_DM2(
       "urn:gematik:ig:DMP-DM2:v6", CodingScheme.DOK_DE, "eDMP Diabetes mellitus Typ 2 (gematik)");
 
   private final String value;
