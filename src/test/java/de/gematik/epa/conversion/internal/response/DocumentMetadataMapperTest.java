@@ -115,7 +115,7 @@ class DocumentMetadataMapperTest extends RegistryObjectListUtils {
     createClassification(
         extrinsicObjectType,
         ClassificationScheme.DOCUMENT_ENTRY_FORMAT,
-        FormatCode.EDMP_DATENSATZ.getValue());
+        FormatCode.EDMP_DM2.getValue());
 
     final String formatCode = DocumentMetadataMapper.formatCode(extrinsicObjectType);
     assertEquals("urn:gematik:ig:DMP-DM2:v6", formatCode);
