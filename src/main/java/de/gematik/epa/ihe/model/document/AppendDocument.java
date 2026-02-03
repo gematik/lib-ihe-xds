@@ -24,14 +24,14 @@
  */
 package de.gematik.epa.ihe.model.document;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import de.gematik.epa.ihe.model.simple.ByteArray;
 
-@RequiredArgsConstructor
-@Getter
-public enum ObjectType {
-  DOCUMENT_ENTRY("urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1"),
-  FOLDER("urn:uuid:d9d542f3-6cc4-48b6-8870-ea235fbc94c2"),
-  SUBMISSION_SET("urn:uuid:a54d6aa5-d40d-43f9-88c5-b4633d873bdd");
-  private final String id;
+public record AppendDocument(
+    ByteArray documentData, DocumentMetadata documentMetadata, String entryUUIDOfDocumentToAppend)
+    implements DocumentInterface {
+
+  public AppendDocument(
+      byte[] documentData, DocumentMetadata documentMetadata, String entryUUIDOfDocumentToAppend) {
+    this(ByteArray.of(documentData), documentMetadata, entryUUIDOfDocumentToAppend);
+  }
 }

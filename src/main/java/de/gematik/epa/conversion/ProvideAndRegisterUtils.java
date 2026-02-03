@@ -2,7 +2,7 @@
  * #%L
  * lib-ihe-xds
  * %%
- * Copyright (C) 2023 - 2025 gematik GmbH
+ * Copyright (C) 2023 - 2026 gematik GmbH
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,6 +33,7 @@ import de.gematik.epa.conversion.internal.requests.factories.classification.Regi
 import de.gematik.epa.conversion.internal.requests.factories.externalidentifier.ExternalIdentifierFactory;
 import de.gematik.epa.conversion.internal.requests.factories.slot.SlotFactory;
 import de.gematik.epa.conversion.internal.requests.factories.slot.SlotName;
+import de.gematik.epa.ihe.model.request.DocumentAppendRequest;
 import de.gematik.epa.ihe.model.request.DocumentReplaceRequest;
 import de.gematik.epa.ihe.model.request.DocumentSubmissionRequest;
 import de.gematik.epa.ihe.model.request.SubmissionRequestInterface;
@@ -91,6 +92,8 @@ public class ProvideAndRegisterUtils {
 
     if (submissionRequest instanceof DocumentReplaceRequest) {
       registryObjectList.getIdentifiable().addAll(createReplaceAssociations(docGenerators));
+    } else if (submissionRequest instanceof DocumentAppendRequest) {
+      registryObjectList.getIdentifiable().addAll(createAppendAssociations(docGenerators));
     }
 
     registryObjectList
@@ -175,5 +178,11 @@ public class ProvideAndRegisterUtils {
       DocumentGenerator.DocumentGeneratorList docGenerators) {
     return AssociationGenerator.toAssociationJaxbElements(
         AssociationGenerator.createDocumentReplaceAssociations(docGenerators));
+  }
+
+  private static List<JAXBElement<AssociationType1>> createAppendAssociations(
+      DocumentGenerator.DocumentGeneratorList docGenerators) {
+    return AssociationGenerator.toAssociationJaxbElements(
+        AssociationGenerator.createDocumentAppendAssociations(docGenerators));
   }
 }

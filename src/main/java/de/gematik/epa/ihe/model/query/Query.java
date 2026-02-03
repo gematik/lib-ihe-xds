@@ -2,7 +2,7 @@
  * #%L
  * lib-ihe-xds
  * %%
- * Copyright (C) 2023 - 2025 gematik GmbH
+ * Copyright (C) 2023 - 2026 gematik GmbH
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -69,7 +69,10 @@ public enum Query {
   FIND_DOCUMENTS_BY_REFERENCE_ID(
       "FindDocumentsByReferenceId",
       "urn:uuid:12941a89-e02e-4be5-967c-ce4bfc8fe492",
-      PatientIdNames.XDS_DOCUMENT_ENTRY_PATIENT_ID);
+      PatientIdNames.XDS_DOCUMENT_ENTRY_PATIENT_ID),
+  GET_DOCUMENTS_AND_ASSOCIATIONS(
+      "GetDocumentsAndAssociations", "urn:uuid:bab9529a-4a10-40b3-a01f-f68a615d247a", null),
+  GET_ASSOCIATIONS("GetAssociations", "urn:uuid:a7ae438b-4bc2-4642-93e9-be891f7bb155", null);
 
   private final String keyword;
   private final String urn;
@@ -99,7 +102,7 @@ public enum Query {
     return Arrays.stream(values())
         .filter(queryType -> queryType.getKeyword().equals(value))
         .findFirst()
-        .orElseThrow();
+        .orElseThrow(() -> new IllegalArgumentException("Unknown query type: " + value));
   }
 
   @JsonValue

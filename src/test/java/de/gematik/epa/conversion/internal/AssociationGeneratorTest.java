@@ -2,7 +2,7 @@
  * #%L
  * lib-ihe-xds
  * %%
- * Copyright (C) 2023 - 2025 gematik GmbH
+ * Copyright (C) 2023 - 2026 gematik GmbH
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,6 +52,22 @@ class AssociationGeneratorTest {
     assertEquals(docGenerators.size(), associations.size());
     assertArrayEquals(
         docGenerators.stream().map(DocumentGenerator::idOfDocumentToReplace).toArray(),
+        associations.stream().map(AssociationType1::getTargetObject).toArray());
+  }
+
+  @Test
+  void createDocumentAppendAssociationsTest() {
+    var request = ResourceLoader.documentsAppendRequest(ResourceLoader.APPEND_DOCUMENTS_REQUEST);
+    var docGenerators = DocumentGenerator.generators(request.documents(), request.insurantId());
+
+    var associations =
+        Assertions.assertDoesNotThrow(
+            () -> AssociationGenerator.createDocumentAppendAssociations(docGenerators));
+
+    assertNotNull(associations);
+    assertEquals(docGenerators.size(), associations.size());
+    assertArrayEquals(
+        docGenerators.stream().map(DocumentGenerator::idOfDocumentToAppend).toArray(),
         associations.stream().map(AssociationType1::getTargetObject).toArray());
   }
 

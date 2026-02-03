@@ -2,7 +2,7 @@
  * #%L
  * lib-ihe-xds
  * %%
- * Copyright (C) 2023 - 2025 gematik GmbH
+ * Copyright (C) 2023 - 2026 gematik GmbH
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ public class AssociationGenerator {
       "urn:oasis:names:tc:ebxml-regrep:AssociationType:HasMember";
 
   public static final String ASSOCIATION_TYPE_REPLACE = "urn:ihe:iti:2007:AssociationType:RPLC";
+  public static final String ASSOCIATION_TYPE_APPEND = "urn:ihe:iti:2007:AssociationType:APND";
 
   public static List<AssociationType1> createFolderToDocumentAssociations(
       DocumentGenerator.DocumentGeneratorList docGenerators) {
@@ -56,6 +57,14 @@ public class AssociationGenerator {
     return docGenerators.stream()
         .filter(dg -> Objects.nonNull(dg.idOfDocumentToReplace()))
         .map(AssociationGenerator::createReplaceAssociation)
+        .toList();
+  }
+
+  public static List<AssociationType1> createDocumentAppendAssociations(
+      DocumentGenerator.DocumentGeneratorList docGenerators) {
+    return docGenerators.stream()
+        .filter(dg -> Objects.nonNull(dg.idOfDocumentToAppend()))
+        .map(AssociationGenerator::createAppendAssociation)
         .toList();
   }
 
@@ -111,6 +120,13 @@ public class AssociationGenerator {
   private static AssociationType1 createReplaceAssociation(DocumentGenerator docGenerator) {
     var association = createNewAssociation(docGenerator.idOfDocumentToReplace());
     association.setAssociationType(ASSOCIATION_TYPE_REPLACE);
+    association.setSourceObject(docGenerator.id());
+    return association;
+  }
+
+  private static AssociationType1 createAppendAssociation(DocumentGenerator docGenerator) {
+    var association = createNewAssociation(docGenerator.idOfDocumentToAppend());
+    association.setAssociationType(ASSOCIATION_TYPE_APPEND);
     association.setSourceObject(docGenerator.id());
     return association;
   }

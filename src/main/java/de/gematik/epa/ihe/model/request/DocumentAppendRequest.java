@@ -22,16 +22,15 @@
  * by gematik, find details in the "Readme" file.
  * #L%
  */
-package de.gematik.epa.ihe.model.document;
+package de.gematik.epa.ihe.model.request;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import de.gematik.epa.ihe.model.document.AppendDocument;
+import de.gematik.epa.ihe.model.simple.InsurantId;
+import de.gematik.epa.ihe.model.simple.SubmissionSetMetadata;
+import java.util.List;
 
-@RequiredArgsConstructor
-@Getter
-public enum ObjectType {
-  DOCUMENT_ENTRY("urn:uuid:7edca82f-054d-47f2-a032-9b2a5b5186c1"),
-  FOLDER("urn:uuid:d9d542f3-6cc4-48b6-8870-ea235fbc94c2"),
-  SUBMISSION_SET("urn:uuid:a54d6aa5-d40d-43f9-88c5-b4633d873bdd");
-  private final String id;
-}
+public record DocumentAppendRequest(
+    InsurantId insurantId,
+    List<AppendDocument> documents,
+    SubmissionSetMetadata submissionSetMetadata)
+    implements SubmissionRequestInterface<AppendDocument> {}

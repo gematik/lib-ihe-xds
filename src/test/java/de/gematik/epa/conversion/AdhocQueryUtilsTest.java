@@ -2,7 +2,7 @@
  * #%L
  * lib-ihe-xds
  * %%
- * Copyright (C) 2023 - 2025 gematik GmbH
+ * Copyright (C) 2023 - 2026 gematik GmbH
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -302,5 +302,48 @@ class AdhocQueryUtilsTest {
                 values.stream().map(value -> value.replace("('", "").replace("')", "")).toList())
             + "')";
     assertEquals(formattedEventCodeList, actualFormatted);
+  }
+
+  @ParameterizedTest
+  @EnumSource(
+      value = QueryKey.class,
+      names = {"XDS_DOCUMENT_ENTRY_UNIQUE_ID", "XDS_DOCUMENT_ENTRY_ENTRY_UUID"})
+  void generateGetDocumentsAndAssociationsRequest(QueryKey queryKey) {
+    Map<QueryKey, List<String>> queryMetadata = new EnumMap<>(QueryKey.class);
+    String idValue = "1.2.3.4";
+    queryMetadata.put(queryKey, List.of(idValue));
+
+    var testdata =
+        new FindRequest(
+            MessageUtils.createInsurantId(),
+            ReturnType.OBJECT_REF,
+            Query.GET_DOCUMENTS_AND_ASSOCIATIONS,
+            queryMetadata);
+
+    var result = assertDoesNotThrow(() -> AdhocQueryUtils.generateFindRequestBody(testdata));
+    assertNotNull(result);
+
+    var adhocQuery = result.getAdhocQuery();
+    assertNotNull(adhocQuery);
+    assertEquals(Query.GET_DOCUMENTS_AND_ASSOCIATIONS.getUrn(), adhocQuery.getId());
+
+    // This query has no patientId slot
+    assertEquals(1, queryMetadata.size());
+    assertEquals(1, adhocQuery.getSlot().size());
+
+    String actualIdValue =
+        adhocQuery.getSlot().stream()
+            .filter(slot -> slot.getName().equals(queryKey.value()))
+            .flatMap(slot -> slot.getValueList().getValue().stream())
+            .findFirst()
+            .orElse(null);
+    String formattedIdValue = "('1.2.3.4')";
+    assertEquals(formattedIdValue, actualIdValue);
+
+    long patientIdSlotCount =
+        adhocQuery.getSlot().stream()
+            .filter(slot -> slot.getName().equals(XDS_DOCUMENT_ENTRY_PATIENT_ID.value()))
+            .count();
+    assertEquals(0, patientIdSlotCount);
   }
 }

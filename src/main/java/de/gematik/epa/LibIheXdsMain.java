@@ -2,7 +2,7 @@
  * #%L
  * lib-ihe-xds
  * %%
- * Copyright (C) 2023 - 2025 gematik GmbH
+ * Copyright (C) 2023 - 2026 gematik GmbH
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,6 +72,20 @@ public class LibIheXdsMain {
       de.gematik.epa.ihe.model.request.DocumentReplaceRequest documentReplaceRequest) {
     return de.gematik.epa.conversion.ProvideAndRegisterUtils.toProvideAndRegisterDocumentSetRequest(
         documentReplaceRequest);
+  }
+
+  /**
+   * Creates a {@code urn:ihe:iti:xds-b:2007:ProvideAndRegisterDocumentSetRequestType} from a {@link
+   * de.gematik.epa.ihe.model.request.DocumentAppendRequest}.<br>
+   * The created request is meant to append documents to an already existing document.
+   *
+   * @param documentAppendRequest input data
+   * @return {@link ProvideAndRegisterDocumentSetRequestType}
+   */
+  public static ProvideAndRegisterDocumentSetRequestType convertDocumentAppendRequest(
+      de.gematik.epa.ihe.model.request.DocumentAppendRequest documentAppendRequest) {
+    return de.gematik.epa.conversion.ProvideAndRegisterUtils.toProvideAndRegisterDocumentSetRequest(
+        documentAppendRequest);
   }
 
   /**
