@@ -1,0 +1,101 @@
+{
+  "insurantId": {
+    "root": "1.2.276.0.76.4.8",
+    "extension": "X110425143"
+  },
+  "documents": [
+    {
+      "documentMetadata": {
+        "author": [
+          {
+            "identifier": "165746304",
+            "familyName": "Lichterbaum",
+            "givenName": "Martin",
+            "otherName": "Markus",
+            "nameAffix": "von",
+            "title": "Dr.",
+            "authorInstitution": [
+              {
+                "name": "arztpraxis",
+                "identifier": "1-SMC-B-Testkarte-883110000092397"
+              }
+            ],
+            "authorRole": [
+              "11^^^&1.3.6.1.4.1.19376.3.276.1.5.13&ISO"
+            ],
+            "authorTelecommunication": [
+              "1234567",
+              "martin.markus@lichterbaum.arzt"
+            ],
+            "authorSpecialty": [
+              "3",
+              "130"
+            ]
+          },
+          {
+            "identifier": "165746304",
+            "familyName": "Test2",
+            "otherName": "MiddleName",
+            "authorInstitution": [
+              {
+                "name": "arztpraxis",
+                "identifier": "1-SMC-B-Testkarte-883110000092397"
+              }
+            ],
+            "authorRole": [
+              "11^^^&1.3.6.1.4.1.19376.3.276.1.5.13&ISO"
+            ]
+          }
+        ],
+        "classCode": "AUS",
+        "eventCodeList": [
+          "H1",
+          "H4"
+        ],
+        "confidentialityCode": [
+          "N",
+          "V"
+        ],
+        "creationTime": "2022-09-15T11:12:01Z",
+        "formatCode": "urn:gematik:ig:KinderuntersuchungsheftUntersuchungen:v1.0.0",
+        "healthcareFacilityTypeCode": "PRA",
+        "languageCode": "de-DE",
+        "mimeType": "application/fhir+xml",
+        "practiceSettingCode": "ALLG",
+        "title": "Untersuchungen",
+        "serviceStartTime": "2021-03-01T08:28:55.194Z",
+        "serviceStopTime": "2021-03-01T08:38:55.194Z",
+        "typeCode": "BERI",
+        "uri": "untersuchungen.xml",
+        "comments": "Dies ist ein Test Dokument der lib-ihe-xds",
+        "legalAuthenticator": "balbla",
+        "referenceIdList": [
+          "Ich bin eine Reference Id"
+        ],
+        "uniqueId": "2.25.12.3",
+        "entryUUID": "45125-123535-3525-325325"
+      },
+      "documentData": "PD94bWwgdmV0KDAB4Qo=",
+      "entryUUIDOfDocumentToAppend": "49ß058-04958349-43958-30958"
+    }
+  ],
+  "submissionSetMetadata": {
+    "authors": [
+      {
+        "identifier": "30432750",
+        "familyName": "Dunkelbaum",
+        "givenName": "Marta",
+        "title": "Prof. Dr.",
+        "authorInstitution": [
+          {
+            "name": "arztpraxis",
+            "identifier": "1-SMC-B-Testkarte-883110000092397"
+          }
+        ],
+        "authorRole": [
+          "11^^^&1.3.6.1.4.1.19376.3.276.1.5.13&ISO"
+        ]
+      }
+    ]
+  }
+}

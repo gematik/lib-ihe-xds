@@ -2,7 +2,7 @@
  * #%L
  * lib-ihe-xds
  * %%
- * Copyright (C) 2023 - 2025 gematik GmbH
+ * Copyright (C) 2023 - 2026 gematik GmbH
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ import de.gematik.epa.conversion.internal.requests.factories.OasisObjectType;
 import de.gematik.epa.conversion.internal.requests.factories.classification.ClassificationScheme;
 import de.gematik.epa.conversion.internal.requests.factories.externalidentifier.ExternalIdentifierScheme;
 import de.gematik.epa.conversion.internal.requests.factories.slot.SlotName;
+import de.gematik.epa.ihe.model.document.AppendDocument;
 import de.gematik.epa.ihe.model.document.ReplaceDocument;
 import de.gematik.epa.ihe.model.request.DocumentSubmissionRequest;
 import de.gematik.epa.ihe.model.simple.SubmissionSetMetadata;
@@ -107,6 +108,38 @@ class ProvideAndRegisterUtilsCreateSubmissionSetTest {
     assertEquals(request.documents().size(), replaceAssociations.size());
     assertArrayEquals(
         request.documents().stream().map(ReplaceDocument::entryUUIDOfDocumentToReplace).toArray(),
+        replaceAssociations.stream().map(AssociationType1::getTargetObject).toArray());
+    assertArrayEquals(
+        result.getDocument().stream().map(Document::getId).toArray(),
+        replaceAssociations.stream().map(AssociationType1::getSourceObject).toArray());
+  }
+
+  @Test
+  void createSubmissionSetWithDocumentAppendTest() {
+    var request = ResourceLoader.documentsAppendRequest(ResourceLoader.APPEND_DOCUMENTS_REQUEST);
+
+    var result =
+        assertDoesNotThrow(
+            () -> ProvideAndRegisterUtils.toProvideAndRegisterDocumentSetRequest(request));
+
+    assertNotNull(result);
+    assertEquals(request.documents().size(), result.getDocument().size());
+
+    assertNotNull(result.getSubmitObjectsRequest());
+
+    var replaceAssociations =
+        result.getSubmitObjectsRequest().getRegistryObjectList().getIdentifiable().stream()
+            .filter(jei -> AssociationType1.class.equals(jei.getDeclaredType()))
+            .map(JAXBElement::getValue)
+            .map(AssociationType1.class::cast)
+            .filter(
+                asso ->
+                    AssociationGenerator.ASSOCIATION_TYPE_APPEND.equals(asso.getAssociationType()))
+            .toList();
+
+    assertEquals(request.documents().size(), replaceAssociations.size());
+    assertArrayEquals(
+        request.documents().stream().map(AppendDocument::entryUUIDOfDocumentToAppend).toArray(),
         replaceAssociations.stream().map(AssociationType1::getTargetObject).toArray());
     assertArrayEquals(
         result.getDocument().stream().map(Document::getId).toArray(),

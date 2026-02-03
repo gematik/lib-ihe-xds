@@ -2,7 +2,7 @@
  * #%L
  * lib-ihe-xds
  * %%
- * Copyright (C) 2023 - 2025 gematik GmbH
+ * Copyright (C) 2023 - 2026 gematik GmbH
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ public enum QueryKey {
   XDS_DOCUMENT_ENTRY_TITLE("$XDSDocumentEntryTitle"),
   XDS_DOCUMENT_ENTRY_ENTRY_UUID("$XDSDocumentEntryEntryUUID"),
   XDS_DOCUMENT_ENTRY_UNIQUE_ID("$XDSDocumentEntryUniqueId"),
+  UNIQUE_ID("$uuid"),
   XDS_DOCUMENT_ENTRY_FORMAT_CODE("$XDSDocumentEntryFormatCode"),
   XDS_DOCUMENT_ENTRY_TYPE_CODE("$XDSDocumentEntryTypeCode"),
   XDS_DOCUMENT_ENTRY_CLASS_CODE("$XDSDocumentEntryClassCode"),

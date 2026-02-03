@@ -2,7 +2,7 @@
  * #%L
  * lib-ihe-xds
  * %%
- * Copyright (C) 2023 - 2025 gematik GmbH
+ * Copyright (C) 2023 - 2026 gematik GmbH
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@
  */
 package de.gematik.epa.conversion.internal.requests;
 
+import de.gematik.epa.ihe.model.document.AppendDocument;
 import de.gematik.epa.ihe.model.document.DocumentInterface;
 import de.gematik.epa.ihe.model.document.DocumentMetadata;
 import de.gematik.epa.ihe.model.document.ReplaceDocument;
@@ -43,11 +44,12 @@ import lombok.experimental.Accessors;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.ExtrinsicObjectType;
 
 /**
- * Generator class to generate the objects, which are created from the document data ({@link
- * de.gematik.epa.ihe.model.document.Document} or {@link
- * de.gematik.epa.ihe.model.document.ReplaceDocument}) of a request.<br>
- * These are {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ExtrinsicObjectType} and {@link
- * ihe.iti.xds_b._2007.ProvideAndRegisterDocumentSetRequestType.Document}.
+ * Generator class to generate objects from the document data of a request (e.g., {@link
+ * de.gematik.epa.ihe.model.document.Document}, {@link
+ * de.gematik.epa.ihe.model.document.ReplaceDocument}, or {@link
+ * de.gematik.epa.ihe.model.document.AppendDocument}).<br>
+ * The generated objects are {@link oasis.names.tc.ebxml_regrep.xsd.rim._3.ExtrinsicObjectType} and
+ * {@link ihe.iti.xds_b._2007.ProvideAndRegisterDocumentSetRequestType.Document}.
  */
 @Getter
 @Accessors(fluent = true)
@@ -125,6 +127,19 @@ public class DocumentGenerator {
           .filter(ReplaceDocument.class::isInstance)
           .map(ReplaceDocument.class::cast)
           .map(ReplaceDocument::entryUUIDOfDocumentToReplace)
+          .orElse(null);
+
+  /**
+   * Gets the ID of the document to which the provided document is to be appended.<br>
+   * This will only return a value if the provided document is of type {@link
+   * de.gematik.epa.ihe.model.document.AppendDocument}; otherwise, null will be returned.
+   */
+  @Getter(lazy = true)
+  private final String idOfDocumentToAppend =
+      Optional.of(document)
+          .filter(AppendDocument.class::isInstance)
+          .map(AppendDocument.class::cast)
+          .map(AppendDocument::entryUUIDOfDocumentToAppend)
           .orElse(null);
 
   /**

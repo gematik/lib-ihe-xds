@@ -2,7 +2,7 @@
  * #%L
  * lib-ihe-xds
  * %%
- * Copyright (C) 2023 - 2025 gematik GmbH
+ * Copyright (C) 2023 - 2026 gematik GmbH
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,12 +28,15 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import de.gematik.epa.ihe.model.query.Query;
 import de.gematik.epa.ihe.model.query.QueryKey;
 import de.gematik.epa.ihe.model.query.ReturnType;
 import de.gematik.epa.ihe.model.request.FindRequest;
 import de.gematik.epa.unit.util.MessageUtils;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -117,5 +120,43 @@ class QueryTest {
     assertEquals(
         "('" + insurantId.getPatientIdValue() + "')",
         actual.get(0).getValueList().getValue().get(0));
+  }
+
+  @Test
+  void fillPatientIdSlotForGetDocumentsAndAssociations() {
+    Map<QueryKey, List<String>> queryMetadata = new EnumMap<>(QueryKey.class);
+    queryMetadata.put(QueryKey.XDS_DOCUMENT_ENTRY_ENTRY_UUID, List.of("1.2.3"));
+    FindRequest request =
+        new FindRequest(
+            MessageUtils.createInsurantId(),
+            null,
+            Query.GET_DOCUMENTS_AND_ASSOCIATIONS,
+            queryMetadata);
+    assertNull(Query.GET_DOCUMENTS_AND_ASSOCIATIONS.getPatientIdSlotName());
+    var slotType1 =
+        assertDoesNotThrow(
+            () -> Query.GET_DOCUMENTS_AND_ASSOCIATIONS.fillPatientIdSlot(request.insurantId()));
+    assertEquals(0, slotType1.size());
+  }
+
+  @Test
+  void testGetDocumentsAndAssociationsQuery() {
+    var query = Query.GET_DOCUMENTS_AND_ASSOCIATIONS;
+    assertEquals("GetDocumentsAndAssociations", query.getKeyword());
+    assertEquals("urn:uuid:bab9529a-4a10-40b3-a01f-f68a615d247a", query.getUrn());
+    assertNull(query.getPatientIdSlotName());
+  }
+
+  @Test
+  void testGetDocumentsAndAssociationsDeserialization() {
+    var query = assertDoesNotThrow(() -> Query.fromValue("GetDocumentsAndAssociations"));
+    assertEquals(Query.GET_DOCUMENTS_AND_ASSOCIATIONS, query);
+  }
+
+  @Test
+  void testInvalidQueryValueThrowsException() {
+    var exception =
+        assertThrows(IllegalArgumentException.class, () -> Query.fromValue("InvalidQueryName"));
+    assertTrue(exception.getMessage().contains("Unknown query type"));
   }
 }

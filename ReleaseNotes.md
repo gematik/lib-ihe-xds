@@ -2,12 +2,19 @@
 
 # Release notes lib-ihe-xds
 
+## Release 3.0.3
+
+### added
+
+- Support for AppendDocuments
+- Support for GetDocumentsAndAssociations and GetAssociations queries
+
 ## Release 3.0.2
 
 ### added
 
 - Support Format Codes for DMP documents (disease_management_programme), eAU v1.2 & participation card of a child record
-- Support Event Codes for DMP documents (disease_management_programme) 
+- Support Event Codes for DMP documents (disease_management_programme)
 
 ## Release 3.0.1
 

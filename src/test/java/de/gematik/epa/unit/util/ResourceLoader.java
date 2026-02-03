@@ -2,7 +2,7 @@
  * #%L
  * lib-ihe-xds
  * %%
- * Copyright (C) 2023 - 2025 gematik GmbH
+ * Copyright (C) 2023 - 2026 gematik GmbH
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import de.gematik.epa.ihe.model.request.DocumentAppendRequest;
 import de.gematik.epa.ihe.model.request.DocumentReplaceRequest;
 import de.gematik.epa.ihe.model.request.DocumentSubmissionRequest;
 import de.gematik.epa.ihe.model.request.RestrictedUpdateDocumentRequest;
@@ -56,6 +57,8 @@ public class ResourceLoader {
 
   public static final String REPLACE_DOCUMENTS_REQUEST =
       REQUEST_PATH + "documentReplaceRequest.json";
+
+  public static final String APPEND_DOCUMENTS_REQUEST = REQUEST_PATH + "documentAppendRequest.json";
 
   public static final String RETRIEVE_DOCUMENTS_REQUEST_PATH =
       REQUEST_PATH + "retrieveDocumentsRequest.json";
@@ -88,6 +91,11 @@ public class ResourceLoader {
   @SneakyThrows
   public static DocumentReplaceRequest documentsReplaceRequest(String template) {
     return loadDtoFromJsonFile(DocumentReplaceRequest.class, template);
+  }
+
+  @SneakyThrows
+  public static DocumentAppendRequest documentsAppendRequest(String template) {
+    return loadDtoFromJsonFile(DocumentAppendRequest.class, template);
   }
 
   public static <T> T loadDtoFromJsonFile(final Class<T> dtoClass, final String path)
