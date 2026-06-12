@@ -68,13 +68,11 @@
         "typeCode": "BERI",
         "uri": "untersuchungen.xml",
         "comments": "Dies ist ein Test Dokument der lib-ihe-xds",
-
         "legalAuthenticator": "balbla",
         "referenceIdList": [
           "Ich bin eine Reference Id"
         ],
         "uniqueId": "2.25.12.3"
-
       },
       "documentData": "PD94bWwgdmV0KDAB4Qo=",
       "folderMetadata": {
@@ -84,7 +82,6 @@
         "title": "MIO-Folder",
         "availabilityStatus": "urn:oasis:names:tc:ebxml-regrep:StatusType:Approved",
         "comments": "Das ist ein Test Folder"
-
       }
     }
   ],

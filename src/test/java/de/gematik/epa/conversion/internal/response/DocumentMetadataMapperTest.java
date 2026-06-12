@@ -169,7 +169,7 @@ class DocumentMetadataMapperTest extends RegistryObjectListUtils {
 
     final List<String> strings = DocumentMetadataMapper.eventCodeList(extrinsicObjectType);
     assertEquals(1, strings.size());
-    assertEquals("H1", strings.get(0));
+    assertEquals("H1", strings.getFirst());
   }
 
   @Test
@@ -223,7 +223,7 @@ class DocumentMetadataMapperTest extends RegistryObjectListUtils {
     final List<String> referenceIdList =
         DocumentMetadataMapper.referenceIdList(extrinsicObjectType);
     assertEquals(
-        "1.2.3.12.78.23^^^&1.2.3.4&ISO^urn:ihe:iti:xds:2013:uniqueId", referenceIdList.get(0));
+        "1.2.3.12.78.23^^^&1.2.3.4&ISO^urn:ihe:iti:xds:2013:uniqueId", referenceIdList.getFirst());
   }
 
   @Test

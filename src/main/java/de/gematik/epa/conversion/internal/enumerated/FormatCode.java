@@ -31,7 +31,11 @@ import lombok.NonNull;
 @AllArgsConstructor
 @Getter
 public enum FormatCode implements CodeInterface {
-  ARBEITSUNFAEHIGKEITSBESCHEINIGUNG(
+  ARBEITSUNFAEHIGKEITSBESCHEINIGUNG_(
+      "urn:gematik:ig:Arbeitsunfaehigkeitsbescheinigung:r4.0",
+      CodingScheme.DOK_DE,
+      "Arbeitsunfähigkeitsbescheinigung (gematik)"),
+  ARBEITSUNFAEHIGKEITSBESCHEINIGUNG_V11(
       "urn:gematik:ig:Arbeitsunfaehigkeitsbescheinigung:v1.1",
       CodingScheme.DOK_DE,
       "Arbeitsunfähigkeitsbescheinigung (gematik) v1.1"),

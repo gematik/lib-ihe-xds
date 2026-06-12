@@ -49,6 +49,7 @@ import oasis.names.tc.ebxml_regrep.xsd.rim._3.ExtrinsicObjectType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectListType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryObjectType;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.RegistryPackageType;
+import oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotListType;
 
 @UtilityClass
 public class ProvideAndRegisterUtils {
@@ -70,6 +71,9 @@ public class ProvideAndRegisterUtils {
       SubmissionRequestInterface<?> submissionRequest,
       DocumentGenerator.DocumentGeneratorList docGenerators) {
     var submitObjectRequest = new SubmitObjectsRequest();
+
+    // Set RequestSlotList with EnableDocumentReuse if any document has it enabled
+    setRequestSlotListIfNeeded(submitObjectRequest, submissionRequest);
 
     var registryObjectList = new RegistryObjectListType();
     submitObjectRequest.setRegistryObjectList(registryObjectList);
@@ -98,8 +102,7 @@ public class ProvideAndRegisterUtils {
 
     registryObjectList
         .getIdentifiable()
-        .add(
-            0,
+        .addFirst(
             de.gematik.epa.conversion.internal.requests.RegistryPackageGenerator
                 .toRegistryPackageJaxbElement(submissionSetRegistryPackage));
 
@@ -184,5 +187,27 @@ public class ProvideAndRegisterUtils {
       DocumentGenerator.DocumentGeneratorList docGenerators) {
     return AssociationGenerator.toAssociationJaxbElements(
         AssociationGenerator.createDocumentAppendAssociations(docGenerators));
+  }
+
+  /**
+   * Sets the RequestSlotList with EnableDocumentReuse slot if any document in the submission
+   * request has enableDocumentReuse set to true. According to A_27700-02, the slot must be in the
+   * RequestSlotList of the SubmitObjectsRequest.
+   *
+   * @param submitObjectRequest the request to set the slot list on
+   * @param submissionRequest the submission request containing the documents
+   */
+  private static void setRequestSlotListIfNeeded(
+      SubmitObjectsRequest submitObjectRequest, SubmissionRequestInterface<?> submissionRequest) {
+    if (submissionRequest.enableDocumentReuse() != null) {
+      var slotList = new SlotListType();
+      slotList
+          .getSlot()
+          .add(
+              SlotFactory.slot(
+                  SlotName.ENABLE_DOCUMENT_REUSE.getName(),
+                  submissionRequest.enableDocumentReuse().toString()));
+      submitObjectRequest.setRequestSlotList(slotList);
+    }
   }
 }

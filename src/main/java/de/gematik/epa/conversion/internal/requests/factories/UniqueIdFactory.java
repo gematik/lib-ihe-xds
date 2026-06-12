@@ -40,7 +40,7 @@ public class UniqueIdFactory {
 
   public static String createOID() {
     var hexString = createUUIDWithoutPrefix().replace("-", "");
-    BigInteger decimalValue = new BigInteger(hexString.substring(15), 16);
+    BigInteger decimalValue = new BigInteger(hexString, 16); // Use whole UUID
     return OID_PREFIX + "." + decimalValue;
   }
 }

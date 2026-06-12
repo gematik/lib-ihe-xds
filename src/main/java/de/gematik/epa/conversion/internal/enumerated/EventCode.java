@@ -108,20 +108,40 @@ public enum EventCode implements CodeInterface {
   EDMP_CR("09", CodeSystem.DMP, "Rueckenschmerz"),
   EDMP_RHEUMA("10", CodeSystem.DMP, "Rheuma"),
   EDMP_OST("11", CodeSystem.DMP, "Osteoporose"),
-  KRANKENHAUS_ENTLASSUNGS_BERICHT("AD010104", CodeSystem.KDL_2024, "Krankenhausentlassungsbericht"),
-  NEUGEBORENEN_SCREENING("SD070104", CodeSystem.KDL_2024, "Neugeborenenscreening"),
-  NOTFALL_DATENMANAGEMENT("ED110102", CodeSystem.KDL_2024, "Notfalldatenmanagement"),
-  EARZTBRIEF("ED110104", CodeSystem.KDL_2024, "eArztbrief"),
-  NOTFALL_DATENSATZ("AU190104", CodeSystem.KDL_2024, "Notfalldatensatz"),
-  NOTFALL_VERTRETUNGS_SCHEIN("AD020105", CodeSystem.KDL_2024, "Notfall-/Vertretungsschein"),
-  GESAMTDOKUMENTATION_STATIONAERE_VERSORGUNG(
-      "UB999997", CodeSystem.KDL_2024, "Gesamtdokumentation stationäre Versorgung"),
-  GESAMTDOKUMENTATION_AMBULANTE_VERSORGUNG(
-      "UB999998", CodeSystem.KDL_2024, "Gesamtdokumentation ambulante Versorgung"),
+  NEUGEBORENEN_SCREENING("SD070104", CodeSystem.KDL_OID_2025, "Neugeborenenscreening"),
+  NOTFALL_DATENMANAGEMENT("ED110102", CodeSystem.KDL_OID_2025, "Notfalldatenmanagement"),
+  NOTFALL_VERTRETUNGS_SCHEIN("AD020105", CodeSystem.KDL_OID_2025, "Notfall-/Vertretungsschein"),
+  // AU190104 ist deprecated, muss aber von den AS akzeptiert werden
+  NOTFALL_DATENSATZ("AU190104", CodeSystem.KDL_OID_2025, "Notfalldatensatz"),
+  EARZTBRIEF("ED110104", CodeSystem.KDL_OID_2025, "eArztbrief"),
   ENTLASSUNGSBERICHT(
-      "AD010115", CodeSystem.KDL_2025, "Entlassungsbericht"), // allowed with epa 3.1.x
-  ARZTBERICHTE("AD0101", CodeSystem.KDL_2024, "Arztberichte"), // not allowed
-  SCT_NOSE("45206002", CodeSystem.SCT, "Nose");
+      "AD010115", CodeSystem.KDL_OID_2025, "Entlassungsbericht"), // allowed with epa 3.1.x
+  GESAMTDOKUMENTATION_STATIONAERE_VERSORGUNG(
+      "UB999997", CodeSystem.KDL_URL, "Gesamtdokumentation stationäre Versorgung"),
+  GESAMTDOKUMENTATION_AMBULANTE_VERSORGUNG(
+      "UB999998", CodeSystem.KDL_URL, "Gesamtdokumentation ambulante Versorgung"),
+  ENTLASSUNGSBERICHT_INTERN(
+      "AD010103", CodeSystem.KDL_URL, "Entlassungsbericht intern"), // allowed with epa 3.1.x
+
+  ARZTBERICHTE("AD0101", CodeSystem.KDL_OID_2025, "Arztberichte"), // not allowed
+  SCT_NOSE("45206002", CodeSystem.SCT, "Nose"),
+
+  // BRI, BERI
+  ENTLASSUNGSBERICHT_EXTERN(
+      "AD010104",
+      CodeSystem.KDL_URL_2025_VERSION,
+      "Entlassungsbericht extern"), // allowed with epa 3.1.x
+  KH_ENTLASSBRIEF("ED110112", CodeSystem.KDL_OID_2024, "KH-Entlassbrief"), // allowed with epa 3.1.x
+
+  // BEF, BILD
+  SONOGRAPHIEBEFUND("DG020111", CodeSystem.KDL_URL, "Sonographiebefund"),
+  ROENTGENBEFUND("DG020110", CodeSystem.KDL_OID_2025, "Röntgenbefund"),
+
+  // DUR, AUFN
+  ANAMNESEBOGEN("AU010101", CodeSystem.KDL_URL_2024_VERSION, "Anamnesebogen"),
+
+  // BEF, GEBU
+  NEUGEBORENENSCREENING("SD070104", CodeSystem.KDL_OID_2024, "Neugeborenenscreening");
 
   private final String value;
   private final String codingScheme;
@@ -136,8 +156,11 @@ public enum EventCode implements CodeInterface {
     public static final String FALLKONTEXT_DOKUMENTENERSTELLUNG = "1.3.6.1.4.1.19376.3.276.1.5.16";
     public static final String IHE_FORMAT_CODES = "1.3.6.1.4.1.19376.1.2.3";
     public static final String DMP = "1.2.276.0.76.5.223";
-    public static final String KDL_2024 = "1.2.276.0.76.5.552";
-    public static final String KDL_2025 = "1.2.276.0.76.5.553"; // allowed with epa 3.1.x
+    public static final String KDL_OID_2025 = "1.2.276.0.76.5.553"; // allowed with epa 3.1.x
+    public static final String KDL_URL = "http://dvmd.de/fhir/CodeSystem/kdl";
+    public static final String KDL_URL_2025_VERSION = "http://dvmd.de/fhir/CodeSystem/kdl|2025";
+    public static final String KDL_OID_2024 = "1.2.276.0.76.5.552"; // allowed with epa 3.1.x
+    public static final String KDL_URL_2024_VERSION = "http://dvmd.de/fhir/CodeSystem/kdl|2024";
     public static final String SCT = "http://snomed.info/sct"; // CS as URL compare
   }
 }

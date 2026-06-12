@@ -28,9 +28,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+import de.gematik.epa.conversion.internal.requests.factories.slot.SlotName;
 import de.gematik.epa.ihe.model.document.Document;
+import de.gematik.epa.ihe.model.document.DocumentMetadata;
 import de.gematik.epa.ihe.model.request.DocumentSubmissionRequest;
+import de.gematik.epa.ihe.model.simple.SubmissionSetMetadata;
+import de.gematik.epa.unit.util.MessageUtils;
 import de.gematik.epa.unit.util.ResourceLoader;
+import java.util.List;
 import java.util.Objects;
 import org.junit.jupiter.api.Test;
 
@@ -85,5 +90,81 @@ class ProvideAndRegisterUtilsTest {
     result += 1;
 
     return result;
+  }
+
+  @Test
+  void toProvideAndRegisterDocumentSetRequestWithEnableDocumentReuseTest() {
+    // Create a document with enableDocumentReuse = true
+    var documentMetadata =
+        new DocumentMetadata(
+            null, // author
+            null, // availabilityStatus
+            null, // confidentialityCode
+            null, // classCode
+            null, // comments
+            null, // creationTime
+            null, // entryUUID
+            null, // eventCodeList
+            null, // formatCode
+            null, // hash
+            null, // healthcareFacilityTypeCode
+            "de-DE", // languageCode
+            null, // legalAuthenticator
+            "application/pdf", // mimeType
+            null, // practiceSettingCode
+            null, // referenceIdList
+            null, // serviceStartTime
+            null, // serviceStopTime
+            null, // size
+            "Test Document", // title
+            null, // typeCode
+            "2.25.12345", // uniqueId
+            null, // uri
+            null, // repositoryUniqueId
+            null, // homeCommunityId
+            null, // patientId
+            null); // sourcePatientId
+
+    var document = new Document(new byte[] {0x01, 0x02}, documentMetadata, null);
+
+    var submissionSetMetadata =
+        new SubmissionSetMetadata(
+            List.of(), null, // contentTypeCode
+            null, // title
+            null, // comments
+            null, // intendedRecipient
+            null); // uniqueId
+
+    var insurantId = MessageUtils.createInsurantId();
+
+    var request =
+        new DocumentSubmissionRequest(insurantId, List.of(document), submissionSetMetadata, true);
+
+    var testResult = ProvideAndRegisterUtils.toProvideAndRegisterDocumentSetRequest(request);
+
+    assertNotNull(testResult);
+    assertNotNull(testResult.getSubmitObjectsRequest());
+    assertNotNull(testResult.getSubmitObjectsRequest().getRequestSlotList());
+
+    var requestSlotList = testResult.getSubmitObjectsRequest().getRequestSlotList();
+    assertEquals(1, requestSlotList.getSlot().size());
+
+    var enableDocumentReuseSlot = requestSlotList.getSlot().getFirst();
+    assertEquals(SlotName.ENABLE_DOCUMENT_REUSE.getName(), enableDocumentReuseSlot.getName());
+    assertEquals("true", enableDocumentReuseSlot.getValueList().getValue().getFirst());
+  }
+
+  @Test
+  void toProvideAndRegisterDocumentSetRequestWithoutEnableDocumentReuseTest() {
+    var testdata =
+        ResourceLoader.documentSubmissionRequest(
+            ResourceLoader.PUT_DOCUMENTS_WITH_FOLDER_METADATA_REQUEST);
+
+    var testResult = ProvideAndRegisterUtils.toProvideAndRegisterDocumentSetRequest(testdata);
+
+    assertNotNull(testResult);
+    assertNull(
+        testResult.getSubmitObjectsRequest().getRequestSlotList(),
+        "RequestSlotList should be null when no document has enableDocumentReuse=true");
   }
 }

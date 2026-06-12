@@ -24,4 +24,26 @@
  */
 package de.gematik.epa.ihe.model.response;
 
-public record ProxyResponse(Boolean success, String statusMessage) {}
+import java.util.List;
+
+/**
+ * Response from the XDS Document Service.
+ *
+ * @param success indicates if the operation was successful
+ * @param statusMessage the status message from the response
+ * @param reusedDocumentMappings list of document mappings when EnableDocumentReuse was used and
+ *     duplicates were detected (as per A_27700-02)
+ */
+public record ProxyResponse(
+    Boolean success, String statusMessage, List<ReusedDocumentMapping> reusedDocumentMappings) {
+
+  /**
+   * Constructor for backward compatibility without reusedDocumentMappings.
+   *
+   * @param success indicates if the operation was successful
+   * @param statusMessage the status message from the response
+   */
+  public ProxyResponse(Boolean success, String statusMessage) {
+    this(success, statusMessage, null);
+  }
+}
