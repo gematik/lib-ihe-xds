@@ -54,7 +54,9 @@ public enum SlotName {
   HOME_COMMUNITY_ID("homeCommunityId"),
   PREVIOUS_VERSION("PreviousVersion"),
   ASSOCIATION_PROPAGATION("associationPropagation"),
-  SUBMISSION_SET_STATUS("SubmissionSetStatus");
+  SUBMISSION_SET_STATUS("SubmissionSetStatus"),
+  ENABLE_DOCUMENT_REUSE("urn:gematik:iti:xds:EnableDocumentReuse"),
+  REUSED_DOCUMENT_MAPPING("urn:gematik:iti:xds:ReusedDocumentMapping");
 
   private final String name;
 }

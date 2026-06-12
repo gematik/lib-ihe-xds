@@ -29,12 +29,15 @@ import static de.gematik.epa.conversion.internal.response.DocumentMetadataMapper
 import static de.gematik.epa.conversion.internal.response.FolderListMapper.mapFolders;
 import static de.gematik.epa.conversion.internal.response.SubmissionSetMetadataMapper.mapSubmissionSetMetadata;
 
+import de.gematik.epa.conversion.internal.requests.factories.slot.SlotName;
 import de.gematik.epa.ihe.model.response.ProxyFindResponse;
 import de.gematik.epa.ihe.model.response.ProxyResponse;
 import de.gematik.epa.ihe.model.response.RegistryObjectLists;
 import de.gematik.epa.ihe.model.response.RetrieveDocumentElement;
 import de.gematik.epa.ihe.model.response.RetrieveDocumentsResponse;
+import de.gematik.epa.ihe.model.response.ReusedDocumentMapping;
 import ihe.iti.xds_b._2007.RetrieveDocumentSetResponseType;
+import java.util.List;
 import java.util.Objects;
 import lombok.experimental.UtilityClass;
 import oasis.names.tc.ebxml_regrep.xsd.query._3.AdhocQueryResponse;
@@ -48,10 +51,21 @@ public class ResponseUtils {
   public static final String SUCCESS = "Success";
   private static final String FAILURE = "Failure";
 
+  /** Standard response */
   public static ProxyResponse toProxyResponse(RegistryResponseType registryResponse) {
     Boolean success = isSuccess(registryResponse);
     String statusMessage = createStatusMessage(registryResponse);
     return new ProxyResponse(success, statusMessage);
+  }
+
+  /** Response with reusedDocumentMappings */
+  public static ProxyResponse toProxyResponseWithReusedMappings(
+      RegistryResponseType registryResponse) {
+    Boolean success = isSuccess(registryResponse);
+    String statusMessage = createStatusMessage(registryResponse);
+    List<ReusedDocumentMapping> reusedDocumentMappings =
+        extractReusedDocumentMappings(registryResponse);
+    return new ProxyResponse(success, statusMessage, reusedDocumentMappings);
   }
 
   public static ProxyFindResponse toProxyFindResponse(AdhocQueryResponse adhocQueryResponse) {
@@ -131,6 +145,33 @@ public class ResponseUtils {
   private static boolean neitherSuccessNorFailure(String statusValue) {
     return statusValue == null
         || (!statusValue.contains(SUCCESS) && !statusValue.contains(FAILURE));
+  }
+
+  /**
+   * Extracts ReusedDocumentMapping entries from the ResponseSlotList of a RegistryResponse.
+   * According to A_27700-02, each slot with name "urn:gematik:iti:xds:ReusedDocumentMapping"
+   * contains a value in the format "$uniqueId_neu|$uniqueId_alt".
+   *
+   * @param registryResponse the registry response to extract mappings from
+   * @return list of ReusedDocumentMapping entries, or empty list if none found
+   */
+  private static List<ReusedDocumentMapping> extractReusedDocumentMappings(
+      RegistryResponseType registryResponse) {
+    if (registryResponse.getResponseSlotList() == null
+        || registryResponse.getResponseSlotList().getSlot() == null) {
+      return List.of();
+    }
+
+    return registryResponse.getResponseSlotList().getSlot().stream()
+        .filter(
+            slot ->
+                SlotName.REUSED_DOCUMENT_MAPPING.getName().equals(slot.getName())
+                    && slot.getValueList() != null
+                    && slot.getValueList().getValue() != null)
+        .flatMap(slot -> slot.getValueList().getValue().stream())
+        .map(ReusedDocumentMapping::fromSlotValue)
+        .filter(Objects::nonNull)
+        .toList();
   }
 
   private static RetrieveDocumentElement createRetrieveDocumentElement(

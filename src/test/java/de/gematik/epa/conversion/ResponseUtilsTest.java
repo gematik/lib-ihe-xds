@@ -26,11 +26,15 @@ package de.gematik.epa.conversion;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import de.gematik.epa.conversion.internal.requests.factories.slot.SlotName;
 import de.gematik.epa.ihe.model.response.ProxyResponse;
 import de.gematik.epa.ihe.model.response.RetrieveDocumentElement;
+import de.gematik.epa.ihe.model.response.ReusedDocumentMapping;
 import de.gematik.epa.unit.util.MessageUtils;
 import ihe.iti.xds_b._2007.RetrieveDocumentSetResponseType.DocumentResponse;
 import oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotListType;
+import oasis.names.tc.ebxml_regrep.xsd.rim._3.SlotType1;
+import oasis.names.tc.ebxml_regrep.xsd.rim._3.ValueListType;
 import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryError;
 import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryErrorList;
 import oasis.names.tc.ebxml_regrep.xsd.rs._3.RegistryResponseType;
@@ -198,5 +202,48 @@ class ResponseUtilsTest {
 
   private String getStatusMessageWithValues() {
     return FAILURE + "\n" + WITH_VALUES;
+  }
+
+  @Test
+  void testSuccessResponseWithReusedDocumentMappings() {
+    var registryResponseType = new RegistryResponseType();
+    registryResponseType.setStatus(SUCCESS);
+
+    // Create ResponseSlotList with ReusedDocumentMapping slot
+    var slotListType = new SlotListType();
+    var slot = new SlotType1();
+    slot.setName(SlotName.REUSED_DOCUMENT_MAPPING.getName());
+    var valueList = new ValueListType();
+    valueList.getValue().add("newUniqueId123|oldUniqueId456");
+    valueList.getValue().add("newUniqueId789|oldUniqueId012");
+    slot.setValueList(valueList);
+    slotListType.getSlot().add(slot);
+    registryResponseType.setResponseSlotList(slotListType);
+
+    final ProxyResponse proxyResponse =
+        ResponseUtils.toProxyResponseWithReusedMappings(registryResponseType);
+
+    assertEquals(true, proxyResponse.success());
+    assertNotNull(proxyResponse.reusedDocumentMappings());
+    assertEquals(2, proxyResponse.reusedDocumentMappings().size());
+
+    ReusedDocumentMapping firstMapping = proxyResponse.reusedDocumentMappings().getFirst();
+    assertEquals("newUniqueId123", firstMapping.newUniqueId());
+    assertEquals("oldUniqueId456", firstMapping.oldUniqueId());
+
+    ReusedDocumentMapping secondMapping = proxyResponse.reusedDocumentMappings().get(1);
+    assertEquals("newUniqueId789", secondMapping.newUniqueId());
+    assertEquals("oldUniqueId012", secondMapping.oldUniqueId());
+  }
+
+  @Test
+  void testSuccessResponseWithoutReusedDocumentMappings() {
+    var registryResponseType = new RegistryResponseType();
+    registryResponseType.setStatus(SUCCESS);
+
+    final ProxyResponse proxyResponse = ResponseUtils.toProxyResponse(registryResponseType);
+
+    assertEquals(true, proxyResponse.success());
+    assertNull(proxyResponse.reusedDocumentMappings());
   }
 }

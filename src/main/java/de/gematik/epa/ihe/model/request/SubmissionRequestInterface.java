@@ -36,4 +36,17 @@ public interface SubmissionRequestInterface<T extends DocumentInterface> {
   List<T> documents();
 
   SubmissionSetMetadata submissionSetMetadata();
+
+  /**
+   * Returns whether document reuse should be enabled for this submission. Only applicable for
+   * DocumentSubmissionRequest. Returns {@code null} by default, which means no EnableDocumentReuse
+   * slot will be added to the request. When {@code true} or {@code false}, the corresponding value
+   * will be set in the EnableDocumentReuse slot of the RequestSlotList.
+   *
+   * @return true if document reuse is enabled, false if explicitly disabled, null if not specified
+   */
+  @jakarta.annotation.Nullable
+  default Boolean enableDocumentReuse() {
+    return null;
+  }
 }

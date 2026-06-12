@@ -24,11 +24,23 @@
  */
 package de.gematik.epa.ihe.model.request;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import de.gematik.epa.ihe.model.document.Document;
 import de.gematik.epa.ihe.model.simple.InsurantId;
 import de.gematik.epa.ihe.model.simple.SubmissionSetMetadata;
 import java.util.List;
 
 public record DocumentSubmissionRequest(
-    InsurantId insurantId, List<Document> documents, SubmissionSetMetadata submissionSetMetadata)
-    implements SubmissionRequestInterface<Document> {}
+    InsurantId insurantId,
+    List<Document> documents,
+    SubmissionSetMetadata submissionSetMetadata,
+    @JsonInclude(JsonInclude.Include.NON_NULL) Boolean enableDocumentReuse)
+    implements SubmissionRequestInterface<Document> {
+
+  public DocumentSubmissionRequest(
+      InsurantId insurantId,
+      List<Document> documents,
+      SubmissionSetMetadata submissionSetMetadata) {
+    this(insurantId, documents, submissionSetMetadata, null);
+  }
+}

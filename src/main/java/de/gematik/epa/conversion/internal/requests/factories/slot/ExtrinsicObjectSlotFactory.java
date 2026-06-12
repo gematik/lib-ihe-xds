@@ -41,6 +41,7 @@ public final class ExtrinsicObjectSlotFactory {
     var creationTime = DateUtil.format(documentMetadata.creationTime());
     var serviceStartTime = DateUtil.format(documentMetadata.serviceStartTime());
     var serviceStopTime = DateUtil.format(documentMetadata.serviceStopTime());
+
     var slots =
         new java.util.ArrayList<>(
             List.of(

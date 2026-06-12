@@ -144,6 +144,19 @@ public class LibIheXdsMain {
   }
 
   /**
+   * Create a {@link ProxyResponse} with reused document mappings from a {@code
+   * urn:oasis:names:tc:ebxml-regrep:xsd:rs:3.0:RegistryResponseType}.<br>
+   * This method extracts ReusedDocumentMapping entries according to A_27700-02.
+   *
+   * @param registryResponse the {@link RegistryResponseType} as received from the IHE registry.
+   * @return {@link ProxyResponse} including reused document mappings
+   */
+  public static ProxyResponse convertRegistryResponseWithReusedMappings(
+      RegistryResponseType registryResponse) {
+    return ResponseUtils.toProxyResponseWithReusedMappings(registryResponse);
+  }
+
+  /**
    * Create a {@link ProxyFindResponse} from a {@code
    * urn:oasis:names:tc:ebxml-regrep:xsd:query:3.0:AdhocQueryResponse}.<br>
    * The AdhocQueryResponse holds the results of the query submitted in an AdhocQueryRequest.

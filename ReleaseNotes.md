@@ -2,12 +2,28 @@
 
 # Release notes lib-ihe-xds
 
+## Release 3.1.0
+
+### added
+
+- Document Reuse: Support for EnableDocumentReuse in ProvideAndRegister
+- Format Codes: Added Arbeitsunfaehigkeitsbescheinigung
+- New event codes (NOTFALL_DATENSATZ, ENTLASSUNGSBERICHT, EARZTBRIEF) and supporting versioned, URL-based code systems
+
+### updated
+
+- EventCodeList code system from KDL 2024 to KDL 2025
+- OID Generation: Switched to full UUIDs in UniqueIdFactory for improved uniqueness
+- Consistency: Renamed XDS_DOCUMENT_ENTRY_COMMENT to ...COMMENTS
+
 ## Release 3.0.3
 
 ### added
 
-- Support for AppendDocuments
-- Support for GetDocumentsAndAssociations and GetAssociations queries
+- AppendDocuments operation
+- GetDocumentsAndAssociations and GetAssociations queries
+- Support for EnableDocumentReuse in ProvideAndRegisterDocumentSetRequest (A_27700-02)
+- ReusedDocumentMapping extraction from RegistryResponse (A_27700-02)
 
 ## Release 3.0.2
 
