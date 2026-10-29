@@ -2,6 +2,16 @@
 
 # Release notes lib-ihe-xds
 
+## Release 3.1.1
+
+### added
+
+- Handling of date times in HL7 DTM format: `YYYY[MM[DD[hh[mm[ss]]]]]`
+
+### updated
+
+- Updated dependencies to latest versions
+
 ## Release 3.1.0
 
 ### added

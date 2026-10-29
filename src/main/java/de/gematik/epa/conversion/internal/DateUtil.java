@@ -26,6 +26,9 @@ package de.gematik.epa.conversion.internal;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeFormatterBuilder;
+import java.time.format.ResolverStyle;
+import java.time.temporal.ChronoField;
 
 public class DateUtil {
 
@@ -42,7 +45,34 @@ public class DateUtil {
     return localDateTime != null ? localDateTime.format(FORMATTER) : null;
   }
 
+  // HL7 DTM: YYYY[MM[DD[hh[mm[ss]]]]], missing parts default to the start of the period
+  private static final DateTimeFormatter DTM_PARSER =
+      new DateTimeFormatterBuilder()
+          .appendValue(ChronoField.YEAR, 4)
+          .optionalStart()
+          .appendValue(ChronoField.MONTH_OF_YEAR, 2)
+          .optionalStart()
+          .appendValue(ChronoField.DAY_OF_MONTH, 2)
+          .optionalStart()
+          .appendValue(ChronoField.HOUR_OF_DAY, 2)
+          .optionalStart()
+          .appendValue(ChronoField.MINUTE_OF_HOUR, 2)
+          .optionalStart()
+          .appendValue(ChronoField.SECOND_OF_MINUTE, 2)
+          .optionalEnd()
+          .optionalEnd()
+          .optionalEnd()
+          .optionalEnd()
+          .optionalEnd()
+          .parseDefaulting(ChronoField.MONTH_OF_YEAR, 1)
+          .parseDefaulting(ChronoField.DAY_OF_MONTH, 1)
+          .parseDefaulting(ChronoField.HOUR_OF_DAY, 0)
+          .parseDefaulting(ChronoField.MINUTE_OF_HOUR, 0)
+          .parseDefaulting(ChronoField.SECOND_OF_MINUTE, 0)
+          .toFormatter()
+          .withResolverStyle(ResolverStyle.STRICT);
+
   public static LocalDateTime format(String dateString) {
-    return LocalDateTime.parse(dateString, FORMATTER);
+    return LocalDateTime.parse(dateString, DTM_PARSER);
   }
 }
